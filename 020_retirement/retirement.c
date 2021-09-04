@@ -4,7 +4,7 @@
 //#include "retirement.h"
 
 struct _retire_info {
-  int month;
+  int months;
   double contribution;
   double rate_of_return;
 };
@@ -16,13 +16,13 @@ double calculations (double current_balance, retire_info stage_of_life);
 void retirement (int startAge, double initial, retire_info working, retire_info retired) {
   double current_balance = initial; 
 
-  for (int i = 0; i < working.month; i++) {
+  for (int i = 0; i < working.months; i++) {
     printf ("Age %3d month %2d you have $%.2lf\n", startAge / 12, startAge % 12, current_balance);
     current_balance = calculations(current_balance, working);
     startAge++;
   }
 
-  for (int i = 0; i < retired.month; i++) {
+  for (int i = 0; i < retired.months; i++) {
     printf ("Age %3d month %2d you have $%.2lf\n", startAge / 12, startAge % 12, current_balance);
     current_balance = calculations(current_balance, retired);
     startAge++;
@@ -37,12 +37,12 @@ double calculations (double current_balance, retire_info stage_of_life) {
 
 int main (void) {
   retire_info working;
-  working.month = 489;
+  working.months = 489;
   working.contribution = 1000;
   working.rate_of_return = .045 / 12;
   
   retire_info retired;
-  retired.month = 384;
+  retired.months = 384;
   retired.contribution = -4000;
   retired.rate_of_return = .01 / 12; 
 
