@@ -1,0 +1,12 @@
+abcde abcde
+$1$$$ $$!a$
+a b 
+aaaaa b
+aaabb aaaab
+aabbc ccbd!
+^^^^^ 54321
+      a    
+aaaaaa aaaaa
+many inputs to mess it up
+abcde abcdee
+10000 00001
