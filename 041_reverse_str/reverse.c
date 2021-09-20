@@ -4,6 +4,21 @@
 
 void reverse(char * str) {
   //WRITE ME!
+  char * reversed = str;
+
+  while (*reversed != '\0') {
+    reversed++;
+  }
+
+  reversed--;
+
+  while (reversed > str) {
+    char temp = *reversed;
+    *reversed = *str;
+    *str = temp;
+    str++;
+    reversed--;
+  }
 }
 
 int main(void) {
