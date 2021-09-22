@@ -34,7 +34,7 @@ void frequency (FILE * file, int * freq) {
 int main (int argc, char ** argv) {
   if (argc != 2) {
     fprintf(stderr, "Usage: inputFileName\n");
-    EXIT_FAILURE;
+    return EXIT_FAILURE;
   }
 
   FILE * file = fopen (argv[1], "r");
