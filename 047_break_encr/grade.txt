@@ -1,9 +1,9 @@
-Grading at 09/22/2021:19:00:12.239173
-For commit ID 5c38318853ff7f6a2901292e66690e47084f06c3
-Grading at Wed Sep 22 15:00:07 EDT 2021
+Grading at 09/22/2021:19:06:57.097405
+For commit ID 0ebeeebc8a96298d3bfc9d0522d3d0c2633b529a
+Grading at Wed Sep 22 15:06:52 EDT 2021
 Attempting to compile breaker.c 
 gcc -std=gnu99 -pedantic -Wall -Werror -o breaker breaker.c
-valgrind reported memory errors
+testcase1 passed
 #################################################
 testcase2:
 testcase2 passed
@@ -14,4 +14,4 @@ testcase3 passed
 testcase4:
 testcase4 passed
 
-Overall Grade: C
+Overall Grade: A
