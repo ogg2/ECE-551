@@ -32,7 +32,7 @@ void frequency (FILE * file, int * freq) {
 }
 
 int main (int argc, char ** argv) {
-  if (argc != 1) {
+  if (argc != 2) {
     fprintf(stderr, "Usage: inputFileName\n");
     EXIT_FAILURE;
   }
@@ -48,11 +48,10 @@ int main (int argc, char ** argv) {
   int codeKey = breaker (freq);
   
   if (fclose(file) != 0) {
-    perror ("Failed to clsoe the input file!");
+    perror ("Failed to close the input file!");
     return EXIT_FAILURE;
   }
 
   printf("%d\n", codeKey);
-
   return EXIT_SUCCESS;
 }
