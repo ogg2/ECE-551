@@ -6,7 +6,12 @@ void rotate (const char ** matrix) {
 
   for (int col = 0; col < 10; col++) {
     for (int row = 9; row >= 0; row--) {
-      printf ("%c", matrix[row][col]);
+      char character;
+      if ((character = matrix[row][col]) == '\0' || character == EOF) {
+        fprintf(stderr,"Input file not formatted correctly. Too few characters.\n");
+        exit (EXIT_FAILURE);
+      }
+      printf ("%c", character);
     }
       printf ("\n");
   }
@@ -14,7 +19,7 @@ void rotate (const char ** matrix) {
 
 int main (int argc, char ** argv) {
   if (argc != 2) {
-    fprintf (stderr, "Incorrect nubmer of input parameters.\n");
+    fprintf (stderr, "Incorrect number of input parameters.\n");
     return EXIT_FAILURE;
   }
 
@@ -54,7 +59,11 @@ int main (int argc, char ** argv) {
   //WHY DOESNT THIS WORK
   while (fgets(word, 12, file) != NULL) {
     if (strchr(word, '\n') == NULL) {
-      fprintf(stderr, "Line is too long.");
+      fprintf(stderr, "Line is too long.\n");
+      return EXIT_FAILURE;
+    }
+    if (i > 9) {
+      fprintf(stderr, "Input file is not formatted correctly. Too many lines.\n");
       return EXIT_FAILURE;
     }
     matrix[i++] = strdup(word);
