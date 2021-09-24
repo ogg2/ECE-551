@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void rotate (const char ** matrix) {
 
@@ -23,7 +24,7 @@ int main (int argc, char ** argv) {
     return EXIT_FAILURE;
   }
 
-  char word0[12];
+  /*char word0[12];
   fgets(word0, 12, file);
   char word1[12];
   fgets(word1, 12, file);
@@ -43,14 +44,21 @@ int main (int argc, char ** argv) {
   fgets(word8, 12, file);
   char word9[12];
   fgets(word9, 12, file);
+  */
 
-  const char * matrix [12] = {word0, word1, word2, word3, word4, word5, word6, word7, word8, word9};
+  //const char * matrix [12] = {word0, word1, word2, word3, word4, word5, word6, word7, word8, word9};
+  const char * matrix[12];
+  int i = 0;
+  char word[12];
 
   //WHY DOESNT THIS WORK
- /* while (fgets(word, 12, file) != NULL) {
-    matrix[i] = word;
-    i++;
-  }*/
+  while (fgets(word, 12, file) != NULL) {
+    if (strchr(word, '\n') == NULL) {
+      fprintf(stderr, "Line is too long.");
+      return EXIT_FAILURE;
+    }
+    matrix[i++] = strdup(word);
+  }
   
   rotate (matrix);
 
