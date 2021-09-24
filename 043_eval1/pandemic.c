@@ -7,9 +7,9 @@
  * parseLine takes an input string that contains a country name and population
  * and inputs it into a struct of type country_t 
  *
- * input: line - string from an input file containing country name and population
+ * input: line is a string containing country name and population
  *
- * return: country_t - struct containing the country name and population 
+ * return: country_t is struct containing the country name and population 
  */
 country_t parseLine(char * line) {
   //WRITE ME
@@ -29,6 +29,11 @@ country_t parseLine(char * line) {
   }
   ans.name[i] = '\0';
   line++;
+
+  /*if ((character = *line) == '\0') {
+    fprintf (stderr, "Error: Population for %s must be a number.\n", ans.name);
+    exit (EXIT_FAILURE);
+  }*/
 
   uint64_t population = 0;
   while ((character = *line) != '\0') {
@@ -68,8 +73,40 @@ country_t parseLine(char * line) {
   return ans;
 }
 
+/**
+ * calcRunningAvg calculates the seven day running of case data
+ *
+ * input: data contains the daily number of cases for an array of days
+ * input: n_days specifies how many data points (days) are stored in data array
+ * input: avg stores the results of the seven day running average as calculated by the function
+ */
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
+  if (data == NULL || avg == NULL) {
+    fprintf (stderr, "Input array is NULL.\n");
+    exit (EXIT_FAILURE);
+  }
+  if (n_days < 7) {
+    fprintf (stderr, "Not enough data to compute 7 day running average.\n");
+    exit (EXIT_FAILURE);
+  }
+  unsigned sevenDayTotal = 0;
+  unsigned * firstDay = data;
+
+  size_t day;
+  for (day = 0; day < 7; day++) {
+    sevenDayTotal += *data;
+    data++; 
+  }
+
+  do {
+    *avg = (double) sevenDayTotal / 7;
+    avg++;
+    sevenDayTotal = sevenDayTotal - *firstDay + *data;
+    data++;
+    firstDay++;
+  } while (day++ < n_days);
+
 }
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
