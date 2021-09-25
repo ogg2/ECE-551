@@ -50,7 +50,7 @@ int main (int argc, char ** argv) {
     }
     matrix[i++] = strdup(word);
   }
-  if (i < 9) {
+  if (i < 10) {
     fprintf(stderr, "Input file is not formatted correctly. Too few lines.\n");
     return EXIT_FAILURE;
   }
