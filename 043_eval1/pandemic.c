@@ -3,6 +3,18 @@
 #include <ctype.h>
 #include <errno.h>
 
+
+/**
+ * error takes an error message, prints it out, and exits the program
+ *
+ * input - message is the error message that will be printed to command line
+ */
+void error (const char * message) {
+  fprintf (stderr, "Error: %s\n", message);
+  exit (EXIT_FAILURE);
+}
+
+
 /**
  * parseLine takes an input string that contains a country name and population
  * and inputs it into a struct of type country_t 
@@ -15,11 +27,12 @@ country_t parseLine(char * line) {
   //WRITE ME
   country_t ans;
   int i = 0;
-  char character;
+  int character;
   while ((character = *line) != ',') {
     if (i > 62) {
-      fprintf (stderr, "Error: Country name too long.\n");
-      exit (EXIT_FAILURE);
+      error ("Error: Country name too long.");
+      //fprintf (stderr, "Error: Country name too long.\n");
+      //exit (EXIT_FAILURE);
     }
     //if (isalpha(character) || character == ' ') {
       ans.name[i] = character;
@@ -40,18 +53,21 @@ country_t parseLine(char * line) {
     if (isspace(character)) { //MAYBE CHECK IF PREV CHARACTER WAS NOT 0-9
       ;
     } else if (character == '-') {
-      fprintf (stderr, "Error: Population count for %s cannot be negative.\n", ans.name);
-      exit (EXIT_FAILURE);
+      error ("Population count cannot be negative.");
+      //fprintf (stderr, "Error: Population count for %s cannot be negative.\n", ans.name);
+      //exit (EXIT_FAILURE);
     } else if (character < '0' || character > '9') {
-      fprintf (stderr, "Error: Population for %s must be a number.\n", ans.name);
-      exit (EXIT_FAILURE);
+      error ("Population must be a number.");
+      //fprintf (stderr, "Error: Population for %s must be a number.\n", ans.name);
+      //exit (EXIT_FAILURE);
     } else {
       int overflow = population;
       int addDigit = character - '0';
       population = population * 10 + addDigit;
       if ((population - addDigit) / 10 != overflow) {
-        fprintf (stderr, "Error: Population for %s does not fit in uint64_t.\n", ans.name);
-        exit (EXIT_FAILURE);
+        error ("Population does not fit in uint64_t.");
+        //fprintf (stderr, "Error: Population for %s does not fit in uint64_t.\n", ans.name);
+        //exit (EXIT_FAILURE);
       }
     }
     line++;
@@ -83,12 +99,12 @@ country_t parseLine(char * line) {
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
   if (data == NULL || avg == NULL) {
-    fprintf (stderr, "Input array is NULL.\n");
-    exit (EXIT_FAILURE);
+    error ("Input array is NULL.");
+    //fprintf (stderr, "Input array is NULL.\n");
+    //exit (EXIT_FAILURE);
   }
   if (n_days < 7) {
-    fprintf (stderr, "Not enough data to compute 7 day running average.\n");
-    exit (EXIT_FAILURE);
+    return;
   }
   unsigned sevenDayTotal = 0;
   unsigned * firstDay = data;
