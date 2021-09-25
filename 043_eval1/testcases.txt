@@ -1,0 +1,9 @@
+#error
+printCountries test_population.csv
+printCountries test_population2.csv
+printCountries test_population3.csv
+printCountries test_population4.csv
+printCountries test_population5.csv
+
+#success
+printCountries population.csv
