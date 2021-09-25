@@ -1,0 +1,31 @@
+Grading at 09/25/2021:21:25:35.966232
+For commit ID ecb460911e3bae4ab1ec53d6c488cd15f951ae1e
+Grading at Sat Sep 25 17:25:31 EDT 2021
+Running your test cases
+
+Compiling printCountries
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
++-----------------------------------------------------------------------+
+Test case printCountries test_population.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries test_population2.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries test_population3.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries test_population4.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries test_population5.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries population.csv
+Your file matched the expected output
+
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
+
+Overall Grade: NO GRADE YET
