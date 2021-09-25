@@ -61,11 +61,11 @@ country_t parseLine(char * line) {
       //fprintf (stderr, "Error: Population for %s must be a number.\n", ans.name);
       //exit (EXIT_FAILURE);
     } else {
-      int overflow = population;
+      int overflowCheck = population;
       int addDigit = character - '0';
       population = population * 10 + addDigit;
-      if ((population - addDigit) / 10 != overflow) {
-        error ("Population does not fit in uint64_t.");
+      if ((population - addDigit) / 10 != overflowCheck) {
+        error ("Overflow - Population does not fit in uint64_t.");
         //fprintf (stderr, "Error: Population for %s does not fit in uint64_t.\n", ans.name);
         //exit (EXIT_FAILURE);
       }
@@ -125,8 +125,31 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 
 }
 
+/**
+ * calcCumulative calculates the cases per 100k population for an array of days
+ * 
+ * input: data contains the daily number of cases for an array of days
+ * input: n_days specifies how many data points (days) are stored in data array and will be sotred in cum array
+ * input: pop contains the total population size
+ * input: cum stores the cases per 100k population for an array of days
+ */
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
   //WRITE ME
+  if (data == NULL || cum == NULL) {
+    error ("Input array is NULL.");
+  }
+  if (n_days < 0) {
+    return;
+  }
+
+  size_t day = 0;
+
+  while (day++ < n_days) {
+    double ratio = pop / 100000;
+    *cum = *data / ratio;
+    cum++;
+    data++;
+  }
 }
 
 void printCountryWithMax(country_t * countries,
