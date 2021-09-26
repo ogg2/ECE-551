@@ -37,9 +37,6 @@ country_t parseLine(char * line) {
       ans.name[i++] = character;
       line++;
   }
-  if (i == 0) {
-    error ("Country is not named.");
-  }
   ans.name[i] = '\0';
   line++;
 
@@ -107,8 +104,8 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
       error ("Input data array missing values.");
     }*/
     *avg = (double) sevenDayTotal / 7;
-    avg++;
     if (day != n_days) {
+      avg++;
       sevenDayTotal -= *firstDay;
       sevenDayTotal += *data;
     }
