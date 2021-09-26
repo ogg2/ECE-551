@@ -87,7 +87,7 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   if (n_days < 7) {
     return;
   }
-  uint64_t sevenDayTotal = 0;
+  unsigned sevenDayTotal = 0;
   unsigned * firstDay = data;
 
   size_t day;
@@ -128,11 +128,12 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
 
   size_t day = 0;
   uint64_t cumulativeCases = 0;
+  double ratio = pop / 100000;
 
   while (day++ < n_days) {
-    double ratio = pop / 100000;
     cumulativeCases += *data;
-    *cum = cumulativeCases / ratio;
+    double per100k = cumulativeCases / ratio;
+    *cum = per100k;
     cum++;
     data++;
   }
