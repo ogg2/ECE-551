@@ -105,10 +105,10 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
     }*/
     *avg = (double) sevenDayTotal / 7;
     if (day != n_days) {
-      avg++;
       sevenDayTotal -= *firstDay;
       sevenDayTotal += *data;
     }
+    avg++;
     data++;
     firstDay++;
   } while (day++ < n_days);
