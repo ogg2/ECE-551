@@ -1,12 +1,79 @@
-Grading at 09/26/2021:18:18:13.967454
-For commit ID 7489afaf631434520c873fd3f340b8e2d38013d7
-Grading at Sun Sep 26 14:18:13 EDT 2021
+Grading at 09/26/2021:18:19:53.979738
+For commit ID 43374b42c58b6a1d33199ce2417c0d987af6fde4
+Grading at Sun Sep 26 14:19:44 EDT 2021
 Running your test cases
 
 Compiling printCountries
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
-Makefile:4: recipe for target 'printCountries' failed
-The code did not compile!
++-----------------------------------------------------------------------+
+Test case printCountries population1.csv
+Our printCountries does not consider this an error case
++-----------------------------------------------------------------------+
+Test case printCountries population2.csv
+No Population: 0
+Your program did not indicate a failure case
++-----------------------------------------------------------------------+
+Test case printCountries population3.csv
+Our printCountries does not consider this an error case
++-----------------------------------------------------------------------+
+Test case printCountries population4.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries population5.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries population6.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries population.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries population7.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries population8.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries population9.csv
+Your file matched the expected output
+
+Compiling printRunningAvg
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o printRunningAvg
++-----------------------------------------------------------------------+
+Test case printRunningAvg population.csv daily_small.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printRunningAvg population.csv daily_cases.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printRunningAvg population.csv daily_tests1.csv
+Your file matched the expected output
+
+Compiling printCumulative
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCumulative.o -o printCumulative
++-----------------------------------------------------------------------+
+Test case printCumulative population.csv daily_small.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCumulative population.csv daily_cases.csv
+Line_2_did_not_match
+Line_4_did_not_match
+Line_6_did_not_match
+Line_8_did_not_match
+Line_10_did_not_match
+Line_12_did_not_match
+Line_14_did_not_match
+Line_16_did_not_match
+Line_18_did_not_match
+Your file did not match the expected ouput
++-----------------------------------------------------------------------+
+Test case printCumulative population.csv daily_tests1.csv
+Your file matched the expected output
+
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
