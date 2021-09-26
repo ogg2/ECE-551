@@ -1,6 +1,6 @@
-Grading at 09/26/2021:18:45:19.204986
-For commit ID 279e9c981271c204d81367223faa2a1db60b09bb
-Grading at Sun Sep 26 14:45:09 EDT 2021
+Grading at 09/26/2021:19:17:48.972013
+For commit ID c4856aeb59617a9d99123541495e408de4e5c723
+Grading at Sun Sep 26 15:17:35 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -45,10 +45,10 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o pr
 Test case printRunningAvg population.csv daily_small.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printRunningAvg population.csv daily_cases.csv
+Test case printRunningAvg population.csv daily_tests1.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printRunningAvg population.csv daily_tests1.csv
+Test case printRunningAvg population.csv daily_cases.csv
 Your file matched the expected output
 
 Compiling printCumulative
@@ -56,6 +56,9 @@ rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCumulative.o -o printCumulative
 +-----------------------------------------------------------------------+
 Test case printCumulative population.csv daily_small.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCumulative population.csv daily_tests1.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCumulative population.csv daily_cases.csv
@@ -69,9 +72,22 @@ Line_14_did_not_match
 Line_16_did_not_match
 Line_18_did_not_match
 Your file did not match the expected ouput
+
+Compiling printDailyMax
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o printDailyMax
 +-----------------------------------------------------------------------+
-Test case printCumulative population.csv daily_tests1.csv
-Your file matched the expected output
+Test case printDailyMax population.csv daily_small.csv
+Valgrind reported memory errors
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv daily_tests1.csv
+Valgrind reported memory errors
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv daily_tests2.csv
+Valgrind reported memory errors
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv daily_cases.csv
+Valgrind reported memory errors
 
 You have FAILED one or more of your test cases
 Keep debugging
