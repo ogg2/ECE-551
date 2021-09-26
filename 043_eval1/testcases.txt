@@ -6,10 +6,10 @@ printCountries test_population4.csv
 printCountries test_population5.csv
 printCountries test_population6.csv
 printCountries test_population7.csv
-printCountries test_population8.csv
 
 #success
 printCountries population.csv
+printCountries test_population8.csv
 printRunningAvg population.csv daily_small.csv
 printRunningAvg population.csv daily_cases.csv
 printRunningAvg population.csv tests_daily.csv
