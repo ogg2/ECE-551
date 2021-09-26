@@ -23,4 +23,5 @@ printCumulative population.csv daily_cases.csv
 printDailyMax population.csv daily_small.csv
 printDailyMax population.csv daily_tests1.csv
 printDailyMax population.csv daily_tests2.csv
+printDailyMax population.csv daily_tests3.csv
 printDailyMax population.csv daily_cases.csv

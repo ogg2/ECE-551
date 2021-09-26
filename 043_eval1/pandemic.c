@@ -150,7 +150,7 @@ void printCountryWithMax(country_t * countries,
     error ("No data to calculate country with most cases.");
   }
   
-  char * country_most;
+  char * country_most = countries[0].name;
   unsigned most_cases = 0;
   int tie = 1;
   size_t country = 0;
