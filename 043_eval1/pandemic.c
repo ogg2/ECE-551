@@ -30,7 +30,7 @@ country_t parseLine(char * line) {
   int character;
   while ((character = *line) != ',') {
     if (i > 62) {
-      error ("Error: Country name too long.");
+      error ("Country name too long.");
       //fprintf (stderr, "Error: Country name too long.\n");
       //exit (EXIT_FAILURE);
     }
