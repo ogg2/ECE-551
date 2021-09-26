@@ -35,9 +35,8 @@ country_t parseLine(char * line) {
       //exit (EXIT_FAILURE);
     }
     //if (isalpha(character) || character == ' ') {
-      ans.name[i] = character;
+      ans.name[i++] = character;
       line++;
-      i++;
     //}
   }
   ans.name[i] = '\0';
