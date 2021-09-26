@@ -1,44 +1,12 @@
-Grading at 09/26/2021:02:54:44.645220
-For commit ID d81d12c24d1989c9cb743bd3ac844aa4b48fdd7e
-Grading at Sat Sep 25 22:54:38 EDT 2021
+Grading at 09/26/2021:03:12:43.846802
+For commit ID 9cd4f7a91ccf850e9a7736aebf61bf6cd3393364
+Grading at Sat Sep 25 23:12:43 EDT 2021
 Running your test cases
 
 Compiling printCountries
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
-+-----------------------------------------------------------------------+
-Test case printCountries test_population.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries test_population2.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries test_population3.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries test_population4.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries test_population5.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries population.csv
-Your file matched the expected output
-
-Compiling printRunningAvg
-rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
-gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o printRunningAvg
-+-----------------------------------------------------------------------+
-Test case printRunningAvg population.csv daily_small.csv
-Valgrind reported memory errors
-+-----------------------------------------------------------------------+
-Test case printRunningAvg population.csv daily_cases.csv
-Valgrind reported memory errors
-+-----------------------------------------------------------------------+
-Test case printRunningAvg population.csv tests_daily.csv
-Valgrind reported memory errors
-
-You have FAILED one or more of your test cases
-Keep debugging
+Makefile:4: recipe for target 'printCountries' failed
+The code did not compile!
 
 Overall Grade: NO GRADE YET
