@@ -1,16 +1,16 @@
 #error
-printCountries test_population.csv
-printCountries test_population2.csv
-printCountries test_population3.csv
-printCountries test_population4.csv
-printCountries test_population5.csv
-printCountries test_population6.csv
-printCountries test_population7.csv
+printCountries population1.csv
+printCountries population2.csv
+printCountries population3.csv
+printCountries population4.csv
+printCountries population5.csv
+printCountries population6.csv
+printCountries population7.csv
 
 #success
 printCountries population.csv
-printCountries test_population8.csv
-printCountries test_population9.csv
+printCountries population8.csv
+printCountries population9.csv
 printRunningAvg population.csv daily_small.csv
 printRunningAvg population.csv daily_cases.csv
-printRunningAvg population.csv tests_daily.csv
+printRunningAvg population.csv daily_test1.csv
