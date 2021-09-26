@@ -132,8 +132,7 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
 
   while (day++ < n_days) {
     cumulativeCases += *data;
-    double per100k = cumulativeCases / ratio;
-    *cum = per100k;
+    *cum = cumulativeCases / ratio;;
     cum++;
     data++;
   }
@@ -144,4 +143,39 @@ void printCountryWithMax(country_t * countries,
                          unsigned ** data,
                          size_t n_days) {
   //WRITE ME
+  if (countries == NULL || data == NULL) {
+    error ("Input array is NULL.");
+  }
+  if (n_countries < 1 || n_days < 1) {
+    error ("No data to calculate country with most cases.");
+  }
+  
+  char * country_most;
+  unsigned most_cases = 0;
+  int tie = 1;
+  size_t country = 0;
+
+  while (country < n_countries) {
+    for (size_t day = 0; day < n_days; day++) {
+      unsigned dailyCases = data[country][day];
+      char * thisCountry = countries[country].name;
+      if (dailyCases > most_cases) {
+        tie = 0;
+        country_most = thisCountry;
+        most_cases = dailyCases;
+      } else if (dailyCases == most_cases && country_most != thisCountry) {
+        tie = 1;
+      } else {
+        ;
+      }
+    }
+    country++;
+  }
+
+  if (tie == 1) {
+    printf ("There is a tie between at least two countries\n");
+    return;
+  }
+
+  printf("%s has the most daily cases with %u\n", country_most, most_cases);
 }
