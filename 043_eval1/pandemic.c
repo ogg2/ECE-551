@@ -72,20 +72,7 @@ country_t parseLine(char * line) {
     }
     line++;
   }
-
- // errno = 0;
-  //uint64_t population = atol (line);
-  /*if (errno != 0 || errno == ERANGE) {
-    fprintf (stderr, "Error: Population count for %s is not a number.\n", ans.name);
-    perror ("The error was: ");
-    exit (EXIT_FAILURE);
-  }
-  if (population == 0) {
-    fprintf (stderr, "Error: Population count for %s is not a number.\n", ans.name);
-    exit (EXIT_FAILURE);
-  }*/
   ans.population = population;
-
   return ans;
 }
 
@@ -116,6 +103,9 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   }
 
   do {
+    if () {
+      error ("Data array has invalid data.");
+    }
     *avg = (double) sevenDayTotal / 7;
     avg++;
     sevenDayTotal = sevenDayTotal - *firstDay + *data;
@@ -140,6 +130,9 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   }
   if (n_days < 0) {
     return;
+  }
+  if (pop < 0) {
+    error ("Population cannot be negative.");
   }
 
   size_t day = 0;
