@@ -138,6 +138,16 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   }
 }
 
+/**
+ * printCountryWithMax finds the maximum number of daily cases of all
+ * countries represented in data, over the entire time period
+ *
+ * input: countries contains the list of countries represented in data
+ * input: n_countries is the number of countries represented in data
+ * input: data contains the number of daily cases for all countries,
+ *        over the entire time period
+ * input: n_days is the number of days of data for each country
+ */
 void printCountryWithMax(country_t * countries,
                          size_t n_countries,
                          unsigned ** data,
