@@ -103,17 +103,19 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   }
 
   do {
-    if (sizeof (*data) != sizeof(sevenDayTotal)) {
+    /*if (sizeof (*data) != sizeof(sevenDayTotal)) {
       error ("Input data array missing values.");
     }
     if (data == NULL) {
       error ("Input data array missing values.");
-    }
+    }*/
     //printf ("Day: %zu\n", day);
     *avg = (double) sevenDayTotal / 7;
     avg++;
-    sevenDayTotal -= *firstDay;
-    sevenDayTotal += *data;
+    if (day != n_days) {
+      sevenDayTotal -= *firstDay;
+      sevenDayTotal += *data;
+    }
     data++;
     firstDay++;
   } while (day++ < n_days);
