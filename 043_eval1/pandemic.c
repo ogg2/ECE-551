@@ -103,9 +103,6 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   }
 
   do {
-    if () {
-      error ("Data array has invalid data.");
-    }
     *avg = (double) sevenDayTotal / 7;
     avg++;
     sevenDayTotal = sevenDayTotal - *firstDay + *data;
