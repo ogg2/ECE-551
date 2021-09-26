@@ -88,7 +88,7 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
     return;
   }
   uint64_t sevenDayTotal = 0;
-  uint64_t * firstDay = data;
+  unsigned * firstDay = data;
 
   size_t day;
   for (day = 0; day < 7; day++) {
