@@ -103,9 +103,17 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   }
 
   do {
+    if (sizeof (*data) != sizeof(sevenDayTotal)) {
+      error ("Input data array missing values.");
+    }
+    if (data == NULL) {
+      error ("Input data array missing values.");
+    }
+    //printf ("Day: %zu\n", day);
     *avg = (double) sevenDayTotal / 7;
     avg++;
-    sevenDayTotal = sevenDayTotal - *firstDay + *data;
+    sevenDayTotal -= *firstDay;
+    sevenDayTotal += *data;
     data++;
     firstDay++;
   } while (day++ < n_days);
@@ -127,9 +135,6 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   }
   if (n_days < 0) {
     return;
-  }
-  if (pop < 0) {
-    error ("Population cannot be negative.");
   }
 
   size_t day = 0;
