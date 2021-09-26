@@ -34,17 +34,17 @@ country_t parseLine(char * line) {
       //fprintf (stderr, "Error: Country name too long.\n");
       //exit (EXIT_FAILURE);
     }
-    //if (isalpha(character) || character == ' ') {
       ans.name[i++] = character;
       line++;
-    //}
+  }
+  if (i == 0) {
+    error ("Country is not named.");
   }
   ans.name[i] = '\0';
   line++;
 
   /*if ((character = *line) == '\0') {
-    fprintf (stderr, "Error: Population for %s must be a number.\n", ans.name);
-    exit (EXIT_FAILURE);
+    error ("No population.");
   }*/
 
   uint64_t population = 0;
@@ -60,13 +60,11 @@ country_t parseLine(char * line) {
       //fprintf (stderr, "Error: Population for %s must be a number.\n", ans.name);
       //exit (EXIT_FAILURE);
     } else {
-      int overflowCheck = population;
-      int addDigit = character - '0';
+      uint64_t overflowCheck = population;
+      uint64_t addDigit = character - '0';
       population = population * 10 + addDigit;
-      if ((population - addDigit) / 10 != overflowCheck) {
+      if (population < overflowCheck) {
         error ("Overflow - Population does not fit in uint64_t.");
-        //fprintf (stderr, "Error: Population for %s does not fit in uint64_t.\n", ans.name);
-        //exit (EXIT_FAILURE);
       }
     }
     line++;
