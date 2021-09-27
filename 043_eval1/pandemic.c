@@ -1,7 +1,6 @@
 #include "pandemic.h"
 #include <stdio.h>
 #include <ctype.h>
-#include <errno.h>
 
 
 /**
@@ -31,8 +30,6 @@ country_t parseLine(char * line) {
   while ((character = *line) != ',') {
     if (i > 62) {
       error ("Country name too long.");
-      //fprintf (stderr, "Error: Country name too long.\n");
-      //exit (EXIT_FAILURE);
     }
       ans.name[i++] = character;
       line++;
@@ -40,22 +37,14 @@ country_t parseLine(char * line) {
   ans.name[i] = '\0';
   line++;
 
-  /*if ((character = *line) == '\0') {
-    error ("No population.");
-  }*/
-
   uint64_t population = 0;
   while ((character = *line) != '\0') {
     if (isspace(character)) { //MAYBE CHECK IF PREV CHARACTER WAS NOT 0-9
       ;
     } else if (character == '-') {
       error ("Population count cannot be negative.");
-      //fprintf (stderr, "Error: Population count for %s cannot be negative.\n", ans.name);
-      //exit (EXIT_FAILURE);
     } else if (character < '0' || character > '9') {
       error ("Population must be a number.");
-      //fprintf (stderr, "Error: Population for %s must be a number.\n", ans.name);
-      //exit (EXIT_FAILURE);
     } else {
       uint64_t overflowCheck = population;
       uint64_t addDigit = character - '0';
@@ -81,8 +70,6 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
   if (data == NULL || avg == NULL) {
     error ("Input array is NULL.");
-    //fprintf (stderr, "Input array is NULL.\n");
-    //exit (EXIT_FAILURE);
   }
   if (n_days < 7) {
     return;
