@@ -105,7 +105,7 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
  * calcCumulative calculates the cumulative cases per 100k population for an array of days up to a given day
  * 
  * input: data contains the daily number of cases for an array of days
- * input: n_days specifies how many data points (days) are stored in data array and will be sotred in cum array
+ * input: n_days specifies how many data points (days) are stored in data array and will be stored in cum array
  * input: pop contains the total population size
  * input: cum stores the cumulative cases per 100k population for an array of days up to that given day
  */
@@ -119,12 +119,11 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   }
 
   uint64_t cumulativeCases = 0;
-  double ratio = pop / 100000;
+  double ratio = pop / (double) 100000;
 
   for (size_t day = 0; day < n_days; day++) {
     cumulativeCases += *data;
     *cum = cumulativeCases / ratio;
-//    printf ("Cumulative Cases: %zu\n", cumulativeCases);
     cum++;
     data++;
   }
