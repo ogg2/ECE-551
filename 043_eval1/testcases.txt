@@ -19,6 +19,7 @@ printRunningAvg population.csv daily_cases.csv
 
 printCumulative population.csv daily_small.csv
 printCumulative population.csv daily_tests1.csv
+printCumulative population.csv daily_tests4.csv
 printCumulative population.csv daily_cases.csv
 
 printDailyMax population.csv daily_small.csv
