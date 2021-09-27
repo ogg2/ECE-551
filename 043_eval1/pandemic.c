@@ -123,7 +123,7 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   for (size_t day = 0; day < n_days; day++) {
     cumulativeCases += *data;
     *cum = cumulativeCases / ((double) (pop / 100000));
-    printf ("Cumulative Cases: %zu\n", cumulativeCases);
+//    printf ("Cumulative Cases: %zu\n", cumulativeCases);
     cum++;
     data++;
   }
