@@ -1,6 +1,5 @@
 #error
 printCountries population1.csv
-printCountries population2.csv
 printCountries population3.csv
 printCountries population4.csv
 printCountries population5.csv
@@ -8,6 +7,7 @@ printCountries population6.csv
 
 #success
 printCountries population.csv
+printCountries population2.csv
 printCountries population7.csv
 printCountries population8.csv
 printCountries population9.csv

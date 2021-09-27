@@ -39,7 +39,7 @@ country_t parseLine(char * line) {
 
   uint64_t population = 0;
   int anyInput = 0;
-  while ((character = *line) != '\0') {
+  while ((character = *line) != '\0' && character != ',') {
     if (isspace(character)) { //MAYBE CHECK IF PREV CHARACTER WAS NOT 0-9
       ;
     } else if (character == '-') {
