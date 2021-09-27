@@ -38,6 +38,7 @@ country_t parseLine(char * line) {
   line++;
 
   uint64_t population = 0;
+  int anyInput = 0;
   while ((character = *line) != '\0') {
     if (isspace(character)) { //MAYBE CHECK IF PREV CHARACTER WAS NOT 0-9
       ;
@@ -49,11 +50,15 @@ country_t parseLine(char * line) {
       uint64_t overflowCheck = population;
       uint64_t addDigit = character - '0';
       population = population * 10 + addDigit;
+      anyInput = 1;
       if (population < overflowCheck) {
         error ("Overflow - Population does not fit in uint64_t.");
       }
     }
     line++;
+  }
+  if (anyInput == 0) {
+    error ("No population for country.");
   }
   ans.population = population;
   return ans;
