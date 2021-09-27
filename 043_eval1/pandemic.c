@@ -119,13 +119,11 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   }
 
   uint64_t cumulativeCases = 0;
-  double ratio = pop / 100000;
-  //size_t day
 
-  //while (day++ < n_days) {
   for (size_t day = 0; day < n_days; day++) {
     cumulativeCases += *data;
-    *cum = cumulativeCases / ratio;;
+    *cum = cumulativeCases / ((double) (pop / 100000));
+    printf ("Cumulative Cases: %zu\n", cumulativeCases);
     cum++;
     data++;
   }
