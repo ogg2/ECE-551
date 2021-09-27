@@ -1,6 +1,6 @@
-Grading at 09/27/2021:01:11:22.401761
-For commit ID 725526e2e8387910a0e5c895294275a24f600e55
-Grading at Sun Sep 26 21:11:08 EDT 2021
+Grading at 09/27/2021:01:14:04.181127
+For commit ID b927b95a4cbc9fcf2655c2a38cdad5e28bf4996a
+Grading at Sun Sep 26 21:13:49 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -10,8 +10,8 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o pri
 Test case printCountries population1.csv
 Our printCountries does not consider this an error case
 +-----------------------------------------------------------------------+
-Test case printCountries population3.csv
-Our printCountries does not consider this an error case
+Test case printCountries population2.csv
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population4.csv
 Your program successfully indicated a failure case
@@ -25,9 +25,8 @@ Your program successfully indicated a failure case
 Test case printCountries population.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printCountries population2.csv
-Line_1_did_not_match
-Your file did not match the expected ouput
+Test case printCountries population3.csv
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries population7.csv
 Your file matched the expected output
