@@ -12,6 +12,7 @@ printCountries population7.csv
 printCountries population8.csv
 printCountries population9.csv
 printCountries population10.csv
+printCountries population11.csv
 
 printRunningAvg population.csv daily_small.csv
 printRunningAvg population.csv daily_tests1.csv
