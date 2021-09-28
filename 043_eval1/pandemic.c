@@ -39,11 +39,12 @@ country_t parseLine(char * line) {
 
   uint64_t population = 0;
   int anyInput = 0;
+  int positive = 1;
   while ((character = *line) != '\0' && character != ',') {
     if (isspace(character)) { //MAYBE CHECK IF PREV CHARACTER WAS NOT 0-9
       ;
     } else if (character == '-') {
-      error ("Population count cannot be negative.");
+      positive = -1;
     } else if (character < '0' || character > '9') {
       error ("Population must be a number.");
     } else {
@@ -60,7 +61,7 @@ country_t parseLine(char * line) {
   if (anyInput == 0) {
     error ("No population for country.");
   }
-  ans.population = population;
+  ans.population = population * positive;
   return ans;
 }
 
