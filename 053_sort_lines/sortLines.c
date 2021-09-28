@@ -14,6 +14,7 @@ void sortData(char ** data, size_t count) {
   qsort(data, count, sizeof(char *), stringOrder);
 }
 
+//prints array and frees memory at each index
 void printArray (char ** data, size_t size) {
   for (size_t i = 0; i < size; i++) {
     printf ("%s", data[i]);
@@ -21,6 +22,7 @@ void printArray (char ** data, size_t size) {
   }
 }
 
+//adds a line of input into the array
 char ** addToArray (char ** data, size_t size, char * line) {
   data = realloc (data, (1 + size) * sizeof (*data));
   data[size] = line;
@@ -46,7 +48,18 @@ void readFile (FILE * file) {
 int main(int argc, char ** argv) {
   //WRITE YOUR CODE HERE!
   if (argc == 1) {
-    char * buffer;
+    FILE * file = stdin;
+    if (file == NULL) {
+        fprintf(stderr, "Error: Could not open file.\n");
+        return EXIT_FAILURE;
+      }
+      readFile (file);
+    if (fclose(file) != 0) {
+      fprintf(stderr, "Error: Failed to close the input file!\n");
+      return EXIT_FAILURE;
+    }
+
+    /*char * buffer;
     size_t sz;
     char ** data = NULL;
     size_t numLines = 0;
@@ -61,7 +74,7 @@ int main(int argc, char ** argv) {
     free (buffer);
     sortData (data, numLines);
     printArray (data, numLines);
-    free (data);
+    free (data);*/
   }
   if (argc > 1) {
     for (int i = 1; i < argc; i++) {
