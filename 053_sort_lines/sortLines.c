@@ -15,14 +15,16 @@ void sortData(char ** data, size_t count) {
 }
 
 void printArray (char ** data, size_t size) {
-  //printf("Inside printArray\n");
-  /*while (*data != NULL) {
-    printf ("%s", *data);
-    data++;
-  }*/
   for (size_t i = 0; i < size; i++) {
     printf ("%s", data[i]);
+    free (data[i]);
   }
+}
+
+char ** addToArray (char ** data, size_t size, char * line) {
+  data = realloc (data, (1 + size) * sizeof (*data));
+  data[size] = line;
+  return data;
 }
 
 void readFile (FILE * file) {
@@ -31,14 +33,11 @@ void readFile (FILE * file) {
   char ** data = NULL;
   size_t numLines = 0;
   while (getline (&line, &sz, file) >= 0) {
-    data = realloc (data, (1 + numLines) * sizeof (*data));  
-    data[numLines] = line;
-    //printf ("Line: %s", data[numLines]);
+    data = addToArray (data, numLines, line);
     numLines++;
     line = NULL;
   }
   free (line);
-  //printf("First line: %s\n", data[0]);
   sortData (data, numLines);
   printArray (data, numLines);
   free (data);
@@ -47,7 +46,22 @@ void readFile (FILE * file) {
 int main(int argc, char ** argv) {
   //WRITE YOUR CODE HERE!
   if (argc == 1) {
-    ;
+    char * buffer;
+    size_t sz;
+    char ** data = NULL;
+    size_t numLines = 0;
+    do {
+      buffer = NULL;
+      if (getline (&buffer, &sz, stdin) >= 0) {
+        data = addToArray (data, numLines, buffer);
+        numLines++;
+      }
+    } while (*buffer != '\n');
+
+    free (buffer);
+    sortData (data, numLines);
+    printArray (data, numLines);
+    free (data);
   }
   if (argc > 1) {
     for (int i = 1; i < argc; i++) {
@@ -63,6 +77,5 @@ int main(int argc, char ** argv) {
       }
     }
   }
-
   return EXIT_SUCCESS;
 }
