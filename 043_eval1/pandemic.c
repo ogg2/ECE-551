@@ -114,7 +114,7 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   if (data == NULL || cum == NULL) {
     error ("Input array is NULL.");
   }
-  if (n_days < 0) {
+  if (n_days < 1) {
     return;
   }
 
@@ -148,7 +148,7 @@ void printCountryWithMax(country_t * countries,
     error ("Input array is NULL.");
   }
   if (n_countries < 1 || n_days < 1) {
-    error ("No data to calculate country with most cases.");
+    return;
   }
   
   char * country_most = countries[0].name;
