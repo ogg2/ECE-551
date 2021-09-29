@@ -1,16 +1,14 @@
 #error
 printCountries population2.csv
 printCountries population4.csv
+printCountries population5.csv
+printCountries population6.csv
 
-printRunningAvg population.csv daily_tests5.csv
-printRunningAvg population.csv daily_tests6.csv
 
 #success
 printCountries population.csv
 printCountries population1.csv
 printCountries population3.csv
-printCountries population5.csv
-printCountries population6.csv
 printCountries population7.csv
 printCountries population8.csv
 printCountries population9.csv
@@ -19,6 +17,8 @@ printCountries population11.csv
 
 printRunningAvg population.csv daily_small.csv
 printRunningAvg population.csv daily_tests1.csv
+printRunningAvg population.csv daily_tests5.csv
+printRunningAvg population.csv daily_tests6.csv
 printRunningAvg population.csv daily_tests7.csv
 printRunningAvg population.csv daily_cases.csv
 
