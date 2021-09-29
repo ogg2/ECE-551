@@ -29,6 +29,7 @@ printCumulative population.csv daily_tests4.csv
 printCumulative population.csv daily_tests5.csv
 printCumulative population.csv daily_tests6.csv
 printCumulative population.csv daily_tests7.csv
+printCumulative population.csv daily_tests9.csv
 printCumulative population.csv daily_cases.csv
 
 printDailyMax population.csv daily_small.csv
