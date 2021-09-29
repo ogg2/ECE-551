@@ -84,12 +84,16 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   if (n_days < 7) {
     return;
   }
-  uint64_t sevenDayTotal = 0;
+  unsigned sevenDayTotal = 0;
   unsigned * firstDay = data;     //pointer to track front of array
 
   size_t day;
   for (day = 0; day < 7; day++) {
+    unsigned overflowCheck = sevenDayTotal;
     sevenDayTotal += *data;
+    if (sevenDayTotal < overflowCheck) {
+        error ("Overflow - Cumulative cases does not fit in unsigned int.");
+      }
     data++; 
   }
 
