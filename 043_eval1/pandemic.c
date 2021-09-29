@@ -13,7 +13,6 @@ void error (const char * message) {
   exit (EXIT_FAILURE);
 }
 
-
 /**
  * parseLine takes an input string that contains a country name and population
  * and inputs it into a struct of type country_t 
@@ -27,6 +26,8 @@ country_t parseLine(char * line) {
   country_t ans;
   int i = 0;
   int character;
+
+  //Country Name Parse
   while ((character = *line) != ',') {
     if (i > 62) {
       error ("Country name too long.");
@@ -37,11 +38,12 @@ country_t parseLine(char * line) {
   ans.name[i] = '\0';
   line++;
 
+  //Country Population Parse
   uint64_t population = 0;
-  int anyInput = 0;
-  int positive = 1;
+  int anyInput = 0;     //variable to make sure user did not leave out popualtion input 
+  int positive = 1;     //variable to check if user input is negative
   while ((character = *line) != '\0' && character != ',') {
-    if (isspace(character)) { //MAYBE CHECK IF PREV CHARACTER WAS NOT 0-9
+    if (isspace(character)) {
       if (anyInput == 1) {
         break;
       }
@@ -82,8 +84,8 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   if (n_days < 7) {
     return;
   }
-  unsigned sevenDayTotal = 0;
-  unsigned * firstDay = data;
+  uint64_t sevenDayTotal = 0;
+  unsigned * firstDay = data;     //pointer to track front of array
 
   size_t day;
   for (day = 0; day < 7; day++) {
