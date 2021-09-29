@@ -6,7 +6,7 @@
 /**
  * error takes an error message, prints it out, and exits the program
  *
- * input - message is the error message that will be printed to command line
+ * input: message is the error message that will be printed to command line
  */
 void error (const char * message) {
   fprintf (stderr, "Error: %s\n", message);
