@@ -1,6 +1,6 @@
-Grading at 09/29/2021:15:38:17.230590
-For commit ID a44156d2d00dbc87d8b02309ae4bf4ba5b3fa7d0
-Grading at Wed Sep 29 11:37:55 EDT 2021
+Grading at 09/29/2021:20:21:44.112152
+For commit ID 70ca17c56316bee5c4158411fb18c1eaa11afa01
+Grading at Wed Sep 29 16:21:23 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -101,12 +101,6 @@ Test case printDailyMax population.csv daily_tests1.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_tests2.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printDailyMax population.csv daily_tests3.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printDailyMax population.csv daily_tests10.csv
 Your file matched the expected output
 
 Grading has taken more than 20 seconds
