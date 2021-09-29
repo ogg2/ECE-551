@@ -29,6 +29,9 @@ country_t parseLine(char * line) {
 
   //Country Name Parse
   while ((character = *line) != ',') {
+    if (character == EOF) {
+      error ("Invalid character.");
+    }
     if (i > 62) {
       error ("Country name too long.");
     }
@@ -42,7 +45,7 @@ country_t parseLine(char * line) {
   uint64_t population = 0;
   int anyInput = 0;     //variable to make sure user did not leave out popualtion input 
   int positive = 1;     //variable to check if user input is negative
-  while ((character = *line) != '\0' && character != ',') {
+  while ((character = *line) != '\0' && character != ',' && character != EOF) {
     if (isspace(character)) {
       if (anyInput == 1) {
         break;
