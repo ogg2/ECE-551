@@ -23,6 +23,9 @@ void error (const char * message) {
  */
 country_t parseLine(char * line) {
   //WRITE ME
+  if (line == NULL) {
+    error ("Input string is NULL.");
+  }
   country_t ans;
   int i = 0;
   int character;
@@ -47,7 +50,7 @@ country_t parseLine(char * line) {
   int positive = 1;     //variable to check if user input is negative
   while ((character = *line) != '\0' && character != ',' && character != EOF) {
     if (isspace(character)) {
-      if (anyInput == 1) {
+      if (anyInput == 1) {    //skip spaces at beginning of population input, else finish reading input
         break;
       }
     } else if (character == '-') {
