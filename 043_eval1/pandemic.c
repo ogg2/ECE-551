@@ -119,11 +119,11 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
  */
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
   //WRITE ME
-  if (data == NULL || cum == NULL) {
-    error ("Input array is NULL.");
-  }
   if (n_days < 1) {
     return;
+  }
+  if (data == NULL || cum == NULL) {
+    error ("Input array is NULL.");
   }
 
   unsigned cumulativeCases = 0;
