@@ -6,15 +6,8 @@ printCountries population6.csv
 
 #success
 printCountries population.csv
-printCountries population1.csv
-printCountries population3.csv
-printCountries population7.csv
 printCountries population8.csv
 printCountries population9.csv
-printCountries population10.csv
-printCountries population11.csv
-printCountries population12.csv
-printCountries population13.csv
 printCountries population14.csv
 
 printRunningAvg population.csv daily_small.csv
