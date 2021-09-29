@@ -1,6 +1,6 @@
-Grading at 09/29/2021:01:19:58.553532
-For commit ID 3bf72db7f3d3e8fbaeec135da6061d1523e60663
-Grading at Tue Sep 28 21:19:41 EDT 2021
+Grading at 09/29/2021:01:22:36.170224
+For commit ID 46597a6672bd00d7f21b080fce8290422515f9d9
+Grading at Tue Sep 28 21:22:18 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -11,12 +11,6 @@ Test case printCountries population2.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population4.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries population5.csv
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case printCountries population6.csv
 Your program successfully indicated a failure case
 
 Compiling printRunningAvg
@@ -41,6 +35,14 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries population3.csv
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries population5.csv
+Line_1_did_not_match
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case printCountries population6.csv
+Line_1_did_not_match
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries population7.csv
 Your file matched the expected output
