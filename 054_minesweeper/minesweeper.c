@@ -42,7 +42,32 @@ void addRandomMine(board_t * b) {
 
 board_t * makeBoard(int w, int h, int numMines) {
   //WRITE ME!
-  return NULL;
+  int ** grid = malloc (h * sizeof(*grid));
+  for (int i = 0; i < h; i++) {
+    int * row = malloc (w * sizeof(*row));
+    for (int i = 0; i < w; i++) {
+      row[i] = UNKNOWN;
+    }
+    grid [i] = row;
+    //row = NULL;
+  }
+  //free (row);
+  //Do not need to set to NULL or free because
+  //We aren't allocating any unused space
+
+  board_t * gameBoard = malloc (sizeof(*gameBoard)); 
+  gameBoard->width = w;
+  gameBoard->height = h;
+  gameBoard->board = grid;
+  gameBoard->totalMines = numMines;  
+
+  for (int i = 0; i < numMines; i++) {
+    addRandomMine (gameBoard);
+  }
+  
+  //return type is board_t * because it is more efficient
+  //returning a pointer to our data is quicker than copying all data
+  return gameBoard;
 }
 void printBoard(board_t * b) {    
   int found = 0;
@@ -95,8 +120,44 @@ void printBoard(board_t * b) {
   printf("\nFound %d of %d mines\n", found, b->totalMines);
 }
 int countMines(board_t * b, int x, int y) {
+  int width = b->width;
+  int height = b->height;
+  int numMines = 0;
+
+  //Check up
+  if (y - 1 >= 0) {
+    numMines += IS_MINE (b->board[y-1][x]); 
+  }
+  //Check up right
+  if (y - 1 >= 0 && x + 1 < width) {
+    numMines += IS_MINE (b->board[y-1][x+1]); 
+  }
+  //Check up left
+  if (y - 1 >= 0 && x - 1 >= 0) {
+    numMines += IS_MINE (b->board[y-1][x-1]); 
+  }
+  //Check right
+  if (x + 1 < width) {
+    numMines += IS_MINE (b->board[y][x+1]); 
+  }
+  //Check left
+  if (x - 1 >= 0) {
+    numMines += IS_MINE (b->board[y][x-1]); 
+  }
+  //Check down
+  if (y + 1 < height) {
+    numMines += IS_MINE (b->board[y+1][x]); 
+  }
+  //Check down right
+  if (y + 1 < height && x + 1 < width) {
+    numMines += IS_MINE (b->board[y+1][x+1]); 
+  }
+  //Check down left
+  if (y + 1 < height && x - 1 >= 0) {
+    numMines += IS_MINE (b->board[y+1][x-1]); 
+  }
   //WRITE ME!
-  return 0;
+  return numMines;
 }
 int click (board_t * b, int x, int y) {
   if (x < 0 || x >= b->width ||
@@ -118,12 +179,23 @@ int click (board_t * b, int x, int y) {
 }
 
 int checkWin(board_t * b) {
-  //WRITE ME!
-  return 0;
+  //WRITE ME
+  int width = b->width;
+  int height = b->height;
+  
+  for (int w = 0; w < width; w++) {
+    for (int h = 0; h < height; h++) {
+      if (b->board[h][w] == UNKNOWN) {
+        return 0;
+      }
+    }
+  }
+  return 1;
 }
 
 void freeBoard(board_t * b) {
   //WRITE ME!
+
 }
 
 int readInt(char ** linep, size_t * lineszp) {
