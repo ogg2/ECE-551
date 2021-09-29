@@ -195,7 +195,11 @@ int checkWin(board_t * b) {
 
 void freeBoard(board_t * b) {
   //WRITE ME!
-
+  for (int h = 0; h < b->height; h++) {
+    free (b->board[h]);
+  }
+  free (b->board);
+  free (b);
 }
 
 int readInt(char ** linep, size_t * lineszp) {
