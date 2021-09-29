@@ -1,6 +1,6 @@
-Grading at 09/29/2021:01:47:40.282494
-For commit ID 197b246a1766d853d8d639c8dde525c68a399d76
-Grading at Tue Sep 28 21:47:19 EDT 2021
+Grading at 09/29/2021:01:59:21.676223
+For commit ID 660b9a91c559d0a032b4792f3a9f44ba9fccc860
+Grading at Tue Sep 28 21:59:00 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -90,6 +90,9 @@ Your file matched the expected output
 Test case printCumulative population.csv daily_tests7.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
+Test case printCumulative population.csv daily_tests9.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
 Test case printCumulative population.csv daily_cases.csv
 Your file matched the expected output
 
@@ -105,12 +108,9 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_tests2.csv
 Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printDailyMax population.csv daily_tests3.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printDailyMax population.csv daily_cases.csv
-Your file matched the expected output
+
+Grading has taken more than 20 seconds
+Skipping remaining test cases
 
 You have PASSED all of your test cases
 Keep adding test cases until you are satisfied your program is correct
