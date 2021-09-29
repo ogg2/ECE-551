@@ -1,6 +1,6 @@
-Grading at 09/29/2021:20:21:44.112152
-For commit ID 70ca17c56316bee5c4158411fb18c1eaa11afa01
-Grading at Wed Sep 29 16:21:23 EDT 2021
+Grading at 09/29/2021:20:30:50.410939
+For commit ID d7faaedc58d567e830d868ad66b6c6693a0d58dd
+Grading at Wed Sep 29 16:30:33 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -22,31 +22,10 @@ Your program successfully indicated a failure case
 Test case printCountries population.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case printCountries population1.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries population3.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries population7.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
 Test case printCountries population8.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries population9.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries population10.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries population11.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries population12.csv
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries population13.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries population14.csv
@@ -102,9 +81,15 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printDailyMax population.csv daily_tests2.csv
 Your file matched the expected output
-
-Grading has taken more than 20 seconds
-Skipping remaining test cases
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv daily_tests3.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv daily_tests10.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printDailyMax population.csv daily_cases.csv
+Your file matched the expected output
 
 You have PASSED all of your test cases
 Keep adding test cases until you are satisfied your program is correct
