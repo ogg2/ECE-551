@@ -81,11 +81,11 @@ country_t parseLine(char * line) {
  */
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
-  if (data == NULL || avg == NULL) {
-    error ("Input array is NULL.");
-  }
   if (n_days < 7) {
     return;
+  }
+  if (data == NULL || avg == NULL) {
+    error ("Input array is NULL.");
   }
   unsigned sevenDayTotal = 0;
   unsigned * firstDay = data;     //pointer to track front of array
@@ -106,7 +106,6 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
     data++;
     firstDay++;
   } while (day++ < n_days);
-
 }
 
 /**
@@ -152,11 +151,11 @@ void printCountryWithMax(country_t * countries,
                          unsigned ** data,
                          size_t n_days) {
   //WRITE ME
-  if (countries == NULL || data == NULL) {
-    error ("Input array is NULL.");
-  }
   if (n_countries < 1 || n_days < 1) {
     return;
+  }
+  if (countries == NULL || data == NULL) {
+    error ("Input array is NULL.");
   }
   
   char * country_most = countries[0].name;
