@@ -3,7 +3,6 @@ printCountries population2.csv
 printCountries population4.csv
 printCountries population5.csv
 printCountries population6.csv
-printCountries population12.csv
 
 #success
 printCountries population.csv
@@ -14,6 +13,7 @@ printCountries population8.csv
 printCountries population9.csv
 printCountries population10.csv
 printCountries population11.csv
+printCountries population12.csv
 printCountries population13.csv
 
 printRunningAvg population.csv daily_small.csv

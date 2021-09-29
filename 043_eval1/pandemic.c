@@ -29,9 +29,9 @@ country_t parseLine(char * line) {
 
   //Country Name Parse
   while ((character = *line) != ',') {
-    if (character == EOF) {
+    /*if (character == EOF) {
       error ("Invalid character.");
-    }
+    }*/
     if (i > 62) {
       error ("Country name too long.");
     }
