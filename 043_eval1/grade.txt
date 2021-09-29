@@ -1,6 +1,6 @@
-Grading at 09/29/2021:01:33:20.797007
-For commit ID 833b8d6c5ba96dfa4fe14359c43f8ffe60103846
-Grading at Tue Sep 28 21:33:02 EDT 2021
+Grading at 09/29/2021:01:41:46.683529
+For commit ID 5141f03356d5f631d377bdb532df72aad469f914
+Grading at Tue Sep 28 21:41:26 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -62,6 +62,9 @@ Your file matched the expected output
 Test case printRunningAvg population.csv daily_tests7.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
+Test case printRunningAvg population.csv daily_tests8.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_cases.csv
 Your file matched the expected output
 
@@ -76,6 +79,9 @@ Test case printCumulative population.csv daily_tests1.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCumulative population.csv daily_tests4.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCumulative population.csv daily_tests7.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCumulative population.csv daily_cases.csv
