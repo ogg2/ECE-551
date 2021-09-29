@@ -23,9 +23,6 @@ void error (const char * message) {
  */
 country_t parseLine(char * line) {
   //WRITE ME
-  if (line == NULL) {
-    error ("Input string is NULL.");
-  }
   country_t ans;
   int i = 0;
   int character;
