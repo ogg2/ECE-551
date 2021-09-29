@@ -123,7 +123,7 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
     return;
   }
 
-  uint64_t cumulativeCases = 0;
+  unsigned cumulativeCases = 0;
   double ratio = pop / (double) 100000;
 
   for (size_t day = 0; day < n_days; day++) {
