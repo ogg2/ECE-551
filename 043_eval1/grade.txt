@@ -1,6 +1,6 @@
-Grading at 09/29/2021:01:22:36.170224
-For commit ID 46597a6672bd00d7f21b080fce8290422515f9d9
-Grading at Tue Sep 28 21:22:18 EDT 2021
+Grading at 09/29/2021:01:33:20.797007
+For commit ID 833b8d6c5ba96dfa4fe14359c43f8ffe60103846
+Grading at Tue Sep 28 21:33:02 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -12,20 +12,12 @@ Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population4.csv
 Your program successfully indicated a failure case
-
-Compiling printRunningAvg
-rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
-gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o printRunningAvg
 +-----------------------------------------------------------------------+
-Test case printRunningAvg population.csv daily_tests5.csv
-Our printRunningAvg does not consider this an error case
+Test case printCountries population5.csv
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case printRunningAvg population.csv daily_tests6.csv
-Our printRunningAvg does not consider this an error case
-
-Compiling printCountries
-rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
-gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
+Test case printCountries population6.csv
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries population.csv
 Your file matched the expected output
@@ -35,14 +27,6 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries population3.csv
 Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries population5.csv
-Line_1_did_not_match
-Your file did not match the expected output
-+-----------------------------------------------------------------------+
-Test case printCountries population6.csv
-Line_1_did_not_match
-Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries population7.csv
 Your file matched the expected output
@@ -67,6 +51,12 @@ Test case printRunningAvg population.csv daily_small.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_tests1.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printRunningAvg population.csv daily_tests5.csv
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printRunningAvg population.csv daily_tests6.csv
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_tests7.csv
@@ -110,7 +100,7 @@ Your file matched the expected output
 Test case printDailyMax population.csv daily_cases.csv
 Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
