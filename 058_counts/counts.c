@@ -47,7 +47,7 @@ void printCounts(counts_t * c, FILE * outFile) {
   }
   size_t unknowns = c->unknowns;
   if (unknowns != 0) {
-    printf ("<unknown>: %zu\n", unknowns);
+    fprintf (outFile, "<unknown> : %zu\n", unknowns);
   }
 }
 

@@ -16,6 +16,7 @@ struct _kvarray_t {
 };
 typedef struct _kvarray_t kvarray_t;
 
+char * readString (char * string, char * line, int c);
 
 kvarray_t * readKVs(const char * fname);
 
