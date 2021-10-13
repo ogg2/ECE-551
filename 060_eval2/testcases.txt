@@ -1,5 +1,6 @@
 #error
 story-step1
+story-step1 story3.txt
 story-step1 story.txt story2.txt
 story-step1 invalid_story.txt
 
