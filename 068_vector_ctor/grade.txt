@@ -1,0 +1,20 @@
+Grading at 10/13/2021:17:58:05.442426
+For commit ID 9cfd472203bc8453ee1ccbc12df75344bcb9105d
+Grading at Wed Oct 13 13:58:05 EDT 2021
+Attempting to compile Vector-Ctor
+Tring to run Vector-Ctor
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Your file did not match the expected output
+Your output did not match what we expected. Here is what you printed
+Vector v1 = <0.00, 0.00> and has magnitude 0.00
+Vector v2 = <-1.00, 3.00> and has magnitude 3.16
+v1 + v2 = <-1.00, 3.00>
+v1 += v2 = <-1.00, 3.00>
+Now v1 = <-1.00, 3.00>
+v1 . v2 = 10.00
+
+Overall Grade: F
