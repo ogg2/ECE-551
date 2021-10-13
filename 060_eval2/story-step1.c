@@ -4,7 +4,7 @@
 
 int main (int argc, char ** argv) {
   if (argc != 2) {
-    fprintf (stderr, "Usage: ./executable inputfile\n");
+    fprintf (stderr, "Error: Usage: ./executable inputfile\n");
     return EXIT_FAILURE;
   }
 
