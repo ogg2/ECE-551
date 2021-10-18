@@ -63,7 +63,7 @@ void readLine (FILE * file) {
 catarray_t * readWords (FILE * file) {
   char * line = NULL;
   size_t size;
-  category_t * arrayCat = NULL;
+  category_t * categories = NULL;
   size_t n_cats = 0;
 
   while (getline (&line, &size, file) >= 0) {
@@ -72,14 +72,16 @@ catarray_t * readWords (FILE * file) {
     parseWords (line, &category, ':', &word);
     //call function that either adds word to category or creates new category
     printf ("Num of Categories: %zu\n", n_cats);
-    addCategories (&arrayCat, &n_cats, category, word);
+    addCategories (&categories, &n_cats, category, word);
     //add category to array
-    printf ("Words: %zu\n", arrayCat[0].n_words);
+    for (size_t i = 0; i < categories[0].n_words; i++) {
+      printf ("\tWords[%zu]: %s\n", categories[0].n_words, categories[0].words[i]);
+    }
   }
   free (line);
 
   catarray_t * ans = malloc (sizeof (*ans));
-  ans->arr = arrayCat;
+  ans->arr = categories;
   ans->n = n_cats;
   return ans;
 }
@@ -168,15 +170,15 @@ void addCategories (category_t ** arrayCat, size_t * n_elem, char * category, ch
   }
   if (catExists == 0) {
     *arrayCat = realloc (*arrayCat, (*n_elem + 1) * sizeof (**arrayCat));
-    category_t * newCat = malloc (sizeof(*newCat));
-    newCat->name = category;
+    category_t * newCategory = malloc (sizeof(*newCategory));
+    newCategory->name = category;
     char ** words = malloc (sizeof (*words));
     words[0] = word;
-    newCat->words = words;
-    newCat->n_words = 1;
-    printf ("%s\n", newCat->words[newCat->n_words - 1]);
+    newCategory->words = words;
+    newCategory->n_words = 1;
+    printf ("%s\n", newCategory->words[newCategory->n_words - 1]);
     printf ("%zu\n", *n_elem);
-    *arrayCat[*n_elem] = *newCat;
+    *arrayCat[*n_elem] = *newCategory;
     printf ("Print marker\n");
     *n_elem += 1;
   }
