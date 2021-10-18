@@ -41,15 +41,17 @@ void closeFile (FILE * file) {
 }
 
 /**
-* readLine reads each line of a story and passes it into findBlank()
+* readStory reads each line of a story and passes it into findBlank() along with 
+*   an array of categories
 *
 * input: file is the file to be read
+* input: categories is an array of category_t that will fill in the blanks for the story
 */
-void readLine (FILE * file) {
+void readStory (FILE * file, catarray_t * categories) {
   char * line = NULL;
   size_t size;
   while (getline (&line, &size, file) >= 0) {
-    findBlank (line);
+    findBlank (line, categories);
   }
   free (line);
 }
@@ -63,8 +65,11 @@ void readLine (FILE * file) {
 catarray_t * readWords (FILE * file) {
   char * line = NULL;
   size_t size;
+  catarray_t * arrayCat = malloc (sizeof (*arrayCat));
   category_t * categories = NULL;
   size_t n_cats = 0;
+  arrayCat->arr = categories;
+  arrayCat->n = n_cats;
 
   while (getline (&line, &size, file) >= 0) {
     char * category;
@@ -72,10 +77,12 @@ catarray_t * readWords (FILE * file) {
     parseWords (line, &category, ':', &word);
     //call function that either adds word to category or creates new category
     printf ("Num of Categories: %zu\n", n_cats);
-    addCategories (&categories, &n_cats, category, word);
+    addCategories (arrayCat, category, word);
     //add category to array
-    for (size_t i = 0; i < categories[0].n_words; i++) {
-      printf ("\tWords[%zu]: %s\n", categories[0].n_words, categories[0].words[i]);
+    for (size_t i = 0; i < arrayCat->n; i++) {
+      for (size_t j = 0; j < arrayCat->arr[i].n_words; j++) {
+        printf ("\tWords[%zu]: %s\n", j, arrayCat->arr[i].words[j]);
+      }
     }
   }
   free (line);
@@ -89,11 +96,12 @@ catarray_t * readWords (FILE * file) {
 /**
 * findBlank takes a line from an input file and prints everything to stdout,
 *   words enclosed by '_' represent categories that will be replaced by with words 
-*   from the respective category before being printed
+*   from the respective category, found in categories, before being printed
 *
 * input: line is a line read from an input file
+* input: categories is an array of category_t that will fill in the blanks for the story
 */
-void findBlank (char * line) {
+void findBlank (char * line, catarray_t * categories) {
   char * story = NULL;
   while ((story = strchr (line, '_')) != NULL) {
     char * always = strndup (line, (story - line));
@@ -101,7 +109,7 @@ void findBlank (char * line) {
     free (always);
 
     char * category = getCategory(story);
-    fprintf (stdout, "%s", chooseWord (category, NULL));
+    fprintf (stdout, "%s", chooseWord (category, categories));
     free (category);
     line = strchr (++story, '_');
     line++;
@@ -151,25 +159,25 @@ void parseWords (char * line, char ** category, int delim, char ** word) {
   string[stringSize] = '\0';
   return string;*/
 }
-    
-void addCategories (category_t ** arrayCat, size_t * n_elem, char * category, char * word) {
+
+void addCategories (catarray_t * arrayCat, char * category, char * word) {
   int catExists = 0;
   printf ("Pairs: %s : %s\n", category, word);
   //category_t * categories = arrayCat;
-  for (size_t i = 0; i < *n_elem; i++) {
-      printf ("Array Cat: %s - Param Cat: %s\n", arrayCat[i]->name, category);
-    if (!strcmp(arrayCat[i]->name, category)) {
+  for (size_t i = 0; i < arrayCat->n; i++) {
+      printf ("Array Cat: %s - Param Cat: %s\n", arrayCat->arr[i].name, category);
+    if (!strcmp(arrayCat->arr[i].name, category)) {
       printf ("Adding to category\n");
-      size_t n_words = arrayCat[i]->n_words;
-      arrayCat[i]->words = realloc (arrayCat[i]->words, (n_words + 1) * sizeof (*arrayCat[i]->words));
-      arrayCat[i]->words[n_words] = word;
-      arrayCat[i]->n_words = n_words + 1;
+      size_t n_words = arrayCat->arr[i].n_words;
+      arrayCat->arr[i].words = realloc (arrayCat->arr[i].words, (n_words + 1) * sizeof (arrayCat->arr[i].words));
+      arrayCat->arr[i].words[n_words] = word;
+      arrayCat->arr[i].n_words = n_words + 1;
       catExists = 1;
       break;
     }
   }
   if (catExists == 0) {
-    *arrayCat = realloc (*arrayCat, (*n_elem + 1) * sizeof (**arrayCat));
+    arrayCat->arr = realloc (arrayCat->arr, (arrayCat->n + 1) * sizeof (*arrayCat->arr));
     category_t * newCategory = malloc (sizeof(*newCategory));
     newCategory->name = category;
     char ** words = malloc (sizeof (*words));
@@ -177,13 +185,32 @@ void addCategories (category_t ** arrayCat, size_t * n_elem, char * category, ch
     newCategory->words = words;
     newCategory->n_words = 1;
     printf ("%s\n", newCategory->words[newCategory->n_words - 1]);
-    printf ("%zu\n", *n_elem);
-    *arrayCat[*n_elem] = *newCategory;
+    printf ("%zu\n", arrayCat->n);
+    arrayCat->arr[arrayCat->n] = *newCategory;
     printf ("Print marker\n");
-    *n_elem += 1;
+    arrayCat->n += 1;
   }
 }
 //Return category of name else return NULL?
 /*char * swapBlank (char * categoryBlank) {
   return chooseWord (categoryBlankk)
 }*/
+
+/**
+* freeCategories frees the memory allocated for all fields inside categories
+*   including memory allocated inside each category
+*
+* input: categories is a pointer to type catarray_t that contains an array of categories
+*/
+void freeCategories (catarray_t * categories) {
+  for (size_t i = 0; i < categories->n; i++) {
+    for (size_t j = 0; j < categories->arr[i].n_words; j++) {
+      free (categories->arr[i].words[j]);
+    }
+    free (categories->arr[i].words);
+    free (categories->arr[i].name);
+    free (&categories->arr[i]);
+  }
+  free (categories->arr);
+  free (categories);
+}

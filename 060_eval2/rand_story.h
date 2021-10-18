@@ -9,11 +9,12 @@
 void error (const char * message);
 FILE * readFile (char * filename);
 void closeFile (FILE * file);
-void readLine (FILE * file);
+void readStory (FILE * file, catarray_t * categories);
 catarray_t * readWords (FILE * file);
-void findBlank (char * line);
+void findBlank (char * line, catarray_t * categories);
 char * getCategory (char * blank);
 void parseWords (char * line, char ** category, int delim, char ** word);
-void addCategories (category_t ** arrayCat, size_t * n_elem, char * category, char * word);
+void addCategories (catarray_t * arrayCat, char * category, char * word);
+void freeCategories (catarray_t * categories);
 
 #endif
