@@ -14,6 +14,6 @@ catarray_t * readWords (FILE * file);
 void findBlank (char * line);
 char * getCategory (char * blank);
 void parseWords (char * line, char ** category, int delim, char ** word);
-void addCategories (category_t * arrayCat, size_t n_elem, char * category, char * word);
+void addCategories (category_t ** arrayCat, size_t * n_elem, char * category, char * word);
 
 #endif

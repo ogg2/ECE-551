@@ -10,6 +10,7 @@ int main (int argc, char ** argv) {
 
   FILE * file = readFile (argv[1]);
   catarray_t * array = readWords (file);
+  printf ("Print before Words\n");
   printWords (array);
 
   closeFile (file);
