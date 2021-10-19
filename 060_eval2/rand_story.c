@@ -56,7 +56,7 @@ void readStory (FILE * file, catarray_t * categories, int reuseWords) {
   usedWords->n_words = 0;
   
   while (getline (&line, &size, file) >= 0) {
-    findBlank (line, categories, usedWords);
+    findBlank (line, categories, usedWords, reuseWords);
   }
   freeUsedWords (usedWords);
   free (line);
@@ -96,8 +96,9 @@ catarray_t * readWords (FILE * file) {
 * input: line is a line read from an input file
 * input: categories is an array of category_t that will fill in the blanks for the story
 * input: usedWords is a pointer to a category of words already printed
+* input: reuseWords indicates if the program was run with a "-n" argument [step4 specific]
 */
-void findBlank (char * line, catarray_t * categories, category_t * usedWords) {
+void findBlank (char * line, catarray_t * categories, category_t * usedWords, int reuseWords) {
   char * story = NULL;
   while ((story = strchr (line, '_')) != NULL) {
     char * always = strndup (line, (story - line));
@@ -108,13 +109,12 @@ void findBlank (char * line, catarray_t * categories, category_t * usedWords) {
     int prevWord;
     char * thisWord;
     char * extraLetters = NULL;
-    //if ((prevWord = atoi (categoru)) > 0)
     if ((prevWord = strtol (category, &extraLetters, 10)) > 0 && *extraLetters == '\0') {
       int index = usedWords->n_words - prevWord;
       if (index < 0) {
         error ("Index out of bounds. Tried to look at previous word that doesn't exist'.");
       }
-      thisWord = strdup(usedWords->words[index]);
+      thisWord = strdup (usedWords->words[index]);
     } else {
       thisWord = strdup (chooseWord (category, categories));
     }
@@ -123,6 +123,7 @@ void findBlank (char * line, catarray_t * categories, category_t * usedWords) {
     usedWords->words = realloc (usedWords->words, (1 + usedWords->n_words) * sizeof (*usedWords->words));
     usedWords->words[usedWords->n_words] = thisWord;
     usedWords->n_words++;
+    preventReuse (categories, category, thisWord, reuseWords);
 
     free (category);
     line = strchr (++story, '_');
@@ -204,6 +205,15 @@ void addCategories (catarray_t * arrayCat, char ** category, char ** word) {
     arrayCat->arr[arrayCat->n] = newCategory;
     arrayCat->n += 1;
   }
+}
+
+/**
+* preventReuse removes all instances of word from ca
+*
+*
+*/
+void preventReuse (catarray_t * categories, char * category, char * word, int reuseWords) {
+  return;
 }
 
 /**

@@ -22,6 +22,7 @@ story-step2 words.txt
 story-step2 words0.txt
 story-step2 words2.txt
 story-step2 words4.txt
+story-step2 words6.txt
 
 story-step3 words.txt story.txt
 story-step3 words0.txt story0.txt
