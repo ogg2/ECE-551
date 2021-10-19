@@ -13,7 +13,8 @@ int main (int argc, char ** argv) {
   closeFile (fileWords);
 
   FILE * fileStory = readFile (argv[2]);
-  readStory (fileStory, categories, 1);
+  int reuseWords = 1;
+  readStory (fileStory, categories, reuseWords);
   freeCategories (categories);
 
   closeFile (fileStory);

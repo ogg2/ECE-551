@@ -10,7 +10,8 @@ int main (int argc, char ** argv) {
 
   FILE * file = readFile (argv[1]);
 
-  readStory (file, NULL, 1);
+  int reuseWords = 1;
+  readStory (file, NULL, reuseWords);
 
   closeFile (file);
   return EXIT_SUCCESS;

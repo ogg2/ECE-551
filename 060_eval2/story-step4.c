@@ -23,7 +23,8 @@ int main (int argc, char ** argv) {
   closeFile (fileWords);
 
   FILE * fileStory = readFile (argv[2 + optional]);
-  readStory (fileStory, categories, !optional);
+  int reuseWords = !optional;
+  readStory (fileStory, categories, reuseWords);
   freeCategories (categories);
 
   closeFile (fileStory);
