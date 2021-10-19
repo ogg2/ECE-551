@@ -1,6 +1,6 @@
-Grading at 10/19/2021:19:15:10.532839
-For commit ID ed97cd0e171d688e00462f49c1e458a013cd8b74
-Grading at Tue Oct 19 15:14:56 EDT 2021
+Grading at 10/19/2021:19:41:15.043120
+For commit ID df9b87d63e95c61dc401dc1bc9867899c8a689ef
+Grading at Tue Oct 19 15:40:58 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -61,6 +61,9 @@ rm story-step1.o
 Test case story-step1 story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
+Test case story-step1 story0.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
 Test case story-step1 story2.txt
 Your file matched the expected output
 
@@ -73,6 +76,23 @@ rm story-step2.o
 +-----------------------------------------------------------------------+
 Test case story-step2 words.txt
 Your file matched the expected output
+
+Compiling story-step1
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
+gcc -o story-step1 story-step1.o rand_story.o provided.o
+rm story-step1.o
++-----------------------------------------------------------------------+
+Test case story-step1 words0.txt
+Your file matched the expected output
+
+Compiling story-step2
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
+gcc -o story-step2 story-step2.o rand_story.o provided.o
+rm story-step2.o
 +-----------------------------------------------------------------------+
 Test case story-step2 words2.txt
 Your file matched the expected output
@@ -88,6 +108,9 @@ gcc -o story-step3 story-step3.o rand_story.o provided.o
 rm story-step3.o
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step3 words0.txt story0.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story2.txt
