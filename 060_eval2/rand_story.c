@@ -97,9 +97,6 @@ catarray_t * readWords (FILE * file) {
 */
 void findBlank (char * line, catarray_t * categories, category_t * usedWords) {
   char * story = NULL;
-  //    CHANGE THIS INTO A CATEGORY_T SO I CAN PASS IT BETWEEN FUNCTIONS AND FREE THE MEMORY
-  //char ** usedWords = NULL;
-  //size_t numUsed = 0;
   while ((story = strchr (line, '_')) != NULL) {
     char * always = strndup (line, (story - line));
     fprintf (stdout, "%s", always);
@@ -114,7 +111,11 @@ void findBlank (char * line, catarray_t * categories, category_t * usedWords) {
     int prevWord;
     char * thisWord;
     if ((prevWord = atoi (category)) > 0) {
-      thisWord = strdup(usedWords->words[usedWords->n_words - prevWord]);
+      int index = usedWords->n_words - prevWord;
+      if (index < 0) {
+        error ("Index out of bounds. Tried to look at previous word that doesn't exist'.");
+      }
+      thisWord = strdup(usedWords->words[index]);
     } else {
       thisWord = strdup (chooseWord (category, categories));
     }
@@ -151,8 +152,8 @@ char * getCategory (char * blank) {
 *   the string after ':' is stored into word
 *
 * input: line is a line read from a file in the format category:word
-* input: category 
-* input: word
+* input: category is pointer to a string, text before ':' will be stored here
+* input: word is a poitner to a string, text after ':' will be stored here
 */
 void parseWords (char * line, char ** category, int delim, char ** word) {
   char * string;
@@ -168,14 +169,20 @@ void parseWords (char * line, char ** category, int delim, char ** word) {
   }
 }
 
+/**
+* addCategories builds a catarray_t, if a category already exists the word is added to the existing 
+*   category, else a new category is created add added to arrayCat
+*
+* input: arrayCat is a pointer to catarray_t containing the categories read from an input file
+* input: category is a pointer to the name of a category
+* input: word is a pointer to a string that will be added to a an existing category or a new category
+*/
 void addCategories (catarray_t * arrayCat, char ** category, char ** word) {
   int catExists = 0;
-  //printf ("Pairs: %s : %s\n", category, word);
-  //category_t * categories = arrayCat;
+  //search arrayCat to see if category already exists
+  //if it does, add word to the existing category
   for (size_t i = 0; i < arrayCat->n; i++) {
-      //printf ("Array Cat: %s - Param Cat: %s\n", arrayCat->arr[i].name, category);
     if (!strcmp(arrayCat->arr[i].name, *category)) {
-      //printf ("Adding to category\n");
       size_t n_words = arrayCat->arr[i].n_words;
       arrayCat->arr[i].words = realloc (arrayCat->arr[i].words, (n_words + 1) * sizeof (arrayCat->arr[i].words));
       arrayCat->arr[i].words[n_words] = *word;
@@ -185,6 +192,7 @@ void addCategories (catarray_t * arrayCat, char ** category, char ** word) {
       break;
     }
   }
+  //if category does not yet exist, create a new category add it to arrayCat
   if (catExists == 0) {
     arrayCat->arr = realloc (arrayCat->arr, (arrayCat->n + 1) * sizeof (*arrayCat->arr));
     category_t newCategory;
@@ -197,10 +205,6 @@ void addCategories (catarray_t * arrayCat, char ** category, char ** word) {
     arrayCat->n += 1;
   }
 }
-//Return category of name else return NULL?
-/*char * swapBlank (char * categoryBlank) {
-  return chooseWord (categoryBlankk)
-}*/
 
 /**
 * freeCategories frees the memory allocated for all fields inside categories
@@ -220,6 +224,11 @@ void freeCategories (catarray_t * categories) {
   free (categories);
 }
 
+/**
+* freeUsedWords frees memory in a category
+*
+* input: usedWords is a pointer to a category that will have it's memory freed
+*/
 void freeUsedWords (category_t * usedWords) {
   for (size_t i = 0; i < usedWords->n_words; i++) {
     free (usedWords->words[i]);
