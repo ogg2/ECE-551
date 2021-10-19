@@ -47,9 +47,17 @@ void closeFile (FILE * file) {
 void readStory (FILE * file, catarray_t * categories) {
   char * line = NULL;
   size_t size;
+
+  category_t * usedWords = malloc (sizeof (*usedWords));
+  char ** used = NULL;
+  usedWords->name = "used";
+  usedWords->words = used;
+  usedWords->n_words = 0;
+  
   while (getline (&line, &size, file) >= 0) {
-    findBlank (line, categories);
+    findBlank (line, categories, usedWords);
   }
+  freeUsedWords (usedWords);
   free (line);
 }
 
@@ -73,7 +81,6 @@ catarray_t * readWords (FILE * file) {
     char * word;
     parseWords (line, &category, ':', &word);
     addCategories (arrayCat, &category, &word);
-    //add category to array
   }
   free (line);
 
@@ -88,11 +95,11 @@ catarray_t * readWords (FILE * file) {
 * input: line is a line read from an input file
 * input: categories is an array of category_t that will fill in the blanks for the story
 */
-void findBlank (char * line, catarray_t * categories) {
+void findBlank (char * line, catarray_t * categories, category_t * usedWords) {
   char * story = NULL;
   //    CHANGE THIS INTO A CATEGORY_T SO I CAN PASS IT BETWEEN FUNCTIONS AND FREE THE MEMORY
-  char ** usedWords = NULL;
-  size_t numUsed = 0;
+  //char ** usedWords = NULL;
+  //size_t numUsed = 0;
   while ((story = strchr (line, '_')) != NULL) {
     char * always = strndup (line, (story - line));
     fprintf (stdout, "%s", always);
@@ -107,15 +114,15 @@ void findBlank (char * line, catarray_t * categories) {
     int prevWord;
     char * thisWord;
     if ((prevWord = atoi (category)) > 0) {
-      thisWord = usedWords[numUsed - prevWord];
+      thisWord = strdup(usedWords->words[usedWords->n_words - prevWord]);
     } else {
       thisWord = strdup (chooseWord (category, categories));
     }
 
     fprintf (stdout, "%s", thisWord);
-    usedWords = realloc (usedWords, (1 + numUsed) * sizeof (*usedWords));
-    usedWords[numUsed] = thisWord;
-    numUsed++;
+    usedWords->words = realloc (usedWords->words, (1 + usedWords->n_words) * sizeof (*usedWords->words));
+    usedWords->words[usedWords->n_words] = thisWord;
+    usedWords->n_words++;
 
     free (category);
     line = strchr (++story, '_');
@@ -180,13 +187,6 @@ void addCategories (catarray_t * arrayCat, char ** category, char ** word) {
   }
   if (catExists == 0) {
     arrayCat->arr = realloc (arrayCat->arr, (arrayCat->n + 1) * sizeof (*arrayCat->arr));
-    /*category_t * newCategory = malloc (sizeof(*newCategory));
-    newCategory->name = *category;
-    char ** words = malloc (sizeof (*words));
-    words[0] = *word;
-    newCategory->words = words;
-    newCategory->n_words = 1;
-    arrayCat->arr[arrayCat->n] = *newCategory;*/
     category_t newCategory;
     newCategory.name = *category;
     char ** words = malloc (sizeof (*words));
@@ -220,9 +220,10 @@ void freeCategories (catarray_t * categories) {
   free (categories);
 }
 
-/*void freeUsedWords (const char ** usedWords, size_t n) {
-  for (size_t i = 0; i < n; i++) {
-    free (usedWords[i]);
+void freeUsedWords (category_t * usedWords) {
+  for (size_t i = 0; i < usedWords->n_words; i++) {
+    free (usedWords->words[i]);
   }
+  free (usedWords->words);
   free (usedWords);
-}*/
+}

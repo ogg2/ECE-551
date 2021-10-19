@@ -11,11 +11,11 @@ FILE * readFile (char * filename);
 void closeFile (FILE * file);
 void readStory (FILE * file, catarray_t * categories);
 catarray_t * readWords (FILE * file);
-void findBlank (char * line, catarray_t * categories);
+void findBlank (char * line, catarray_t * categories, category_t * usedWords);
 char * getCategory (char * blank);
 void parseWords (char * line, char ** category, int delim, char ** word);
 void addCategories (catarray_t * arrayCat, char ** category, char ** word);
 void freeCategories (catarray_t * categories);
-//void freeUsedWords (const char ** usedWords, size_t n);
+void freeUsedWords (category_t * usedWords);
 
 #endif
