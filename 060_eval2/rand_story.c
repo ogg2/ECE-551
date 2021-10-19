@@ -137,14 +137,27 @@ char * getCategory (char * blank) {
   }
 }*/
 
+/**
+* parseWords takes a line read from a file, the string before ':' is stored into category
+*   the string after ':' is stored into word
+*
+* input: line is a line read from a file in the format category:word
+* input: category 
+* input: word
+*/
 void parseWords (char * line, char ** category, int delim, char ** word) {
   char * string;
 
+  //error check if there is no ':'
+  //strip leading and trailing white space?
   if ((string = strchr (line, delim)) != NULL) {
     *category = strndup (line, (string - line)); 
     string++;
     char * end = strchr (string, '\n');
     *word = strndup (string, (size_t) (end - string)); 
+  }
+  if (string == NULL) {
+    error ("Line not in format category:word.");
   }
 }
 
