@@ -9,9 +9,11 @@ int main (int argc, char ** argv) {
   }
 
   FILE * file = readFile (argv[1]);
-  catarray_t * array = readWords (file);
+  catarray_t * categories = readWords (file);
   printf ("Print before Words\n");
-  printWords (array);
+
+  printWords (categories);
+  freeCategories (categories);
 
   closeFile (file);
   return EXIT_SUCCESS;

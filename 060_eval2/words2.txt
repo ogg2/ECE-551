@@ -5,3 +5,5 @@ place:cave
 adjective:peculiar
 adjective:scary
 adjective:peaceful
+person:Owen
+person:Deeksha
