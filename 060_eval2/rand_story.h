@@ -16,5 +16,6 @@ char * getCategory (char * blank);
 void parseWords (char * line, char ** category, int delim, char ** word);
 void addCategories (catarray_t * arrayCat, char ** category, char ** word);
 void freeCategories (catarray_t * categories);
+//void freeUsedWords (const char ** usedWords, size_t n);
 
 #endif

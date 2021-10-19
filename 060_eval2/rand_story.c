@@ -3,9 +3,6 @@
 #include <string.h>
 #include "rand_story.h"
 
-//strchr (string, character)- return pointer to first occurance of character
-//strndup (string, n)- copy of string up until n
-
 /**
  * error takes an error message, prints it out, and exits the program
  *
@@ -75,15 +72,8 @@ catarray_t * readWords (FILE * file) {
     char * category;
     char * word;
     parseWords (line, &category, ':', &word);
-    //call function that either adds word to category or creates new category
-    //printf ("Num of Categories: %zu\n", n_cats);
     addCategories (arrayCat, &category, &word);
     //add category to array
-    /*for (size_t i = 0; i < arrayCat->n; i++) {
-      for (size_t j = 0; j < arrayCat->arr[i].n_words; j++) {
-        printf ("\tWords[%zu]: %s\n", j, arrayCat->arr[i].words[j]);
-      }
-    }*/
   }
   free (line);
 
@@ -100,13 +90,33 @@ catarray_t * readWords (FILE * file) {
 */
 void findBlank (char * line, catarray_t * categories) {
   char * story = NULL;
+  //    CHANGE THIS INTO A CATEGORY_T SO I CAN PASS IT BETWEEN FUNCTIONS AND FREE THE MEMORY
+  char ** usedWords = NULL;
+  size_t numUsed = 0;
   while ((story = strchr (line, '_')) != NULL) {
     char * always = strndup (line, (story - line));
     fprintf (stdout, "%s", always);
     free (always);
 
     char * category = getCategory(story);
-    fprintf (stdout, "%s", chooseWord (category, categories));
+    //error check if category doesn't exit, fail
+    //check if part of category is number "123abc" - what do we do?
+    //check if category is just a number
+    //check if _2_ is out of bounds
+    
+    int prevWord;
+    char * thisWord;
+    if ((prevWord = atoi (category)) > 0) {
+      thisWord = usedWords[numUsed - prevWord];
+    } else {
+      thisWord = strdup (chooseWord (category, categories));
+    }
+
+    fprintf (stdout, "%s", thisWord);
+    usedWords = realloc (usedWords, (1 + numUsed) * sizeof (*usedWords));
+    usedWords[numUsed] = thisWord;
+    numUsed++;
+
     free (category);
     line = strchr (++story, '_');
     line++;
@@ -140,7 +150,6 @@ char * getCategory (char * blank) {
 void parseWords (char * line, char ** category, int delim, char ** word) {
   char * string;
 
-  //strip leading and trailing white space?
   if ((string = strchr (line, delim)) != NULL) {
     *category = strndup (line, (string - line)); 
     string++;
@@ -210,3 +219,10 @@ void freeCategories (catarray_t * categories) {
   free (categories->arr);
   free (categories);
 }
+
+/*void freeUsedWords (const char ** usedWords, size_t n) {
+  for (size_t i = 0; i < n; i++) {
+    free (usedWords[i]);
+  }
+  free (usedWords);
+}*/
