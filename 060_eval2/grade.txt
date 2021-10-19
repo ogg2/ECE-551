@@ -1,6 +1,6 @@
-Grading at 10/19/2021:13:41:30.219129
-For commit ID b849de12938386514a4b733851efb7f57e52ada9
-Grading at Tue Oct 19 09:41:21 EDT 2021
+Grading at 10/19/2021:18:38:54.069151
+For commit ID c1e3cc931eea480251c487dc9bb160ead382f72e
+Grading at Tue Oct 19 14:38:40 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -30,6 +30,22 @@ gcc -o story-step2 story-step2.o rand_story.o provided.o
 rm story-step2.o
 +-----------------------------------------------------------------------+
 Test case story-step2 words3.txt
+Your program successfully indicated a failure case
+
+Compiling story-step3
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step3.c
+gcc -o story-step3 story-step3.o rand_story.o provided.o
+rm story-step3.o
++-----------------------------------------------------------------------+
+Test case story-step3 words4.txt story5.txt
+Arsenal player, Aubameyang, dribbles past his opponent. Aubameyang shoots, and scores! Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case story-step3 words2.txt story.txt
+Once upon a time, there was a Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case story-step3 words5.txt story4.txt
 Your program successfully indicated a failure case
 
 Compiling story-step1
@@ -72,6 +88,15 @@ Test case story-step3 words.txt story.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt story2.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step3 words4.txt story4.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step3 words4.txt story6.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step3 words2.txt story1.txt
 Your file matched the expected output
 
 You have PASSED all of your test cases
