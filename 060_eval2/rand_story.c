@@ -17,6 +17,7 @@ void error (const char * message) {
 * readFile takes a filename and returns a FILE or fails if there was an error
 *
 * input: filename is the name of the file to be opened
+* return: FILE * is the file that has been opened and can now be read
 */
 FILE * readFile (char * filename) {
   FILE * file = fopen (filename, "r");
@@ -123,7 +124,9 @@ void findBlank (char * line, catarray_t * categories, category_t * usedWords, in
     usedWords->words = realloc (usedWords->words, (1 + usedWords->n_words) * sizeof (*usedWords->words));
     usedWords->words[usedWords->n_words] = thisWord;
     usedWords->n_words++;
-    preventReuse (categories, category, thisWord, reuseWords);
+    if (reuseWords == 0) {
+      preventReuse (categories, category, thisWord);
+    }
 
     free (category);
     line = strchr (++story, '_');
@@ -208,12 +211,29 @@ void addCategories (catarray_t * arrayCat, char ** category, char ** word) {
 }
 
 /**
-* preventReuse removes all instances of word from ca
+* preventReuse removes all instances of word from its category if reuseWords == 0
 *
-*
+* input: categories is a pointer to an array of category_t
+* input: category is the category name that we need to move all instances of word from
+* input: word is the word that needs to be removed so it cannot be reused
 */
-void preventReuse (catarray_t * categories, char * category, char * word, int reuseWords) {
-  return;
+void preventReuse (catarray_t * categories, char * category, char * word) {
+  for (size_t i = 0; i < categories->n; i++) {
+    if (!strcmp (categories->arr[i].name, category)) {
+      for (size_t j = 0; j < categories->arr[i].n_words; j++) {
+        if (!strcmp (categories->arr[i].words[j], word)) {
+          free (categories->arr[i].words[j]);
+          for (size_t k = j; k < categories->arr[i].n_words - 1; k++) {
+            categories->arr[i].words[k] = categories->arr[i].words[k + 1];
+          }
+          categories->arr[i].n_words--;
+        }
+      }
+      categories->arr[i].words = realloc (categories->arr[i].words, categories->arr[i].n_words * 
+          sizeof (*categories->arr[i].words));
+      break;
+    }
+  }
 }
 
 /**

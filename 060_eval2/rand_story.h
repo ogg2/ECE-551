@@ -15,7 +15,7 @@ void findBlank (char * line, catarray_t * categories, category_t * usedWords, in
 char * getCategory (char * blank);
 void parseWords (char * line, char ** category, char ** word);
 void addCategories (catarray_t * arrayCat, char ** category, char ** word);
-void preventReuse (catarray_t * categories, char * category, char * word, int reuseWords);
+void preventReuse (catarray_t * categories, char * category, char * word);
 void freeCategories (catarray_t * categories);
 void freeUsedWords (category_t * usedWords);
 
