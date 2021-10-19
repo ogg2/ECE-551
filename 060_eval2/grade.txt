@@ -1,6 +1,6 @@
-Grading at 10/19/2021:18:44:20.734622
-For commit ID 0ff92d44394dde7e5ee3fcd51b7320c811c8cee9
-Grading at Tue Oct 19 14:44:04 EDT 2021
+Grading at 10/19/2021:19:15:10.532839
+For commit ID ed97cd0e171d688e00462f49c1e458a013cd8b74
+Grading at Tue Oct 19 15:14:56 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -49,8 +49,7 @@ Test case story-step3 words5.txt story4.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case story-step3 words4.txt story7.txt
-Arsenal player, Aubameyang, dribbles past his opponent. Aubameyang shoots, and scores! Arsenal lead by 2 goals.
-Your program did not indicate a failure case
+Arsenal player, Aubameyang, dribbles past his opponent. Your program successfully indicated a failure case
 
 Compiling story-step1
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
@@ -103,7 +102,7 @@ Your file matched the expected output
 Test case story-step3 words2.txt story1.txt
 Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
