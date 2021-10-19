@@ -227,6 +227,7 @@ void preventReuse (catarray_t * categories, char * category, char * word) {
             categories->arr[i].words[k] = categories->arr[i].words[k + 1];
           }
           categories->arr[i].n_words--;
+          break;
         }
       }
       categories->arr[i].words = realloc (categories->arr[i].words, categories->arr[i].n_words * 
