@@ -39,7 +39,7 @@ void closeFile (FILE * file) {
 
 /**
 * readStory reads each line of a story and passes it into findBlank() along with 
-*   an array of categories
+*   an array of categories, it also creates a category to story previous words printed
 *
 * input: file is the file to be read
 * input: categories is an array of category_t that will fill in the blanks for the story
@@ -79,7 +79,7 @@ catarray_t * readWords (FILE * file) {
   while (getline (&line, &size, file) >= 0) {
     char * category;
     char * word;
-    parseWords (line, &category, ':', &word);
+    parseWords (line, &category, &word);
     addCategories (arrayCat, &category, &word);
   }
   free (line);
@@ -104,9 +104,6 @@ void findBlank (char * line, catarray_t * categories, category_t * usedWords) {
     free (always);
 
     char * category = getCategory(story);
-    //check if part of category is number "123abc" - what do we do?
-    //check if category is just a number
-    
     int prevWord;
     char * thisWord;
     char * extraLetters = NULL;
@@ -156,10 +153,10 @@ char * getCategory (char * blank) {
 * input: category is pointer to a string, text before ':' will be stored here
 * input: word is a poitner to a string, text after ':' will be stored here
 */
-void parseWords (char * line, char ** category, int delim, char ** word) {
+void parseWords (char * line, char ** category, char ** word) {
   char * string;
 
-  if ((string = strchr (line, delim)) != NULL) {
+  if ((string = strchr (line, ':')) != NULL) {
     *category = strndup (line, (string - line)); 
     string++;
     char * end = strchr (string, '\n');
@@ -185,7 +182,8 @@ void addCategories (catarray_t * arrayCat, char ** category, char ** word) {
   for (size_t i = 0; i < arrayCat->n; i++) {
     if (!strcmp(arrayCat->arr[i].name, *category)) {
       size_t n_words = arrayCat->arr[i].n_words;
-      arrayCat->arr[i].words = realloc (arrayCat->arr[i].words, (n_words + 1) * sizeof (arrayCat->arr[i].words));
+      arrayCat->arr[i].words = realloc (arrayCat->arr[i].words, (n_words + 1) * 
+          sizeof (arrayCat->arr[i].words));
       arrayCat->arr[i].words[n_words] = *word;
       arrayCat->arr[i].n_words = n_words + 1;
       catExists = 1;
@@ -193,7 +191,7 @@ void addCategories (catarray_t * arrayCat, char ** category, char ** word) {
       break;
     }
   }
-  //if category does not yet exist, create a new category add it to arrayCat
+  //if category does not yet exist, create a new category and add it to arrayCat
   if (catExists == 0) {
     arrayCat->arr = realloc (arrayCat->arr, (arrayCat->n + 1) * sizeof (*arrayCat->arr));
     category_t newCategory;

@@ -11,11 +11,14 @@ story-step3 words4.txt story7.txt
 
 #success
 story-step1 story.txt
+story-step1 story0.txt
 story-step1 story2.txt
 story-step2 words.txt
+story-step1 words0.txt
 story-step2 words2.txt
 story-step2 words4.txt
 story-step3 words.txt story.txt
+story-step3 words0.txt story0.txt
 story-step3 words.txt story2.txt
 story-step3 words4.txt story4.txt
 story-step3 words4.txt story6.txt
