@@ -103,10 +103,8 @@ void findBlank (char * line, catarray_t * categories, category_t * usedWords) {
     free (always);
 
     char * category = getCategory(story);
-    //error check if category doesn't exit, fail
     //check if part of category is number "123abc" - what do we do?
     //check if category is just a number
-    //check if _2_ is out of bounds
     
     int prevWord;
     char * thisWord;
