@@ -1,6 +1,6 @@
-Grading at 10/19/2021:23:07:41.853732
-For commit ID c2c80737b2c53a7b7ee61df8bde5ef2cf4deed64
-Grading at Tue Oct 19 19:07:19 EDT 2021
+Grading at 10/19/2021:23:18:27.338094
+For commit ID 5a7a66fb442c217255b64fcd787d2a7b677d227c
+Grading at Tue Oct 19 19:18:03 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -61,9 +61,6 @@ rm story-step4.o
 Test case story-step4 -n words6.txt story4.txt
 Arsenal player, Smith-Rowe, dribbles past his opponent. Smith-Rowe shoots, and scores! Arsenal lead by 2 goals.
 Goal by Smith-Rowe, assisted by Ozil. Suberb 1-2 by Saka and Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case story-step4 -n words8.txt story9.txt
-Our story-step4 does not consider this an error case
 
 Compiling story-step1
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
@@ -155,8 +152,11 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step4 -n words7.txt story8.txt
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step4 -n words8.txt story9.txt
+Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
