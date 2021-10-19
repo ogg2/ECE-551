@@ -1,0 +1,1 @@
+Empty category does not cause an __ error.
