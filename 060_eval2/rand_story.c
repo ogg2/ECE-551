@@ -4,10 +4,10 @@
 #include "rand_story.h"
 
 /**
- * error takes an error message, prints it out, and exits the program
- *
- * input: message is the error message that will be printed to command line
- */
+* error takes an error message, prints it out, and exits the program
+*
+* input: message is the error message that will be printed to command line
+*/
 void error (const char * message) {
   fprintf (stderr, "Error: %s\n", message);
   exit (EXIT_FAILURE);
@@ -43,8 +43,9 @@ void closeFile (FILE * file) {
 *
 * input: file is the file to be read
 * input: categories is an array of category_t that will fill in the blanks for the story
+* input: reuseWords indicates if the program was run with a "-n" argument [step4 specific]
 */
-void readStory (FILE * file, catarray_t * categories) {
+void readStory (FILE * file, catarray_t * categories, int reuseWords) {
   char * line = NULL;
   size_t size;
 

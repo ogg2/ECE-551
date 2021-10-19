@@ -10,7 +10,7 @@ int main (int argc, char ** argv) {
 
   FILE * file = readFile (argv[1]);
 
-  readStory (file, NULL);
+  readStory (file, NULL, 0);
 
   closeFile (file);
   return EXIT_SUCCESS;

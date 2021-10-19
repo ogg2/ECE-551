@@ -9,7 +9,7 @@
 void error (const char * message);
 FILE * readFile (char * filename);
 void closeFile (FILE * file);
-void readStory (FILE * file, catarray_t * categories);
+void readStory (FILE * file, catarray_t * categories, int reuseWords);
 catarray_t * readWords (FILE * file);
 void findBlank (char * line, catarray_t * categories, category_t * usedWords);
 char * getCategory (char * blank);
