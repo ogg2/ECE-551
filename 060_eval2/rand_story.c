@@ -94,6 +94,7 @@ catarray_t * readWords (FILE * file) {
 *
 * input: line is a line read from an input file
 * input: categories is an array of category_t that will fill in the blanks for the story
+* input: usedWords is a pointer to a category of words already printed
 */
 void findBlank (char * line, catarray_t * categories, category_t * usedWords) {
   char * story = NULL;
@@ -108,7 +109,9 @@ void findBlank (char * line, catarray_t * categories, category_t * usedWords) {
     
     int prevWord;
     char * thisWord;
-    if ((prevWord = atoi (category)) > 0) {
+    char * extraLetters = NULL;
+    //if ((prevWord = atoi (categoru)) > 0)
+    if ((prevWord = strtol (category, &extraLetters, 10)) > 0 && *extraLetters == '\0') {
       int index = usedWords->n_words - prevWord;
       if (index < 0) {
         error ("Index out of bounds. Tried to look at previous word that doesn't exist'.");
