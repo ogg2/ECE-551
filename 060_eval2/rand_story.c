@@ -129,14 +129,6 @@ char * getCategory (char * blank) {
   return strndup (blank, (underscore - blank));  
 }
 
-/*catarray_t * parseWords (char * line) {
-  catarray_t * categories = NULL;
-
-  while (getline (&line, &size, line)) {
-    
-  }
-}*/
-
 /**
 * parseWords takes a line read from a file, the string before ':' is stored into category
 *   the string after ':' is stored into word
@@ -148,7 +140,6 @@ char * getCategory (char * blank) {
 void parseWords (char * line, char ** category, int delim, char ** word) {
   char * string;
 
-  //error check if there is no ':'
   //strip leading and trailing white space?
   if ((string = strchr (line, delim)) != NULL) {
     *category = strndup (line, (string - line)); 
