@@ -1,6 +1,6 @@
-Grading at 10/19/2021:22:18:43.328519
-For commit ID fda29896d22d0f0a64a2a1d99956b661a3b21299
-Grading at Tue Oct 19 18:18:21 EDT 2021
+Grading at 10/19/2021:22:39:51.628594
+For commit ID a46cf3495bbb87785577d2cd5a9474ba1f219de8
+Grading at Tue Oct 19 18:39:29 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -50,6 +50,17 @@ Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case story-step3 words4.txt story7.txt
 Arsenal player, Aubameyang, dribbles past his opponent. Your program successfully indicated a failure case
+
+Compiling story-step4
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
+gcc -o story-step4 story-step4.o rand_story.o provided.o
+rm story-step4.o
++-----------------------------------------------------------------------+
+Test case story-step4 -n words6.txt story4.txt
+Arsenal player, Smith-Rowe, dribbles past his opponent. Smith-Rowe shoots, and scores! Arsenal lead by 2 goals.
+Goal by Smith-Rowe, assisted by Ozil. Suberb 1-2 by Saka and Your program successfully indicated a failure case
 
 Compiling story-step1
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
