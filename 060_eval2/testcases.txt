@@ -29,6 +29,4 @@ story-step3 words4.txt story6.txt
 story-step3 words2.txt story1.txt
 
 story-step4 words.txt story.txt
-story-step4 -n words.txt story.txt
 story-step4 words4.txt story4.txt
-story-step4 -n words4.txt story4.txt
