@@ -198,7 +198,6 @@ void addCategories (catarray_t * arrayCat, char ** category, char ** word) {
 void freeCategories (catarray_t * categories) {
   for (size_t i = 0; i < categories->n; i++) {
     for (size_t j = 0; j < categories->arr[i].n_words; j++) {
-      printf ("Free word: %s\n", categories->arr[i].words[j]);
       free (categories->arr[i].words[j]);
     }
     free (categories->arr[i].words);
