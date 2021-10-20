@@ -40,11 +40,11 @@ void closeFile (FILE * file) {
 
 /**
 * readStory reads each line of a story and passes it into findBlank() along with 
-*   an array of categories, it also creates a category to story previous words printed
+*   an array of categories, it also creates a category to store previous words printed
 *
 * input: file is the file to be read
 * input: categories is an array of category_t that will fill in the blanks for the story
-* input: reuseWords indicates if the program was run with a "-n" argument [step4 specific]
+* input: reuseWords indicates if the program was run with a "-n" argument
 */
 void readStory (FILE * file, catarray_t * categories, int reuseWords) {
   char * line = NULL;
@@ -91,13 +91,13 @@ catarray_t * readWords (FILE * file) {
 
 /**
 * findBlank takes a line from an input file and prints everything to stdout,
-*   words enclosed by '_' represent categories that will be replaced by with words 
-*   from the respective category, found in categories, before being printed
+*   words enclosed by '_' represent categories that will be replaced with words 
+*   from their respective category, found in categories, before being printed
 *
 * input: line is a line read from an input file
-* input: categories is an array of category_t that will fill in the blanks for the story
+* input: categories is an array of category_t that contains the data to fill in the blanks for the story
 * input: usedWords is a pointer to a category of words already printed
-* input: reuseWords indicates if the program was run with a "-n" argument [step4 specific]
+* input: reuseWords indicates if the program was run with a "-n" argument
 */
 void findBlank (char * line, catarray_t * categories, category_t * usedWords, int reuseWords) {
   char * story = NULL;
@@ -110,10 +110,11 @@ void findBlank (char * line, catarray_t * categories, category_t * usedWords, in
     int prevWord;
     char * thisWord;
     char * extraLetters = NULL;
+    //check if category is in format _[int]_
     if ((prevWord = strtol (category, &extraLetters, 10)) > 0 && *extraLetters == '\0') {
       int index = usedWords->n_words - prevWord;
       if (index < 0) {
-        error ("Index out of bounds. Tried to look at previous word that doesn't exist'.");
+        error ("Index out of bounds. Tried to look at previous word that doesn't exist.");
       }
       thisWord = strdup (usedWords->words[index]);
     } else {
@@ -211,10 +212,11 @@ void addCategories (catarray_t * arrayCat, char ** category, char ** word) {
 }
 
 /**
-* preventReuse removes all instances of word from its category if reuseWords == 0
+* preventReuse removes the first instance of word from its category if "-n" argument was included 
+*   when the program was run
 *
 * input: categories is a pointer to an array of category_t
-* input: category is the category name that we need to move all instances of word from
+* input: category is the category name that we need to move the first instances of word from
 * input: word is the word that needs to be removed so it cannot be reused
 */
 void preventReuse (catarray_t * categories, char * category, char * word) {
@@ -223,6 +225,7 @@ void preventReuse (catarray_t * categories, char * category, char * word) {
       for (size_t j = 0; j < categories->arr[i].n_words; j++) {
         if (!strcmp (categories->arr[i].words[j], word)) {
           free (categories->arr[i].words[j]);
+          //shift all elements after removed word forward 1 index
           for (size_t k = j; k < categories->arr[i].n_words - 1; k++) {
             categories->arr[i].words[k] = categories->arr[i].words[k + 1];
           }

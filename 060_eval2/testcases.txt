@@ -13,6 +13,7 @@ story-step3 words5.txt story4.txt
 story-step3 words4.txt story7.txt
 
 story-step4 -n words6.txt story4.txt
+story-step4 -t words4.txt story4.txt
 
 #success
 story-step1 story.txt

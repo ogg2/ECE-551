@@ -12,21 +12,21 @@ int main (int argc, char ** argv) {
     return EXIT_FAILURE;
   }
 
-  int optional = 0;
+  int optionalArg = 0;
   if (argc == 4) {
     if (strcmp(argv[1], "-n")) {
-      fprintf (stderr, "Error: Optional argument must be a \"-n\".\n");
+      fprintf (stderr, "Error: Optional argument must be \"-n\".\n");
       return EXIT_FAILURE;
     }
-    optional = 1;
+    optionalArg = 1;
   }
 
-  FILE * fileWords = readFile (argv[1 + optional]);
+  FILE * fileWords = readFile (argv[1 + optionalArg]);
   catarray_t * categories = readWords (fileWords);
   closeFile (fileWords);
 
-  FILE * fileStory = readFile (argv[2 + optional]);
-  int reuseWords = !optional;
+  FILE * fileStory = readFile (argv[2 + optionalArg]);
+  int reuseWords = !optionalArg;
   readStory (fileStory, categories, reuseWords);
   freeCategories (categories);
 
