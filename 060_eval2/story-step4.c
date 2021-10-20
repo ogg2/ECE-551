@@ -3,6 +3,9 @@
 #include <string.h>
 #include "rand_story.h"
 
+/**
+* main for story-step4
+*/
 int main (int argc, char ** argv) {
   if (argc != 3 && argc != 4) {
     fprintf (stderr, "Error: Usage: ./executable -n[optional] inputWords inputStory\n");

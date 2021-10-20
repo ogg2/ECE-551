@@ -3,8 +3,6 @@
 
 #include "provided.h"
 //any functions you want your main to use
-#define WORDS 1
-#define STORY 2
 
 void error (const char * message);
 FILE * readFile (char * filename);

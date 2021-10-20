@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include "rand_story.h"
 
+/**
+* main for story-step1
+*/
 int main (int argc, char ** argv) {
   if (argc != 2) {
     fprintf (stderr, "Error: Usage: ./executable inputfile\n");
