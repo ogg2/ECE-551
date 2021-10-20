@@ -1,6 +1,6 @@
-Grading at 10/20/2021:02:26:15.506320
-For commit ID f575c9bd3775de3c7f6218bd3b82061b60fb9bca
-Grading at Tue Oct 19 22:25:49 EDT 2021
+Grading at 10/20/2021:03:50:30.014099
+For commit ID 81c1bfcd91ad8744ceefbbe9d4a295ac4b3fd038
+Grading at Tue Oct 19 23:50:03 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -64,6 +64,9 @@ rm story-step4.o
 Test case story-step4 -n words6.txt story4.txt
 Arsenal player, Smith-Rowe, dribbles past his opponent. Smith-Rowe shoots, and scores! Arsenal lead by 2 goals.
 Goal by Smith-Rowe, assisted by Ozil. Suberb 1-2 by Saka and Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case story-step4 -t words4.txt story4.txt
+Your program successfully indicated a failure case
 
 Compiling story-step1
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
