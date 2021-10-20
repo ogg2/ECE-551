@@ -3,34 +3,47 @@
 #include <ostream>
 
 IntArray::IntArray() : data(NULL), numElements(0) {
-
-}
-IntArray::IntArray(int n) : data(int[n]), numElements(n) {
-
 }
 
-IntArray::IntArray(const IntArray & rhs)  {
-  int newData [numElements];
+IntArray::IntArray(int n) : data(new int[n]), numElements(n) {
+}
+
+//Copy Constructor
+IntArray::IntArray(const IntArray & rhs) : data(new int[rhs.numElements]),
+                                           numElements (rhs.numElements) {
   for (int i = 0; i < numElements; i++) {
-    newData[i] = data[i];
+    data[i] = rhs.data[i];
   }
-  rhs.data = newData;
-  rhs.numElements = newElements;
 }
+
+//Destructor
 IntArray::~IntArray() {
   delete[] data;
 }
 
+//= operator
 IntArray & IntArray::operator=(const IntArray & rhs) {
- // IntArray (rhs);
+  if (this != & rhs) {
+    int * temp = new int[rhs.numElements];
+    for (int i = 0; i < rhs.numElements; i++) {
+      temp[i] = rhs.data[i];
+    }
+    delete[] data;
+    numElements = rhs.numElements;
+    data = temp;
+  }
+  return *this;
 }
+//[] operator
 const int & IntArray::operator[](int index) const {
-  assert (index < numElements);
-  return &data[index];
+  assert (index < numElements && index >= 0);
+  return data[index];
 }
+
+//[] operator
 int & IntArray::operator[](int index) {
-  assert (index < numElements);
-  return &data[index];
+  assert (index < numElements && index >= 0);
+  return data[index];
 }
 
 int IntArray::size() const {
@@ -50,12 +63,15 @@ bool IntArray::operator==(const IntArray & rhs) const {
 }
 
 bool IntArray::operator!=(const IntArray & rhs) const {
-  return !(this == rhs);
+  return !(*this == rhs);
 }
 
 std::ostream & operator<<(std::ostream & s, const IntArray & rhs) {
-  char printing[16];
-  snprintf (printing, 16, %d, rhs.numElements);
-  stream.write (printing, strlen(printing));
+  s << "{";
+  for (int i = 0; i < rhs.size() - 1; i++) {
+    s << rhs[i] << ", ";
+  }
+  s << rhs[rhs.size() - 1] << "}";
+
   return s;
 }
