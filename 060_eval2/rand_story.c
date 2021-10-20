@@ -100,10 +100,7 @@ catarray_t * readWords(FILE * file) {
 * input: usedWords is a pointer to a category of words already printed
 * input: reuseWords indicates if the program was run with a "-n" argument [step4 specific]
 */
-void findBlank(char * line,
-               catarray_t * categories,
-               category_t * usedWords,
-               int reuseWords) {
+void findBlank(char * line, catarray_t * categories, category_t * usedWords, int reuseWords) {
   char * story = NULL;
   while ((story = strchr(line, '_')) != NULL) {
     char * always = strndup(line, (story - line));
