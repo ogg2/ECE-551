@@ -1,7 +1,7 @@
 #include "IntMatrix.h"
 
 //IntMatrix myMatrix (r, c) // returns actual object
-//IntMatrix myMatrix = new IntMatrix (); //pointer to object
+//IntMatrix myMatrix = new IntMatrix (); //pointer to object?
 //new always returns pointer
 
 IntMatrix::IntMatrix() : numRows (0), numColumns (0),
@@ -86,11 +86,11 @@ IntMatrix IntMatrix::operator+(const IntMatrix & rhs) const {
 
   IntMatrix newMatrix (numRows, numColumns);
   for (int i = 0; i < numRows; i++) {
-    IntArray & l = *rows[i];
-    IntArray & r = *rhs.rows[i];
-    IntArray & newIntArray = *newMatrix.rows[i];
+    //IntArray & l = *rows[i];
+    //IntArray & r = *rhs.rows[i];
+    //IntArray & newIntArray = *newMatrix.rows[i];
     for (int j = 0; j < numColumns; j++) {
-      newIntArray[j] = l[j] + r[j];
+      newMatrix[i][j] = (*this)[i][j] + rhs[i][j];
     }
   }
   return newMatrix;
