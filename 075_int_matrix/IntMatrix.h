@@ -21,8 +21,6 @@ class IntMatrix {
   IntArray & operator[](int index);
   bool operator==(const IntMatrix & rhs) const;
   IntMatrix operator+(const IntMatrix & rhs) const;
-
-
 };
 
 
