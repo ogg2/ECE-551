@@ -32,6 +32,8 @@ int main (int argc, char ** argv) {
   std::vector<std::string> v1;
   if (argc == 1) {
     std::cin >> v1;
+    std::sort (v1.begin(), v1.end());
+    std::cout << v1;
   } else {
     for (int i = 1; i < argc; i++) {
       std::ifstream file (argv[i]);
@@ -41,10 +43,11 @@ int main (int argc, char ** argv) {
       }
       file >> v1;
       file.close (); 
+      std::sort (v1.begin(), v1.end());
+      std::cout << v1;
+      v1.clear();
     }
   }
 
-  std::sort (v1.begin(), v1.end());
-  std::cout << v1;
   return EXIT_SUCCESS;
 }
