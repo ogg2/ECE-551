@@ -20,13 +20,12 @@ std::ostream & operator<<(std::ostream & s, std::vector<std::string> & data) {
     }
     s << data[data.size() - 1];
   }*/
-
   std::vector<std::string>::iterator it = data.begin();
   while (it != data.end()) {
     s << *it << "\n";
     ++it;
   }
-
+  data.clear();
   return s;
 }
 
@@ -38,7 +37,7 @@ int main (int argc, char ** argv) {
     for (int i = 1; i < argc; i++) {
       std::ifstream file (argv[i]);
       if (!file) {
-        std::cerr << "Could not open file!" << std::endl;
+        std::cerr << "Error: Could not open file!" << std::endl;
         return EXIT_FAILURE;
       }
       file >> v1;
