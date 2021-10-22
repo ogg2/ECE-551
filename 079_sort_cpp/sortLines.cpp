@@ -14,12 +14,19 @@ std::istream & operator>>(std::istream & s, std::vector<std::string> & data) {
 }
 
 std::ostream & operator<<(std::ostream & s, std::vector<std::string> & data) {
-  if (data.size() > 0) {
+  /*if (data.size() > 0) {
     for (size_t i = 0; i < data.size() - 1; i++) {
       s << data[i] << "\n";
     }
     s << data[data.size() - 1];
+  }*/
+
+  std::vector<std::string>::iterator it = data.begin();
+  while (it != data.end()) {
+    s << *it << "\n";
+    ++it;
   }
+
   return s;
 }
 
@@ -30,12 +37,16 @@ int main (int argc, char ** argv) {
   } else {
     for (int i = 1; i < argc; i++) {
       std::ifstream file (argv[i]);
+      if (!file) {
+        std::cerr << "Could not open file!" << std::endl;
+        return EXIT_FAILURE;
+      }
       file >> v1;
-      file.close ();
+      file.close (); 
     }
   }
 
   std::sort (v1.begin(), v1.end());
-  std::cout << v1 << std::endl;
+  std::cout << v1;
   return EXIT_SUCCESS;
 }
