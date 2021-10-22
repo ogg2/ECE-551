@@ -25,7 +25,6 @@ std::ostream & operator<<(std::ostream & s, std::vector<std::string> & data) {
     s << *it << "\n";
     ++it;
   }
-  data.clear();
   return s;
 }
 
