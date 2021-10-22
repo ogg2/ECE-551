@@ -1,0 +1,36 @@
+Grading at 10/22/2021:03:52:08.009287
+For commit ID 4f1a04bd2e6e19a24845149886f7864ddd74351c
+Grading at Thu Oct 21 23:52:01 EDT 2021
+Looking for malloc in your files
+No uses found (good).
+Looking for free in your files
+No uses found (good).
+Looking for FILE in your files
+No uses found (good).
+Looking for realloc in your files
+No uses found (good).
+Looking for qsort in your files
+No uses found (good).
+Looking for printf in your files
+No uses found (good).
+Attempting to compile with make
+g++ -std=gnu++98 -pedantic -Wall -Werror -o sortLines sortLines.cpp
+Using sortLines..
+#################################################
+testcase1:
+testcase1 failed, your program didn't indicate this is a failure case
+#################################################
+testcase2:
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
+#################################################
+testcase3:
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
+#################################################
+testcase4:
+Your output is incorrect
+
+Overall Grade: D
