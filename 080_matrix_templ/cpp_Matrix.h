@@ -139,4 +139,18 @@ std::ostream & operator<<(std::ostream & s, const Matrix<T> & rhs) {
   return s;
 }
 
+template<typename T>
+std::ostream & operator<<(std::ostream & s, const std::vector<T> & rhs) {
+  s << "{";
+  if (rhs.size() != 0) {
+    for (size_t i = 0; i < rhs.size() - 1; i++) {
+      s << rhs[i] << ", ";
+    }
+    s << rhs[rhs.size() - 1];
+  }
+  s << "}";
+  return s;
+}
+
+
 #endif
