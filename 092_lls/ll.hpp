@@ -25,18 +25,29 @@ class LinkedList{
   int size;
 
  public:
-  LinkedList() : head (NULL), tail (NULL), size (0) {};
-  LinkedList(const LinkedList<T> & rhs) {
-    head = rhs.head;
-    tail = rhs.tail;
+  LinkedList() : head (NULL), tail (NULL), size (0) {}
+  LinkedList(const LinkedList<T> & rhs) : head (NULL), tail (NULL), size (0) {
+    Node * curr = rhs.head;
+    while (curr != NULL) {
+      this->addBack (curr->data);
+      curr = curr->next;
+    }
+  }
+
+  LinkedList<T> & operator=(const LinkedList<T> & rhs) {
+    while (head != NULL) {
+      Node * temp = head->next;
+      delete head;
+      head = temp;
+      size--;
+    }
     Node * it = rhs.head;
     while (it != NULL) {
       this->addBack (it->data);
       it = it->next;
     }
-    size = rhs.getSize();
-  };
-  LinkedList<T> & operator=(const LinkedList<T> & rhs);
+    return *this;
+  }
 
   ~LinkedList() {
     while (head != NULL) {
@@ -67,21 +78,66 @@ class LinkedList{
   }
 
   bool remove(const T & item) {
+    Node * curr = head;
+    while (curr != NULL) {
+      if (curr->data == item) {
+        if (size == 1) {
+          head = NULL;
+          tail = NULL;
+        } else if (curr->prev == NULL) {
+          curr->next->prev = NULL;
+          head = curr->next;
+        } else if (curr->next == NULL) {
+          curr->prev->next = NULL;
+          tail = curr->prev;
+        } else {
+          Node * currNext = curr->next;
+          curr->prev->next = currNext;
+          currNext->prev = curr->prev;
+        }
+        delete curr;
+        size--;
+        return true;
+      }
+      curr = curr->next;
+    }
     return false;
   }
 
   T & operator[](int index) {
-    return head->data;
+    int i = 0;
+    Node * curr = head;
+    while (i < index) {
+      curr = curr->next;
+      i++;
+    }
+    return curr->data;
   }
   const T & operator[](int index) const {
-    return head->data;
+    int i = 0;
+    Node * curr = head;
+    while (i < index) {
+      curr = curr->next;
+      i++;
+    }
+    return curr->data;
   }
 
   int find(const T & item) {
+    int index = 0;
+    Node * curr = head;
+    while (index < size) {
+      if (curr->data == item) {
+        return index;
+      }
+      curr = curr->next;
+      index++;
+    }
     return -1;
   }
+
   int getSize() const {return size;}
-  friend Tester;
+  friend class Tester;
 };
 
 #endif

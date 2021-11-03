@@ -18,6 +18,7 @@ class Tester {
   // example of another method you might want to write
   void testAddFront() {
     // WRITE ME
+    std::cout << "Adding to front" << std::endl;
     IntList il;
     il.addFront (4);
     assert (il.head->data == 4);
@@ -34,6 +35,7 @@ class Tester {
   }
 
   void testAddBack () {
+    std::cout << "Adding to Back" << std::endl;
     IntList il;
     il.addBack (4);
     assert (il.head->data == 4);
@@ -51,18 +53,21 @@ class Tester {
   // many more tester methods
 
   void testCopyConstructor () {
+    std::cout << "Copy Constructor" << std::endl;
     IntList il;
 
     il.addFront (4);
     il.addBack (5);
     il.addBack (6);
     IntList copy (il);
+    std::cout << copy.getSize() << std::endl;
     assert (copy.getSize() == 3);
     assert (copy.head->data == 4);
     assert (copy.tail->data == 6);
     assert (copy.head->next->data == 5);
     assert (copy.tail->prev->data == 5);
-
+    
+    std::cout << "Assignment Operator" << std::endl;
     IntList equals;
     equals.addFront (4);
     equals = copy;
@@ -77,6 +82,7 @@ class Tester {
   void testIndexing () {
     IntList il;
 
+    std::cout << "Indexing" << std::endl;
     il.addFront(4);
     il.addFront(5);
 
@@ -88,6 +94,7 @@ class Tester {
 
   void testAllocation () {
     IntList il;
+    std::cout << "Allocating" << std::endl;
     try {
       il.addFront(4);
     } catch (std::bad_alloc & e) {
@@ -102,13 +109,30 @@ class Tester {
 
   void testDestructor () {
     IntList il;
+    std::cout << "Destroying" << std::endl;
     il.addFront (4);
     il.addBack (5);
     il.addBack (6);
   }
 
+  void testFind () {
+    IntList il;
+    std::cout << "Finding" << std::endl;
+    il.addFront (4);
+    il.addBack (5);
+    il.addBack (6);
+    il.addFront(3);
+
+    assert (il.find (4) == 1);
+    assert (il.find (3) == 0);
+    assert (il.find (5) == 2);
+    assert (il.find (6) == 3);
+    assert (il.find (8) == -1);
+  }
+
   void testRemove () {
     IntList il;
+    std::cout << "Removing" << std::endl;
     assert (il.remove(1) == false);
     il.addFront (4);
     assert (il.remove (4) == true);
@@ -148,6 +172,7 @@ int main(void) {
   t.testIndexing();
   t.testAllocation();
   t.testDestructor();
+  t.testFind();
   t.testRemove();
   return EXIT_SUCCESS;
 }
