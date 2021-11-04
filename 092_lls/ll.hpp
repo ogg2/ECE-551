@@ -11,7 +11,7 @@ class Tester;
 //YOUR CODE GOES HERE
 template <typename T>
 class LinkedList{
- public:
+ private:
   class Node {
    public:
     T data;
