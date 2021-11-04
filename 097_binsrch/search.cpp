@@ -5,13 +5,13 @@
 #include <iostream>
 
 int binarySearchForZero(Function<int, int> * f, int low, int high) {
-  while (low + 1 < high) {
+  while (low < high) {
     int middle = (low + high) / 2;
     int ans = f->invoke (middle);
     if (ans == 0) {
       return middle;
     } else if (ans < 0) {
-      low = middle;
+      low = middle + 1;
     } else {
       high = middle;
     }
