@@ -1,6 +1,7 @@
 #include "function.h"
 #include <iostream>
 #include <cstdlib>
+#include <cstdio>
 #include <cmath>
 #include <assert.h>
 
@@ -49,7 +50,7 @@ public:
 
 void check(Function<int,int> * f, int low, int high, int expected_ans,
            const char * mesg) {
-  int max = std::log2(high-low) + 1;
+  int max = std::log(high-low) + 1;
   CountedIntFn * counted = new CountedIntFn(max, f, mesg);
   int ans = binarySearchForZero (counted, low, high);
 
