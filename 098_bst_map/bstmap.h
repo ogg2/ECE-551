@@ -98,6 +98,12 @@ public:
       return temp;
     }
   }
+  virtual Node * closest (Node * curr) {
+    if (curr == NULL) {
+      return curr;
+    }
+    return closest (curr->right);
+  }
   virtual void remove(const K& key) {
     /*Node * curr = root;
     while (curr != NULL) {
