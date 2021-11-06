@@ -17,8 +17,6 @@ int main (void) {
   assert (map.root->left->key == 3);
   assert (map.root->right->key == 9);
   map.add (4, "four");
-  std::cout << "Key: " << map.root->key << std::endl;
-  std::cout << "Key: " << map.root->left->key << std::endl;
   assert (map.root->left->right->key == 4);
   map.lookup(2); 
   map.lookup(10); 

@@ -58,7 +58,7 @@ public:
       std::cerr << e.what();
     }
   }
-  virtual Node * remove (Node * curr, const K& key) {
+/*  virtual Node * remove (Node * curr, const K& key) {
     if (curr == NULL) {
       return curr;
     }
@@ -105,13 +105,46 @@ public:
     return closest (curr->right);
   }
   virtual void remove(const K& key) {
-    /*Node * curr = root;
+    Node * curr = root;
     while (curr != NULL) {
       if (curr->key == key) {
         Node * ans = remove (curr, key);
       }
-    }*/
+    }
     root = remove (root, key);
+  }*/
+
+  virtual void remove (const K& key) {
+    Node ** curr = &root;
+    while (*curr != NULL) {
+      if (key == (*curr)->key) {
+        if ((*curr)->left == NULL) {
+          Node * right = (*curr)->right;
+          delete *curr;
+          *curr = right;
+        } else if ((*curr)->right == NULL) {
+          Node * left = (*curr)->left;
+          delete *curr;
+          *curr = left;
+        } else {
+          //2 CHILDREN
+          Node ** toReplace = &(*curr)->left;
+          while ((*toReplace)->right != NULL) {
+            toReplace = &(*toReplace)->right;
+          }
+          (*toReplace)->left = (*curr)->left;
+          (*toReplace)->right = (*curr)->right;
+          delete *curr;
+          *curr = *toReplace;
+          *toReplace = NULL;
+        }
+
+      } else if (key < (*curr)->key) {
+        curr = &(*curr)->left;
+      } else {
+        curr = &(*curr)->right;
+      }
+    }
   }
   virtual ~BSTMap<K,V>() {
     destroy (root);
