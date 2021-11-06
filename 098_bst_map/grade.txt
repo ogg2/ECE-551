@@ -1,401 +1,386 @@
-Grading at 11/06/2021:02:23:46.767748
-For commit ID dc03736f84fe7cd2f909053b663ada2fd28dfa70
-Grading at Fri Nov  5 22:23:45 EDT 2021
+Grading at 11/06/2021:02:25:36.411367
+For commit ID 277f1a42660835e0591c8a4313166ccb7cb8c8a0
+Grading at Fri Nov  5 22:25:26 EDT 2021
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         BSTMap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘BSTMap’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   BSTMap
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==18328== Memcheck, a memory error detector
+==18328== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18328== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==18328== Command: ./test.1
+==18328== Parent PID: 18327
+==18328== 
+==18328== Invalid read of size 4
+==18328==    at 0x10950A: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.1)
+==18328==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
+==18328== 
+==18328== 
+==18328== Process terminating with default action of signal 11 (SIGSEGV)
+==18328==  Access not within mapped region at address 0x4
+==18328==    at 0x10950A: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.1)
+==18328==  If you believe this happened as a result of a stack
+==18328==  overflow in your program's main thread (unlikely but
+==18328==  possible), you can try to increase the size of the
+==18328==  main thread stack using the --main-stacksize= flag.
+==18328==  The main thread stack size used in this run was 8388608.
+==18328== 
+==18328== HEAP SUMMARY:
+==18328==     in use at exit: 616 bytes in 26 blocks
+==18328==   total heap usage: 28 allocs, 2 frees, 77,416 bytes allocated
+==18328== 
+==18328== LEAK SUMMARY:
+==18328==    definitely lost: 0 bytes in 0 blocks
+==18328==    indirectly lost: 0 bytes in 0 blocks
+==18328==      possibly lost: 0 bytes in 0 blocks
+==18328==    still reachable: 616 bytes in 26 blocks
+==18328==         suppressed: 0 bytes in 0 blocks
+==18328== Reachable blocks (those to which a pointer was found) are not shown.
+==18328== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==18328== 
+==18328== For counts of detected and suppressed errors, rerun with: -v
+==18328== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         BSTMap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘BSTMap’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   BSTMap
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==18350== Memcheck, a memory error detector
+==18350== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18350== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==18350== Command: ./test.2
+==18350== Parent PID: 18349
+==18350== 
+==18350== Invalid read of size 8
+==18350==    at 0x4F63187: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==18350==    by 0x1095A3: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.2)
+==18350==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18350== 
+==18350== 
+==18350== Process terminating with default action of signal 11 (SIGSEGV)
+==18350==  Access not within mapped region at address 0x8
+==18350==    at 0x4F63187: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==18350==    by 0x1095A3: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.2)
+==18350==  If you believe this happened as a result of a stack
+==18350==  overflow in your program's main thread (unlikely but
+==18350==  possible), you can try to increase the size of the
+==18350==  main thread stack using the --main-stacksize= flag.
+==18350==  The main thread stack size used in this run was 8388608.
+==18350== 
+==18350== HEAP SUMMARY:
+==18350==     in use at exit: 1,816 bytes in 46 blocks
+==18350==   total heap usage: 88 allocs, 42 frees, 79,416 bytes allocated
+==18350== 
+==18350== LEAK SUMMARY:
+==18350==    definitely lost: 0 bytes in 0 blocks
+==18350==    indirectly lost: 0 bytes in 0 blocks
+==18350==      possibly lost: 0 bytes in 0 blocks
+==18350==    still reachable: 1,816 bytes in 46 blocks
+==18350==         suppressed: 0 bytes in 0 blocks
+==18350== Reachable blocks (those to which a pointer was found) are not shown.
+==18350== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==18350== 
+==18350== For counts of detected and suppressed errors, rerun with: -v
+==18350== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         BSTMap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘BSTMap’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   BSTMap
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==18361== Memcheck, a memory error detector
+==18361== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18361== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==18361== Command: ./test.3
+==18361== Parent PID: 18360
+==18361== 
+==18361== Invalid read of size 4
+==18361==    at 0x10A3DC: Tester::Tester(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.3)
+==18361==    by 0x1095A3: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.3)
+==18361==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+==18361== 
+==18361== 
+==18361== Process terminating with default action of signal 11 (SIGSEGV)
+==18361==  Access not within mapped region at address 0x8
+==18361==    at 0x10A3DC: Tester::Tester(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.3)
+==18361==    by 0x1095A3: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.3)
+==18361==  If you believe this happened as a result of a stack
+==18361==  overflow in your program's main thread (unlikely but
+==18361==  possible), you can try to increase the size of the
+==18361==  main thread stack using the --main-stacksize= flag.
+==18361==  The main thread stack size used in this run was 8388608.
+==18361== 
+==18361== HEAP SUMMARY:
+==18361==     in use at exit: 2,016 bytes in 46 blocks
+==18361==   total heap usage: 108 allocs, 62 frees, 80,016 bytes allocated
+==18361== 
+==18361== LEAK SUMMARY:
+==18361==    definitely lost: 0 bytes in 0 blocks
+==18361==    indirectly lost: 0 bytes in 0 blocks
+==18361==      possibly lost: 0 bytes in 0 blocks
+==18361==    still reachable: 2,016 bytes in 46 blocks
+==18361==         suppressed: 0 bytes in 0 blocks
+==18361== Reachable blocks (those to which a pointer was found) are not shown.
+==18361== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==18361== 
+==18361== For counts of detected and suppressed errors, rerun with: -v
+==18361== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         BSTMap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘BSTMap’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   BSTMap
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==18382== Memcheck, a memory error detector
+==18382== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18382== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==18382== Command: ./test.4
+==18382== Parent PID: 18381
+==18382== 
+==18382== Invalid read of size 4
+==18382==    at 0x10972E: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.4)
+==18382==  Address 0x20 is not stack'd, malloc'd or (recently) free'd
+==18382== 
+==18382== 
+==18382== Process terminating with default action of signal 11 (SIGSEGV)
+==18382==  Access not within mapped region at address 0x20
+==18382==    at 0x10972E: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.4)
+==18382==  If you believe this happened as a result of a stack
+==18382==  overflow in your program's main thread (unlikely but
+==18382==  possible), you can try to increase the size of the
+==18382==  main thread stack using the --main-stacksize= flag.
+==18382==  The main thread stack size used in this run was 8388608.
+==18382== 
+==18382== HEAP SUMMARY:
+==18382==     in use at exit: 1,416 bytes in 26 blocks
+==18382==   total heap usage: 28 allocs, 2 frees, 78,216 bytes allocated
+==18382== 
+==18382== LEAK SUMMARY:
+==18382==    definitely lost: 0 bytes in 0 blocks
+==18382==    indirectly lost: 0 bytes in 0 blocks
+==18382==      possibly lost: 0 bytes in 0 blocks
+==18382==    still reachable: 1,416 bytes in 26 blocks
+==18382==         suppressed: 0 bytes in 0 blocks
+==18382== Reachable blocks (those to which a pointer was found) are not shown.
+==18382== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==18382== 
+==18382== For counts of detected and suppressed errors, rerun with: -v
+==18382== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         BSTMap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘BSTMap’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   BSTMap
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==18401== Memcheck, a memory error detector
+==18401== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18401== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==18401== Command: ./test.5
+==18401== Parent PID: 18400
+==18401== 
+==18401== Invalid read of size 8
+==18401==    at 0x4F63187: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==18401==    by 0x1097C7: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.5)
+==18401==  Address 0x20 is not stack'd, malloc'd or (recently) free'd
+==18401== 
+==18401== 
+==18401== Process terminating with default action of signal 11 (SIGSEGV)
+==18401==  Access not within mapped region at address 0x20
+==18401==    at 0x4F63187: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==18401==    by 0x1097C7: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.5)
+==18401==  If you believe this happened as a result of a stack
+==18401==  overflow in your program's main thread (unlikely but
+==18401==  possible), you can try to increase the size of the
+==18401==  main thread stack using the --main-stacksize= flag.
+==18401==  The main thread stack size used in this run was 8388608.
+==18401== 
+==18401== HEAP SUMMARY:
+==18401==     in use at exit: 2,416 bytes in 46 blocks
+==18401==   total heap usage: 88 allocs, 42 frees, 80,016 bytes allocated
+==18401== 
+==18401== LEAK SUMMARY:
+==18401==    definitely lost: 0 bytes in 0 blocks
+==18401==    indirectly lost: 0 bytes in 0 blocks
+==18401==      possibly lost: 0 bytes in 0 blocks
+==18401==    still reachable: 2,416 bytes in 46 blocks
+==18401==         suppressed: 0 bytes in 0 blocks
+==18401== Reachable blocks (those to which a pointer was found) are not shown.
+==18401== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==18401== 
+==18401== For counts of detected and suppressed errors, rerun with: -v
+==18401== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         BSTMap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘BSTMap’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   BSTMap
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==18424== Memcheck, a memory error detector
+==18424== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18424== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==18424== Command: ./test.6
+==18424== Parent PID: 18423
+==18424== 
+==18424== Invalid read of size 4
+==18424==    at 0x10A6A4: Tester::Tester(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.6)
+==18424==    by 0x1097C7: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.6)
+==18424==  Address 0x20 is not stack'd, malloc'd or (recently) free'd
+==18424== 
+==18424== 
+==18424== Process terminating with default action of signal 11 (SIGSEGV)
+==18424==  Access not within mapped region at address 0x20
+==18424==    at 0x10A6A4: Tester::Tester(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.6)
+==18424==    by 0x1097C7: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.6)
+==18424==  If you believe this happened as a result of a stack
+==18424==  overflow in your program's main thread (unlikely but
+==18424==  possible), you can try to increase the size of the
+==18424==  main thread stack using the --main-stacksize= flag.
+==18424==  The main thread stack size used in this run was 8388608.
+==18424== 
+==18424== HEAP SUMMARY:
+==18424==     in use at exit: 2,616 bytes in 46 blocks
+==18424==   total heap usage: 108 allocs, 62 frees, 80,616 bytes allocated
+==18424== 
+==18424== LEAK SUMMARY:
+==18424==    definitely lost: 0 bytes in 0 blocks
+==18424==    indirectly lost: 0 bytes in 0 blocks
+==18424==      possibly lost: 0 bytes in 0 blocks
+==18424==    still reachable: 2,616 bytes in 46 blocks
+==18424==         suppressed: 0 bytes in 0 blocks
+==18424== Reachable blocks (those to which a pointer was found) are not shown.
+==18424== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==18424== 
+==18424== For counts of detected and suppressed errors, rerun with: -v
+==18424== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         BSTMap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘BSTMap’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   BSTMap
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==18443== Memcheck, a memory error detector
+==18443== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18443== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==18443== Command: ./test.7
+==18443== Parent PID: 18442
+==18443== 
+==18443== Invalid read of size 4
+==18443==    at 0x1096AE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.7)
+==18443==  Address 0x28 is not stack'd, malloc'd or (recently) free'd
+==18443== 
+==18443== 
+==18443== Process terminating with default action of signal 11 (SIGSEGV)
+==18443==  Access not within mapped region at address 0x28
+==18443==    at 0x1096AE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.7)
+==18443==  If you believe this happened as a result of a stack
+==18443==  overflow in your program's main thread (unlikely but
+==18443==  possible), you can try to increase the size of the
+==18443==  main thread stack using the --main-stacksize= flag.
+==18443==  The main thread stack size used in this run was 8388608.
+==18443== 
+==18443== HEAP SUMMARY:
+==18443==     in use at exit: 1,616 bytes in 26 blocks
+==18443==   total heap usage: 28 allocs, 2 frees, 78,416 bytes allocated
+==18443== 
+==18443== LEAK SUMMARY:
+==18443==    definitely lost: 0 bytes in 0 blocks
+==18443==    indirectly lost: 0 bytes in 0 blocks
+==18443==      possibly lost: 0 bytes in 0 blocks
+==18443==    still reachable: 1,616 bytes in 26 blocks
+==18443==         suppressed: 0 bytes in 0 blocks
+==18443== Reachable blocks (those to which a pointer was found) are not shown.
+==18443== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==18443== 
+==18443== For counts of detected and suppressed errors, rerun with: -v
+==18443== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         BSTMap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘BSTMap’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   BSTMap
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==18464== Memcheck, a memory error detector
+==18464== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18464== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==18464== Command: ./test.8
+==18464== Parent PID: 18463
+==18464== 
+==18464== Invalid read of size 8
+==18464==    at 0x4F63187: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==18464==    by 0x109747: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.8)
+==18464==  Address 0x28 is not stack'd, malloc'd or (recently) free'd
+==18464== 
+==18464== 
+==18464== Process terminating with default action of signal 11 (SIGSEGV)
+==18464==  Access not within mapped region at address 0x28
+==18464==    at 0x4F63187: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==18464==    by 0x109747: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.8)
+==18464==  If you believe this happened as a result of a stack
+==18464==  overflow in your program's main thread (unlikely but
+==18464==  possible), you can try to increase the size of the
+==18464==  main thread stack using the --main-stacksize= flag.
+==18464==  The main thread stack size used in this run was 8388608.
+==18464== 
+==18464== HEAP SUMMARY:
+==18464==     in use at exit: 2,616 bytes in 46 blocks
+==18464==   total heap usage: 88 allocs, 42 frees, 80,216 bytes allocated
+==18464== 
+==18464== LEAK SUMMARY:
+==18464==    definitely lost: 0 bytes in 0 blocks
+==18464==    indirectly lost: 0 bytes in 0 blocks
+==18464==      possibly lost: 0 bytes in 0 blocks
+==18464==    still reachable: 2,616 bytes in 46 blocks
+==18464==         suppressed: 0 bytes in 0 blocks
+==18464== Reachable blocks (those to which a pointer was found) are not shown.
+==18464== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==18464== 
+==18464== For counts of detected and suppressed errors, rerun with: -v
+==18464== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         BSTMap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘BSTMap’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   BSTMap
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind reported errors
+Valgrind reported errors (test failed).
+==18477== Memcheck, a memory error detector
+==18477== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18477== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==18477== Command: ./test.9
+==18477== Parent PID: 18476
+==18477== 
+==18477== Invalid read of size 4
+==18477==    at 0x10A684: Tester::Tester(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.9)
+==18477==    by 0x109759: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.9)
+==18477==  Address 0x28 is not stack'd, malloc'd or (recently) free'd
+==18477== 
+==18477== 
+==18477== Process terminating with default action of signal 11 (SIGSEGV)
+==18477==  Access not within mapped region at address 0x28
+==18477==    at 0x10A684: Tester::Tester(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.9)
+==18477==    by 0x109759: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.kyvKAd/test.9)
+==18477==  If you believe this happened as a result of a stack
+==18477==  overflow in your program's main thread (unlikely but
+==18477==  possible), you can try to increase the size of the
+==18477==  main thread stack using the --main-stacksize= flag.
+==18477==  The main thread stack size used in this run was 8388608.
+==18477== 
+==18477== HEAP SUMMARY:
+==18477==     in use at exit: 2,816 bytes in 46 blocks
+==18477==   total heap usage: 108 allocs, 62 frees, 80,816 bytes allocated
+==18477== 
+==18477== LEAK SUMMARY:
+==18477==    definitely lost: 0 bytes in 0 blocks
+==18477==    indirectly lost: 0 bytes in 0 blocks
+==18477==      possibly lost: 0 bytes in 0 blocks
+==18477==    still reachable: 2,816 bytes in 46 blocks
+==18477==         suppressed: 0 bytes in 0 blocks
+==18477== Reachable blocks (those to which a pointer was found) are not shown.
+==18477== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==18477== 
+==18477== For counts of detected and suppressed errors, rerun with: -v
+==18477== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
