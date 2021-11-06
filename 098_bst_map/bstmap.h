@@ -6,7 +6,7 @@
 #include "map.h"
 
 template<typename K, typename V>
-class BSTMap : public Map<K,V> {
+class BstMap : public Map<K,V> {
   public:
     class Node {
       public:
@@ -19,13 +19,13 @@ class BSTMap : public Map<K,V> {
     Node * root;
 
 public:
-  BSTMap () : root(NULL) {}
+  BstMap () : root(NULL) {}
   
-  BSTMap (const BSTMap & rhs) : root(NULL) {
+  BstMap (const BstMap & rhs) : root(NULL) {
     copy (rhs.root); 
   }
 
-  BSTMap & operator=(const BSTMap & rhs) {
+  BstMap & operator=(const BstMap & rhs) {
     if (this != &rhs) {
       destroy(root);
       root = NULL;
@@ -46,7 +46,7 @@ public:
     }
   }
 
-  virtual ~BSTMap<K,V>() {
+  virtual ~BstMap<K,V>() {
     destroy (root);
     root = NULL;
   }

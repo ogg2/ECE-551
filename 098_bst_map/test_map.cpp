@@ -6,7 +6,7 @@
 #include <string>
 
 int main (void) {
-  BSTMap<int, std::string> map;
+  BstMap<int, std::string> map;
 
   assert (map.root == NULL);
   map.add (5, "five");
@@ -53,7 +53,7 @@ int main (void) {
   assert (map.root->left->key == 2);
 
 
-  BSTMap<int, std::string> map2 (map);
+  BstMap<int, std::string> map2 (map);
   assert (map2.root->key == 5);
   assert (map2.root->left->key == 2);
   assert (map2.root->right->key == 9);
