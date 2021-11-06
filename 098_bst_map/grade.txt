@@ -1,19 +1,19 @@
-Grading at 11/06/2021:00:12:49.548443
-For commit ID b23804066e3125cd70bdf7ff209b0f43152ae6e2
-Grading at Fri Nov  5 20:12:48 EDT 2021
+Grading at 11/06/2021:02:20:23.825394
+For commit ID e2eb078ec8836c74b3266979d2745c2d85e60722
+Grading at Fri Nov  5 22:20:22 EDT 2021
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+bstmap.h:96:12: error: ‘cout’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
-bstmap.h:58:12: note: suggested alternative: ‘copy’
+bstmap.h:96:12: note: suggested alternative: ‘copy’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
             copy
-bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+bstmap.h:96:55: error: ‘endl’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
                                                        ^~~~
 89-tester.cpp: At global scope:
@@ -63,14 +63,14 @@ testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+bstmap.h:96:12: error: ‘cout’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
-bstmap.h:58:12: note: suggested alternative: ‘copy’
+bstmap.h:96:12: note: suggested alternative: ‘copy’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
             copy
-bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+bstmap.h:96:55: error: ‘endl’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
                                                        ^~~~
 89-tester.cpp: At global scope:
@@ -120,14 +120,14 @@ testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+bstmap.h:96:12: error: ‘cout’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
-bstmap.h:58:12: note: suggested alternative: ‘copy’
+bstmap.h:96:12: note: suggested alternative: ‘copy’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
             copy
-bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+bstmap.h:96:55: error: ‘endl’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
                                                        ^~~~
 89-tester.cpp: At global scope:
@@ -177,14 +177,14 @@ testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+bstmap.h:96:12: error: ‘cout’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
-bstmap.h:58:12: note: suggested alternative: ‘copy’
+bstmap.h:96:12: note: suggested alternative: ‘copy’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
             copy
-bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+bstmap.h:96:55: error: ‘endl’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
                                                        ^~~~
 89-tester.cpp: At global scope:
@@ -234,14 +234,14 @@ testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+bstmap.h:96:12: error: ‘cout’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
-bstmap.h:58:12: note: suggested alternative: ‘copy’
+bstmap.h:96:12: note: suggested alternative: ‘copy’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
             copy
-bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+bstmap.h:96:55: error: ‘endl’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
                                                        ^~~~
 89-tester.cpp: At global scope:
@@ -291,14 +291,14 @@ testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+bstmap.h:96:12: error: ‘cout’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
-bstmap.h:58:12: note: suggested alternative: ‘copy’
+bstmap.h:96:12: note: suggested alternative: ‘copy’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
             copy
-bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+bstmap.h:96:55: error: ‘endl’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
                                                        ^~~~
 89-tester.cpp: At global scope:
@@ -348,14 +348,14 @@ testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+bstmap.h:96:12: error: ‘cout’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
-bstmap.h:58:12: note: suggested alternative: ‘copy’
+bstmap.h:96:12: note: suggested alternative: ‘copy’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
             copy
-bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+bstmap.h:96:55: error: ‘endl’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
                                                        ^~~~
 89-tester.cpp: At global scope:
@@ -405,14 +405,14 @@ testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+bstmap.h:96:12: error: ‘cout’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
-bstmap.h:58:12: note: suggested alternative: ‘copy’
+bstmap.h:96:12: note: suggested alternative: ‘copy’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
             copy
-bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+bstmap.h:96:55: error: ‘endl’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
                                                        ^~~~
 89-tester.cpp: At global scope:
@@ -462,14 +462,14 @@ testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wr
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+bstmap.h:96:12: error: ‘cout’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
-bstmap.h:58:12: note: suggested alternative: ‘copy’
+bstmap.h:96:12: note: suggested alternative: ‘copy’
        std::cout << "Error: invalid argument." << std::endl;
             ^~~~
             copy
-bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+bstmap.h:96:55: error: ‘endl’ is not a member of ‘std’
        std::cout << "Error: invalid argument." << std::endl;
                                                        ^~~~
 89-tester.cpp: At global scope:
