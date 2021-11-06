@@ -2,6 +2,7 @@
 #define __BSTMAP_H__
 #include <stdexcept>
 #include <cstdlib>
+#include <iostream>
 #include "map.h"
 
 template<typename K, typename V>
