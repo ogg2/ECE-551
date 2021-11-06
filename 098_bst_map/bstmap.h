@@ -55,7 +55,7 @@ public:
     try {
       return curr->value;
     } catch (std::invalid_argument & e) {
-      std::cerr << e.what();
+      std::cout << "Error: invalid argument." << std::endl;
     }
   }
 /*  virtual Node * remove (Node * curr, const K& key) {
