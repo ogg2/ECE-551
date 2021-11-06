@@ -1,6 +1,7 @@
 #ifndef __BSTMAP_H__
 #define __BSTMAP_H__
 #include <stdexcept>
+#include <cstdlib>
 #include "map.h"
 
 template<typename K, typename V>
