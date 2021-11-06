@@ -18,6 +18,44 @@ class BSTMap : public Map<K,V> {
 
 public:
   BSTMap () : root(NULL) {}
+  
+  BSTMap (const BSTMap & rhs) : root(NULL) {
+    copy (rhs.root); 
+  }
+
+  BSTMap & operator=(const BSTMap & rhs) {
+    if (this != &rhs) {
+      destroy(root);
+      root = NULL;
+      copy (rhs.root);
+    }
+    return *this;
+  }
+
+  void copy (Node * curr) {
+    if (curr != NULL) {
+      //add (curr->key, curr->value);
+      //root->left = copy (curr->left);
+      //root->right = copy (curr->right);
+      add (curr->key, curr->value);
+      copy (curr->left);
+      copy (curr->right);
+
+    }
+  }
+
+  virtual ~BSTMap<K,V>() {
+    destroy (root);
+    root = NULL;
+  }
+
+  void destroy (Node * curr) {
+    if (curr != NULL) {
+      destroy (curr->left);
+      destroy (curr->right);
+      delete curr;
+    }
+  }
 
   virtual void add(const K & key, const V & value) {
     root = add (root, key, value);
@@ -144,17 +182,6 @@ public:
       } else {
         curr = &(*curr)->right;
       }
-    }
-  }
-  virtual ~BSTMap<K,V>() {
-    destroy (root);
-  }
-
-  void destroy (Node * curr) {
-    if (curr != NULL) {
-      destroy (curr->left);
-      destroy (curr->right);
-      delete curr;
     }
   }
 };

@@ -52,5 +52,20 @@ int main (void) {
   map.remove (3);
   assert (map.root->left->key == 2);
 
+
+  BSTMap<int, std::string> map2 (map);
+  assert (map2.root->key == 5);
+  assert (map2.root->left->key == 2);
+  assert (map2.root->right->key == 9);
+
+  map2.remove (5);
+  assert (map2.root->key == 4);
+  map2.remove (2);
+  assert (map2.root->left->key == 0);
+  map2 = map;
+
+  assert (map2.root->key == 5);
+  assert (map.root->left->key == 2);
+
   return EXIT_SUCCESS;
 }
