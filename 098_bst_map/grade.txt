@@ -1,14 +1,21 @@
-Grading at 11/06/2021:00:10:08.015345
-For commit ID 60c0bb5a76ff3e764c87fff99e3e6971a9f0770f
-Grading at Fri Nov  5 20:10:06 EDT 2021
+Grading at 11/06/2021:00:12:49.548443
+For commit ID b23804066e3125cd70bdf7ff209b0f43152ae6e2
+Grading at Fri Nov  5 20:12:48 EDT 2021
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cerr’ is not a member of ‘std’
-       std::cerr << e.what();
+bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
             ^~~~
+bstmap.h:58:12: note: suggested alternative: ‘copy’
+       std::cout << "Error: invalid argument." << std::endl;
+            ^~~~
+            copy
+bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
+                                                       ^~~~
 89-tester.cpp: At global scope:
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
@@ -56,9 +63,16 @@ testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cerr’ is not a member of ‘std’
-       std::cerr << e.what();
+bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
             ^~~~
+bstmap.h:58:12: note: suggested alternative: ‘copy’
+       std::cout << "Error: invalid argument." << std::endl;
+            ^~~~
+            copy
+bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
+                                                       ^~~~
 89-tester.cpp: At global scope:
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
@@ -106,9 +120,16 @@ testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cerr’ is not a member of ‘std’
-       std::cerr << e.what();
+bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
             ^~~~
+bstmap.h:58:12: note: suggested alternative: ‘copy’
+       std::cout << "Error: invalid argument." << std::endl;
+            ^~~~
+            copy
+bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
+                                                       ^~~~
 89-tester.cpp: At global scope:
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
@@ -156,9 +177,16 @@ testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cerr’ is not a member of ‘std’
-       std::cerr << e.what();
+bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
             ^~~~
+bstmap.h:58:12: note: suggested alternative: ‘copy’
+       std::cout << "Error: invalid argument." << std::endl;
+            ^~~~
+            copy
+bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
+                                                       ^~~~
 89-tester.cpp: At global scope:
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
@@ -206,9 +234,16 @@ testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cerr’ is not a member of ‘std’
-       std::cerr << e.what();
+bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
             ^~~~
+bstmap.h:58:12: note: suggested alternative: ‘copy’
+       std::cout << "Error: invalid argument." << std::endl;
+            ^~~~
+            copy
+bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
+                                                       ^~~~
 89-tester.cpp: At global scope:
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
@@ -256,9 +291,16 @@ testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cerr’ is not a member of ‘std’
-       std::cerr << e.what();
+bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
             ^~~~
+bstmap.h:58:12: note: suggested alternative: ‘copy’
+       std::cout << "Error: invalid argument." << std::endl;
+            ^~~~
+            copy
+bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
+                                                       ^~~~
 89-tester.cpp: At global scope:
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
@@ -306,9 +348,16 @@ testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cerr’ is not a member of ‘std’
-       std::cerr << e.what();
+bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
             ^~~~
+bstmap.h:58:12: note: suggested alternative: ‘copy’
+       std::cout << "Error: invalid argument." << std::endl;
+            ^~~~
+            copy
+bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
+                                                       ^~~~
 89-tester.cpp: At global scope:
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
@@ -356,9 +405,16 @@ testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cerr’ is not a member of ‘std’
-       std::cerr << e.what();
+bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
             ^~~~
+bstmap.h:58:12: note: suggested alternative: ‘copy’
+       std::cout << "Error: invalid argument." << std::endl;
+            ^~~~
+            copy
+bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
+                                                       ^~~~
 89-tester.cpp: At global scope:
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
@@ -406,9 +462,16 @@ testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wr
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In member function ‘virtual const V& BSTMap<K, V>::lookup(const K&) const’:
-bstmap.h:58:12: error: ‘cerr’ is not a member of ‘std’
-       std::cerr << e.what();
+bstmap.h:58:12: error: ‘cout’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
             ^~~~
+bstmap.h:58:12: note: suggested alternative: ‘copy’
+       std::cout << "Error: invalid argument." << std::endl;
+            ^~~~
+            copy
+bstmap.h:58:55: error: ‘endl’ is not a member of ‘std’
+       std::cout << "Error: invalid argument." << std::endl;
+                                                       ^~~~
 89-tester.cpp: At global scope:
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘BSTMap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
