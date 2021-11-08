@@ -42,7 +42,6 @@ public:
       add (curr->key, curr->value);
       copy (curr->left);
       copy (curr->right);
-
     }
   }
 
@@ -92,11 +91,12 @@ public:
         curr = curr->right;
       }
     }
-    try {
+    /*try {
       return curr->value;
     } catch (std::invalid_argument & e) {
       std::cout << "Error: invalid argument." << std::endl;
-    }
+    }*/
+    throw std::invalid_argument ("Key does not exist.");
   }
 /*  virtual Node * remove (Node * curr, const K& key) {
     if (curr == NULL) {
