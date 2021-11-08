@@ -172,18 +172,12 @@ public:
           while ((*toReplace)->right != NULL) {
             toReplace = &(*toReplace)->right;
           }
-          (*toReplace)->key = (*curr)->key;
-          const V value = (*curr)->value;
-          Node * temp = (*curr)->left;
-          delete *curr;
-          *curr = temp;
-          add((*toReplace)->key, value);
-          /*(*toReplace)->left = (*curr)->left;
+          (*toReplace)->left = (*curr)->left;
           (*toReplace)->right = (*curr)->right;
           delete *curr;
           *curr = *toReplace;
           add ((*toReplace)->key, value);
-          *toReplace = NULL;*/
+          *toReplace = NULL;
         }
 
       } else if (key < (*curr)->key) {
