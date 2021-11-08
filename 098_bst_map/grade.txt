@@ -1,386 +1,491 @@
-Grading at 11/08/2021:00:24:41.554349
-For commit ID f30c22efe145d0613410e4f26a42a6ec29a66d96
-Grading at Sun Nov  7 19:24:31 EST 2021
+Grading at 11/08/2021:00:42:40.649852
+For commit ID 18f6bed063da9c0e7b42569cbc8edd7cbb5a6756
+Grading at Sun Nov  7 19:41:53 EST 2021
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==46462== Memcheck, a memory error detector
-==46462== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==46462== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==46462== Command: ./test.1
-==46462== Parent PID: 46461
-==46462== 
-==46462== Invalid read of size 4
-==46462==    at 0x10950A: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.1)
-==46462==  Address 0x4 is not stack'd, malloc'd or (recently) free'd
-==46462== 
-==46462== 
-==46462== Process terminating with default action of signal 11 (SIGSEGV)
-==46462==  Access not within mapped region at address 0x4
-==46462==    at 0x10950A: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.1)
-==46462==  If you believe this happened as a result of a stack
-==46462==  overflow in your program's main thread (unlikely but
-==46462==  possible), you can try to increase the size of the
-==46462==  main thread stack using the --main-stacksize= flag.
-==46462==  The main thread stack size used in this run was 8388608.
-==46462== 
-==46462== HEAP SUMMARY:
-==46462==     in use at exit: 616 bytes in 26 blocks
-==46462==   total heap usage: 28 allocs, 2 frees, 77,416 bytes allocated
-==46462== 
-==46462== LEAK SUMMARY:
-==46462==    definitely lost: 0 bytes in 0 blocks
-==46462==    indirectly lost: 0 bytes in 0 blocks
-==46462==      possibly lost: 0 bytes in 0 blocks
-==46462==    still reachable: 616 bytes in 26 blocks
-==46462==         suppressed: 0 bytes in 0 blocks
-==46462== Reachable blocks (those to which a pointer was found) are not shown.
-==46462== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==46462== 
-==46462== For counts of detected and suppressed errors, rerun with: -v
-==46462== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==50899== Memcheck, a memory error detector
+==50899== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==50899== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==50899== Command: ./test.1
+==50899== Parent PID: 50898
+==50899== 
+==50899== Invalid read of size 8
+==50899==    at 0x10AC0B: BstMap<int, int>::remove(int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x109912: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==  Address 0x5b82248 is 8 bytes inside a block of size 24 free'd
+==50899==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50899==    by 0x10AC06: BstMap<int, int>::remove(int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x109912: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==  Block was alloc'd at
+==50899==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50899==    by 0x10A9D9: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899== 
+==50899== Invalid write of size 8
+==50899==    at 0x10AC19: BstMap<int, int>::remove(int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x109912: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==  Address 0x5b82248 is 8 bytes inside a block of size 24 free'd
+==50899==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50899==    by 0x10AC06: BstMap<int, int>::remove(int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x109912: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==  Block was alloc'd at
+==50899==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50899==    by 0x10A9D9: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899==    by 0x10AA52: BstMap<int, int>::add(BstMap<int, int>::Node*, int const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.1)
+==50899== 
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==46473== Memcheck, a memory error detector
-==46473== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==46473== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==46473== Command: ./test.2
-==46473== Parent PID: 46472
-==46473== 
-==46473== Invalid read of size 8
-==46473==    at 0x4F63187: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
-==46473==    by 0x1095A3: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.2)
-==46473==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
-==46473== 
-==46473== 
-==46473== Process terminating with default action of signal 11 (SIGSEGV)
-==46473==  Access not within mapped region at address 0x8
-==46473==    at 0x4F63187: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
-==46473==    by 0x1095A3: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.2)
-==46473==  If you believe this happened as a result of a stack
-==46473==  overflow in your program's main thread (unlikely but
-==46473==  possible), you can try to increase the size of the
-==46473==  main thread stack using the --main-stacksize= flag.
-==46473==  The main thread stack size used in this run was 8388608.
-==46473== 
-==46473== HEAP SUMMARY:
-==46473==     in use at exit: 1,816 bytes in 46 blocks
-==46473==   total heap usage: 88 allocs, 42 frees, 79,416 bytes allocated
-==46473== 
-==46473== LEAK SUMMARY:
-==46473==    definitely lost: 0 bytes in 0 blocks
-==46473==    indirectly lost: 0 bytes in 0 blocks
-==46473==      possibly lost: 0 bytes in 0 blocks
-==46473==    still reachable: 1,816 bytes in 46 blocks
-==46473==         suppressed: 0 bytes in 0 blocks
-==46473== Reachable blocks (those to which a pointer was found) are not shown.
-==46473== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==46473== 
-==46473== For counts of detected and suppressed errors, rerun with: -v
-==46473== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==50971== Memcheck, a memory error detector
+==50971== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==50971== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==50971== Command: ./test.2
+==50971== Parent PID: 50970
+==50971== 
+==50971== Invalid read of size 8
+==50971==    at 0x10AF67: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x1099BE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==  Address 0x5b84b68 is 40 bytes inside a block of size 56 free'd
+==50971==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50971==    by 0x10AF62: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x1099BE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==  Block was alloc'd at
+==50971==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50971==    by 0x10ACA3: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971== 
+==50971== Invalid write of size 8
+==50971==    at 0x10AF75: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x1099BE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==  Address 0x5b84b68 is 40 bytes inside a block of size 56 free'd
+==50971==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50971==    by 0x10AF62: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x1099BE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==  Block was alloc'd at
+==50971==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50971==    by 0x10ACA3: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971==    by 0x10AD2F: BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, int const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.2)
+==50971== 
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==46482== Memcheck, a memory error detector
-==46482== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==46482== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==46482== Command: ./test.3
-==46482== Parent PID: 46481
-==46482== 
-==46482== Invalid read of size 4
-==46482==    at 0x10A3DC: Tester::Tester(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.3)
-==46482==    by 0x1095A3: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.3)
-==46482==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
-==46482== 
-==46482== 
-==46482== Process terminating with default action of signal 11 (SIGSEGV)
-==46482==  Access not within mapped region at address 0x8
-==46482==    at 0x10A3DC: Tester::Tester(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.3)
-==46482==    by 0x1095A3: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.3)
-==46482==  If you believe this happened as a result of a stack
-==46482==  overflow in your program's main thread (unlikely but
-==46482==  possible), you can try to increase the size of the
-==46482==  main thread stack using the --main-stacksize= flag.
-==46482==  The main thread stack size used in this run was 8388608.
-==46482== 
-==46482== HEAP SUMMARY:
-==46482==     in use at exit: 2,016 bytes in 46 blocks
-==46482==   total heap usage: 108 allocs, 62 frees, 80,016 bytes allocated
-==46482== 
-==46482== LEAK SUMMARY:
-==46482==    definitely lost: 0 bytes in 0 blocks
-==46482==    indirectly lost: 0 bytes in 0 blocks
-==46482==      possibly lost: 0 bytes in 0 blocks
-==46482==    still reachable: 2,016 bytes in 46 blocks
-==46482==         suppressed: 0 bytes in 0 blocks
-==46482== Reachable blocks (those to which a pointer was found) are not shown.
-==46482== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==46482== 
-==46482== For counts of detected and suppressed errors, rerun with: -v
-==46482== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==50994== Memcheck, a memory error detector
+==50994== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==50994== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==50994== Command: ./test.3
+==50994== Parent PID: 50993
+==50994== 
+==50994== Invalid read of size 8
+==50994==    at 0x10AFFF: BstMap<int, Tester>::remove(int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x1099BE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==  Address 0x5b852f0 is 48 bytes inside a block of size 64 free'd
+==50994==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50994==    by 0x10AFFA: BstMap<int, Tester>::remove(int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x1099BE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==  Block was alloc'd at
+==50994==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50994==    by 0x10AD3B: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994== 
+==50994== Invalid write of size 8
+==50994==    at 0x10B00D: BstMap<int, Tester>::remove(int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x1099BE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==  Address 0x5b852f0 is 48 bytes inside a block of size 64 free'd
+==50994==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50994==    by 0x10AFFA: BstMap<int, Tester>::remove(int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x1099BE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==  Block was alloc'd at
+==50994==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50994==    by 0x10AD3B: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994==    by 0x10ADC7: BstMap<int, Tester>::add(BstMap<int, Tester>::Node*, int const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.3)
+==50994== 
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==46491== Memcheck, a memory error detector
-==46491== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==46491== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==46491== Command: ./test.4
-==46491== Parent PID: 46490
-==46491== 
-==46491== Invalid read of size 4
-==46491==    at 0x10972E: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.4)
-==46491==  Address 0x20 is not stack'd, malloc'd or (recently) free'd
-==46491== 
-==46491== 
-==46491== Process terminating with default action of signal 11 (SIGSEGV)
-==46491==  Access not within mapped region at address 0x20
-==46491==    at 0x10972E: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.4)
-==46491==  If you believe this happened as a result of a stack
-==46491==  overflow in your program's main thread (unlikely but
-==46491==  possible), you can try to increase the size of the
-==46491==  main thread stack using the --main-stacksize= flag.
-==46491==  The main thread stack size used in this run was 8388608.
-==46491== 
-==46491== HEAP SUMMARY:
-==46491==     in use at exit: 1,416 bytes in 26 blocks
-==46491==   total heap usage: 28 allocs, 2 frees, 78,216 bytes allocated
-==46491== 
-==46491== LEAK SUMMARY:
-==46491==    definitely lost: 0 bytes in 0 blocks
-==46491==    indirectly lost: 0 bytes in 0 blocks
-==46491==      possibly lost: 0 bytes in 0 blocks
-==46491==    still reachable: 1,416 bytes in 26 blocks
-==46491==         suppressed: 0 bytes in 0 blocks
-==46491== Reachable blocks (those to which a pointer was found) are not shown.
-==46491== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==46491== 
-==46491== For counts of detected and suppressed errors, rerun with: -v
-==46491== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==51036== Memcheck, a memory error detector
+==51036== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==51036== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==51036== Command: ./test.4
+==51036== Parent PID: 51035
+==51036== 
+==51036== Invalid read of size 8
+==51036==    at 0x10B093: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x109B00: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==  Address 0x5b82288 is 40 bytes inside a block of size 56 free'd
+==51036==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51036==    by 0x10B08E: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x109B00: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==  Block was alloc'd at
+==51036==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51036==    by 0x10ADC1: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AE54: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AE54: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AE54: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AD61: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10ABFF: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AC16: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AC16: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AC16: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10A891: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int> const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x109A61: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036== 
+==51036== Invalid write of size 8
+==51036==    at 0x10B0A1: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x109B00: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==  Address 0x5b82288 is 40 bytes inside a block of size 56 free'd
+==51036==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51036==    by 0x10B08E: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x109B00: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==  Block was alloc'd at
+==51036==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51036==    by 0x10ADC1: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AE54: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AE54: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AE54: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AD61: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10ABFF: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AC16: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AC16: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10AC16: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x10A891: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int> const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036==    by 0x109A61: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.4)
+==51036== 
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==46509== Memcheck, a memory error detector
-==46509== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==46509== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==46509== Command: ./test.5
-==46509== Parent PID: 46508
-==46509== 
-==46509== Invalid read of size 8
-==46509==    at 0x4F63187: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
-==46509==    by 0x1097C7: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.5)
-==46509==  Address 0x20 is not stack'd, malloc'd or (recently) free'd
-==46509== 
-==46509== 
-==46509== Process terminating with default action of signal 11 (SIGSEGV)
-==46509==  Access not within mapped region at address 0x20
-==46509==    at 0x4F63187: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
-==46509==    by 0x1097C7: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.5)
-==46509==  If you believe this happened as a result of a stack
-==46509==  overflow in your program's main thread (unlikely but
-==46509==  possible), you can try to increase the size of the
-==46509==  main thread stack using the --main-stacksize= flag.
-==46509==  The main thread stack size used in this run was 8388608.
-==46509== 
-==46509== HEAP SUMMARY:
-==46509==     in use at exit: 2,416 bytes in 46 blocks
-==46509==   total heap usage: 88 allocs, 42 frees, 80,016 bytes allocated
-==46509== 
-==46509== LEAK SUMMARY:
-==46509==    definitely lost: 0 bytes in 0 blocks
-==46509==    indirectly lost: 0 bytes in 0 blocks
-==46509==      possibly lost: 0 bytes in 0 blocks
-==46509==    still reachable: 2,416 bytes in 46 blocks
-==46509==         suppressed: 0 bytes in 0 blocks
-==46509== Reachable blocks (those to which a pointer was found) are not shown.
-==46509== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==46509== 
-==46509== For counts of detected and suppressed errors, rerun with: -v
-==46509== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==51083== Memcheck, a memory error detector
+==51083== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==51083== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==51083== Command: ./test.5
+==51083== Parent PID: 51082
+==51083== 
+==51083== Invalid read of size 8
+==51083==    at 0x10B399: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x109B9D: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==  Address 0x5b84260 is 64 bytes inside a block of size 80 free'd
+==51083==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51083==    by 0x10B394: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x109B9D: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==  Block was alloc'd at
+==51083==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51083==    by 0x10B032: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10B0F7: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10B0F7: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10B0F7: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10AFA1: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10AE0F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10AE26: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10AE26: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10AE26: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10AAA1: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x109AFE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083== 
+==51083== Invalid write of size 8
+==51083==    at 0x10B3A7: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x109B9D: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==  Address 0x5b84260 is 64 bytes inside a block of size 80 free'd
+==51083==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51083==    by 0x10B394: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x109B9D: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==  Block was alloc'd at
+==51083==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51083==    by 0x10B032: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10B0F7: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10B0F7: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10B0F7: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10AFA1: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10AE0F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10AE26: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10AE26: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10AE26: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x10AAA1: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083==    by 0x109AFE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.5)
+==51083== 
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==46518== Memcheck, a memory error detector
-==46518== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==46518== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==46518== Command: ./test.6
-==46518== Parent PID: 46517
-==46518== 
-==46518== Invalid read of size 4
-==46518==    at 0x10A6A4: Tester::Tester(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.6)
-==46518==    by 0x1097C7: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.6)
-==46518==  Address 0x20 is not stack'd, malloc'd or (recently) free'd
-==46518== 
-==46518== 
-==46518== Process terminating with default action of signal 11 (SIGSEGV)
-==46518==  Access not within mapped region at address 0x20
-==46518==    at 0x10A6A4: Tester::Tester(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.6)
-==46518==    by 0x1097C7: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.6)
-==46518==  If you believe this happened as a result of a stack
-==46518==  overflow in your program's main thread (unlikely but
-==46518==  possible), you can try to increase the size of the
-==46518==  main thread stack using the --main-stacksize= flag.
-==46518==  The main thread stack size used in this run was 8388608.
-==46518== 
-==46518== HEAP SUMMARY:
-==46518==     in use at exit: 2,616 bytes in 46 blocks
-==46518==   total heap usage: 108 allocs, 62 frees, 80,616 bytes allocated
-==46518== 
-==46518== LEAK SUMMARY:
-==46518==    definitely lost: 0 bytes in 0 blocks
-==46518==    indirectly lost: 0 bytes in 0 blocks
-==46518==      possibly lost: 0 bytes in 0 blocks
-==46518==    still reachable: 2,616 bytes in 46 blocks
-==46518==         suppressed: 0 bytes in 0 blocks
-==46518== Reachable blocks (those to which a pointer was found) are not shown.
-==46518== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==46518== 
-==46518== For counts of detected and suppressed errors, rerun with: -v
-==46518== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==51120== Memcheck, a memory error detector
+==51120== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==51120== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==51120== Command: ./test.6
+==51120== Parent PID: 51119
+==51120== 
+==51120== Invalid read of size 8
+==51120==    at 0x10B431: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x109B9D: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==  Address 0x5b84ba8 is 72 bytes inside a block of size 88 free'd
+==51120==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51120==    by 0x10B42C: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x109B9D: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==  Block was alloc'd at
+==51120==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51120==    by 0x10B0CA: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10B18F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10B18F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10B18F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10AFFB: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10AE69: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10AE80: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10AE80: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10AE80: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10AAFB: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester> const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x109AFE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120== 
+==51120== Invalid write of size 8
+==51120==    at 0x10B43F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x109B9D: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==  Address 0x5b84ba8 is 72 bytes inside a block of size 88 free'd
+==51120==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51120==    by 0x10B42C: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x109B9D: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==  Block was alloc'd at
+==51120==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51120==    by 0x10B0CA: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10B18F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10B18F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10B18F: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::add(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10AFFB: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10AE69: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10AE80: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10AE80: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10AE80: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::copy(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::Node*) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x10AAFB: BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester>::BstMap(BstMap<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Tester> const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120==    by 0x109AFE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.6)
+==51120== 
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==46527== Memcheck, a memory error detector
-==46527== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==46527== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==46527== Command: ./test.7
-==46527== Parent PID: 46526
-==46527== 
-==46527== Invalid read of size 4
-==46527==    at 0x1096AE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.7)
-==46527==  Address 0x28 is not stack'd, malloc'd or (recently) free'd
-==46527== 
-==46527== 
-==46527== Process terminating with default action of signal 11 (SIGSEGV)
-==46527==  Access not within mapped region at address 0x28
-==46527==    at 0x1096AE: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.7)
-==46527==  If you believe this happened as a result of a stack
-==46527==  overflow in your program's main thread (unlikely but
-==46527==  possible), you can try to increase the size of the
-==46527==  main thread stack using the --main-stacksize= flag.
-==46527==  The main thread stack size used in this run was 8388608.
-==46527== 
-==46527== HEAP SUMMARY:
-==46527==     in use at exit: 1,616 bytes in 26 blocks
-==46527==   total heap usage: 28 allocs, 2 frees, 78,416 bytes allocated
-==46527== 
-==46527== LEAK SUMMARY:
-==46527==    definitely lost: 0 bytes in 0 blocks
-==46527==    indirectly lost: 0 bytes in 0 blocks
-==46527==      possibly lost: 0 bytes in 0 blocks
-==46527==    still reachable: 1,616 bytes in 26 blocks
-==46527==         suppressed: 0 bytes in 0 blocks
-==46527== Reachable blocks (those to which a pointer was found) are not shown.
-==46527== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==46527== 
-==46527== For counts of detected and suppressed errors, rerun with: -v
-==46527== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==51177== Memcheck, a memory error detector
+==51177== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==51177== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==51177== Command: ./test.7
+==51177== Parent PID: 51176
+==51177== 
+==51177== Invalid read of size 8
+==51177==    at 0x10B0B3: BstMap<Tester, int>::remove(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x109A80: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==  Address 0x5b82710 is 48 bytes inside a block of size 64 free'd
+==51177==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51177==    by 0x10B0AE: BstMap<Tester, int>::remove(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x109A80: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==  Block was alloc'd at
+==51177==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51177==    by 0x10ADE1: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177== 
+==51177== Invalid write of size 8
+==51177==    at 0x10B0C1: BstMap<Tester, int>::remove(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x109A80: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==  Address 0x5b82710 is 48 bytes inside a block of size 64 free'd
+==51177==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51177==    by 0x10B0AE: BstMap<Tester, int>::remove(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x109A80: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==  Block was alloc'd at
+==51177==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51177==    by 0x10ADE1: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177==    by 0x10AE74: BstMap<Tester, int>::add(BstMap<Tester, int>::Node*, Tester const&, int const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.7)
+==51177== 
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==46536== Memcheck, a memory error detector
-==46536== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==46536== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==46536== Command: ./test.8
-==46536== Parent PID: 46535
-==46536== 
-==46536== Invalid read of size 8
-==46536==    at 0x4F63187: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
-==46536==    by 0x109747: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.8)
-==46536==  Address 0x28 is not stack'd, malloc'd or (recently) free'd
-==46536== 
-==46536== 
-==46536== Process terminating with default action of signal 11 (SIGSEGV)
-==46536==  Access not within mapped region at address 0x28
-==46536==    at 0x4F63187: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
-==46536==    by 0x109747: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.8)
-==46536==  If you believe this happened as a result of a stack
-==46536==  overflow in your program's main thread (unlikely but
-==46536==  possible), you can try to increase the size of the
-==46536==  main thread stack using the --main-stacksize= flag.
-==46536==  The main thread stack size used in this run was 8388608.
-==46536== 
-==46536== HEAP SUMMARY:
-==46536==     in use at exit: 2,616 bytes in 46 blocks
-==46536==   total heap usage: 88 allocs, 42 frees, 80,216 bytes allocated
-==46536== 
-==46536== LEAK SUMMARY:
-==46536==    definitely lost: 0 bytes in 0 blocks
-==46536==    indirectly lost: 0 bytes in 0 blocks
-==46536==      possibly lost: 0 bytes in 0 blocks
-==46536==    still reachable: 2,616 bytes in 46 blocks
-==46536==         suppressed: 0 bytes in 0 blocks
-==46536== Reachable blocks (those to which a pointer was found) are not shown.
-==46536== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==46536== 
-==46536== For counts of detected and suppressed errors, rerun with: -v
-==46536== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==51200== Memcheck, a memory error detector
+==51200== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==51200== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==51200== Command: ./test.8
+==51200== Parent PID: 51199
+==51200== 
+==51200== Invalid read of size 8
+==51200==    at 0x10B3B9: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x109B1D: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==  Address 0x5b85028 is 72 bytes inside a block of size 88 free'd
+==51200==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51200==    by 0x10B3B4: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x109B1D: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==  Block was alloc'd at
+==51200==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51200==    by 0x10B052: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200== 
+==51200== Invalid write of size 8
+==51200==    at 0x10B3C7: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x109B1D: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==  Address 0x5b85028 is 72 bytes inside a block of size 88 free'd
+==51200==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51200==    by 0x10B3B4: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x109B1D: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==  Block was alloc'd at
+==51200==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51200==    by 0x10B052: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200==    by 0x10B117: BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::add(BstMap<Tester, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::Node*, Tester const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.8)
+==51200== 
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
 The code compiled.
   - Valgrind reported errors
 Valgrind reported errors (test failed).
-==46545== Memcheck, a memory error detector
-==46545== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==46545== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==46545== Command: ./test.9
-==46545== Parent PID: 46544
-==46545== 
-==46545== Invalid read of size 4
-==46545==    at 0x10A684: Tester::Tester(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.9)
-==46545==    by 0x109759: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.9)
-==46545==  Address 0x28 is not stack'd, malloc'd or (recently) free'd
-==46545== 
-==46545== 
-==46545== Process terminating with default action of signal 11 (SIGSEGV)
-==46545==  Access not within mapped region at address 0x28
-==46545==    at 0x10A684: Tester::Tester(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.9)
-==46545==    by 0x109759: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.gaZoAz/test.9)
-==46545==  If you believe this happened as a result of a stack
-==46545==  overflow in your program's main thread (unlikely but
-==46545==  possible), you can try to increase the size of the
-==46545==  main thread stack using the --main-stacksize= flag.
-==46545==  The main thread stack size used in this run was 8388608.
-==46545== 
-==46545== HEAP SUMMARY:
-==46545==     in use at exit: 2,816 bytes in 46 blocks
-==46545==   total heap usage: 108 allocs, 62 frees, 80,816 bytes allocated
-==46545== 
-==46545== LEAK SUMMARY:
-==46545==    definitely lost: 0 bytes in 0 blocks
-==46545==    indirectly lost: 0 bytes in 0 blocks
-==46545==      possibly lost: 0 bytes in 0 blocks
-==46545==    still reachable: 2,816 bytes in 46 blocks
-==46545==         suppressed: 0 bytes in 0 blocks
-==46545== Reachable blocks (those to which a pointer was found) are not shown.
-==46545== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==46545== 
-==46545== For counts of detected and suppressed errors, rerun with: -v
-==46545== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==51232== Memcheck, a memory error detector
+==51232== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==51232== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==51232== Command: ./test.9
+==51232== Parent PID: 51231
+==51232== 
+==51232== Invalid read of size 8
+==51232==    at 0x10B415: BstMap<Tester, Tester>::remove(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x109B2F: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==  Address 0x5b857b0 is 80 bytes inside a block of size 96 free'd
+==51232==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51232==    by 0x10B410: BstMap<Tester, Tester>::remove(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x109B2F: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==  Block was alloc'd at
+==51232==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51232==    by 0x10B0A2: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232== 
+==51232== Invalid write of size 8
+==51232==    at 0x10B423: BstMap<Tester, Tester>::remove(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x109B2F: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==  Address 0x5b857b0 is 80 bytes inside a block of size 96 free'd
+==51232==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51232==    by 0x10B410: BstMap<Tester, Tester>::remove(Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x109B2F: main (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==  Block was alloc'd at
+==51232==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==51232==    by 0x10B0A2: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232==    by 0x10B16D: BstMap<Tester, Tester>::add(BstMap<Tester, Tester>::Node*, Tester const&, Tester const&) (in /home/ece551db/graderbase/work/ogg4.098_bst_map.nFmdS8/test.9)
+==51232== 
 
 Overall Grade: F
