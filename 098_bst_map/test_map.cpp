@@ -18,9 +18,9 @@ int main (void) {
   assert (map.root->right->key == 9);
   map.add (4, "four");
   assert (map.root->left->right->key == 4);
-  map.lookup(2); 
-  map.lookup(10); 
-  map.lookup(8); 
+  //map.lookup(2); 
+  //map.lookup(10); 
+  //map.lookup(8); 
   map.add (3, "thirty");
   assert (map.lookup(3) == "thirty");
   assert (map.lookup(4) == "four");

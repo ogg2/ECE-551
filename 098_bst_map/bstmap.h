@@ -176,7 +176,6 @@ public:
           (*toReplace)->right = (*curr)->right;
           delete *curr;
           *curr = *toReplace;
-          add ((*toReplace)->key, value);
           *toReplace = NULL;
         }
 
