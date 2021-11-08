@@ -22,38 +22,38 @@ public:
   BstMap () : root(NULL) {}
   
   BstMap (const BstMap & rhs) : root(NULL) {
-    copy (rhs.root); 
+    copier (rhs.root); 
   }
 
   BstMap & operator=(const BstMap & rhs) {
     if (this != &rhs) {
-      destroy(root);
+      destruct (root);
       root = NULL;
-      copy (rhs.root);
+      copier (rhs.root);
     }
     return *this;
   }
 
-  void copy (Node * curr) {
+  void copier (Node * curr) {
     if (curr != NULL) {
       //add (curr->key, curr->value);
       //root->left = copy (curr->left);
       //root->right = copy (curr->right);
       add (curr->key, curr->value);
-      copy (curr->left);
-      copy (curr->right);
+      copier (curr->left);
+      copier (curr->right);
     }
   }
 
   virtual ~BstMap<K,V>() {
-    destroy (root);
+    destruct (root);
     root = NULL;
   }
 
-  void destroy (Node * curr) {
+  void destruct (Node * curr) {
     if (curr != NULL) {
-      destroy (curr->left);
-      destroy (curr->right);
+      destruct (curr->left);
+      destruct (curr->right);
       delete curr;
     }
   }
