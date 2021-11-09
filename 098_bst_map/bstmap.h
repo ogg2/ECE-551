@@ -170,7 +170,11 @@ public:
           while ((*toReplace)->right != NULL) {
             toReplace = &(*toReplace)->right;
           }
-          (*toReplace)->left = (*curr)->left;
+          if ((*curr)->left != *toReplace) {
+            (*toReplace)->left = (*curr)->left;
+          } else {
+            (*toReplace)->left = NULL;
+          }
           (*toReplace)->right = (*curr)->right;
           delete *curr;
           *curr = *toReplace;

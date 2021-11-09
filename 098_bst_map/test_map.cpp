@@ -93,6 +93,7 @@ int main (void) {
   assert (map2.root->left->key == 3);
   assert (map2.root->left->left->right == NULL);
 
+  map.remove (0);
   map.remove (3);
   assert (map.root->left->key == 2);
   assert (map.root->left->left->right == NULL);
