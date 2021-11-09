@@ -36,9 +36,6 @@ public:
 
   void copier (Node * curr) {
     if (curr != NULL) {
-      //add (curr->key, curr->value);
-      //root->left = copy (curr->left);
-      //root->right = copy (curr->right);
       add (curr->key, curr->value);
       copier (curr->left);
       copier (curr->right);
