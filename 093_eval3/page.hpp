@@ -9,15 +9,16 @@
 class Page {
   private:
     std::string pageText;
-    std::vector<std::string> choices; 
+    std::vector<std::pair<std::string, int> > choices; 
+    //std::vector<int> nextPage;
   public:
     Page (char * fileName);
 
 };
 
 //Are these needed here?
-std::istream & operator>>(std::istream & s, std::vector<std::string> & data);
-std::ostream & operator<<(std::ostream & s, std::vector<std::string> & data);
+std::istream & operator>>(std::istream & s, std::vector<std::pair<std::string, int> > & data);
+std::ostream & operator<<(std::ostream & s, std::vector<std::pair<std::string, int> > & data);
 
 
 #endif

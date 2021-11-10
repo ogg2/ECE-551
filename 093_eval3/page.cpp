@@ -1,5 +1,6 @@
 #include "page.hpp"
 #include <fstream>
+#include <sstream>
 
 /**
 * Constructor that reads an input file and separates the navigation section
@@ -20,11 +21,19 @@ Page::Page (char * fileName) {
 
 }
 
-std::istream & operator>>(std::istream & s, std::vector<std::string> & data) {
+std::istream & operator>>(std::istream & s, std::vector<std::pair<std::string, int> > & data) {
   std::string line;
   while (std::getline (s, line)) {
-    if (line.compare("#") != 0) { //change to starts with # instead of only "#"
-      data.push_back(line);
+    if (line.substr(0,1).compare("#") != 0) {
+      size_t colon = line.find_first_of(":");
+      //std::string::size_type sz;
+      int nextPage; // = atoi (line.substr(0, colon));
+      std::istringstream (line.substr(0, colon)) >> nextPage;
+      std::pair<std::string, int> pair (line.substr (colon + 1, line.length()), nextPage);
+      //pair.first = line.substr(colon + 1, line.length());
+      //pair.second = line.substr(0, colon);
+      //pair.second = 2;
+      data.push_back (pair);
     } else {
       break;
     }
@@ -38,12 +47,14 @@ std::istream & operator>>(std::istream & s, std::vector<std::string> & data) {
   return s;
 }
 
-std::ostream & operator<<(std::ostream & s, std::vector<std::string> & data) {
-  std::vector<std::string>::iterator it = data.begin();
+std::ostream & operator<<(std::ostream & s, std::vector<std::pair<std::string, int> > & data) {
+  std::vector<std::pair<std::string, int> >::iterator it = data.begin();
+  int index = 1;
   while (it != data.end()) {
-    s << *it << std::endl;
+    s << " " << index << ". " << it->first << std::endl;
+    s << " " << index << ". " << it->second << std::endl;
     ++it;
+    index++;
   }
   return s;
 }
-
