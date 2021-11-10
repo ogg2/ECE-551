@@ -170,15 +170,15 @@ public:
           while ((*toReplace)->right != NULL) {
             toReplace = &(*toReplace)->right;
           }
-          if ((*curr)->left != *toReplace) {
-            (*toReplace)->left = (*curr)->left;
-          } else {
-            (*toReplace)->left = NULL;
-          }
-          (*toReplace)->right = (*curr)->right;
-          delete *curr;
-          *curr = *toReplace;
-          *toReplace = NULL;
+          (*curr)->key = (*toReplace)->key;
+          (*curr)->value = (*toReplace)->value;
+          //(*toReplace)->left = (*curr)->left;
+          //(*toReplace)->right = (*curr)->right;
+          Node * temp = (*toReplace)->left;
+          delete *toReplace;
+          *toReplace = temp;
+          //*curr = *toReplace;
+          //*toReplace = NULL;
         }
 
       } else if (key < (*curr)->key) {
