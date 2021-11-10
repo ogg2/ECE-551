@@ -1,0 +1,12 @@
+#error
+cyoa-step1 tests/page0.txt
+cyoa-step1 tests/page2.txt
+cyoa-step1 tests/page3.txt
+cyoa-step1 tests/page4.txt
+cyoa-step1 tests/page5.txt
+
+#success
+cyoa-step1 tests/page1.txt
+cyoa-step1 story1/page4.txt
+cyoa-step1 story1/page6.txt
+cyoa-step1 story1/page12.txt
