@@ -1,6 +1,5 @@
 #include "page.hpp"
 #include <fstream>
-#include <sstream>
 #include "errors.hpp"
 
 /**
@@ -17,6 +16,11 @@ Page::Page (char * fileName) {
   file >> *this;
   file.close ();
 //  std::cout << *this;
+}
+
+void Page::printPage () {
+  std::cout << pageText.str();
+  std::cout << *this;
 }
 
 std::istream & operator>>(std::istream & s, Page & page) {

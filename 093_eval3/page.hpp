@@ -17,10 +17,7 @@ class Page {
     std::vector<std::pair<std::string, int> > choices; 
   public:
     Page (char * fileName);
-    void printPage () {
-      std::cout << pageText.str();
-      std::cout << *this;
-    }
+    void printPage ();
     friend std::istream & operator>>(std::istream & s, Page & page);
     friend std::ostream & operator<<(std::ostream & s, Page & page);
 };

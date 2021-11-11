@@ -7,6 +7,5 @@ int main (int argc, char ** argv) {
 
   Page page (argv[1]);
   page.printPage();
-  //std::cout << page;
   return EXIT_SUCCESS;
 }
