@@ -22,8 +22,4 @@ class Page {
     friend std::ostream & operator<<(std::ostream & s, Page & page);
 };
 
-//Are these needed here?
-//std::istream & operator>>(std::istream & s, std::vector<std::pair<std::string, int> > & data);
-//std::ostream & operator<<(std::ostream & s, std::vector<std::pair<std::string, int> > & data);
-
 #endif

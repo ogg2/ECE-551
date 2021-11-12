@@ -15,14 +15,21 @@ Page::Page (char * fileName) {
   }
   file >> *this;
   file.close ();
-//  std::cout << *this;
 }
 
+/**
+* printPage prints page.pageText to the terminal and calls operator<< to print page.choices
+*/
 void Page::printPage () {
   std::cout << pageText.str();
   std::cout << *this;
 }
 
+/**
+* Overloaded operator>> takes an input file and writes the contents to a page
+*   navigation choices are written to page.choices
+*   story text is written to page.pageText
+*/
 std::istream & operator>>(std::istream & s, Page & page) {
   std::string line;
   while (std::getline (s, line)) {
@@ -30,7 +37,6 @@ std::istream & operator>>(std::istream & s, Page & page) {
       size_t colon = line.find_first_of(':');
       char * extraNumbers = NULL;
       int nextPage = 0;
-      //Handle win/lose in here? Or further checks if line without page number
       //Navigation section error checking
       if ((colon != std::string::npos || page.choices.size() > 0) && 
          ((nextPage = strtol (line.substr(0, colon).c_str(), &extraNumbers, 10)) <= 0 || 
@@ -55,6 +61,9 @@ std::istream & operator>>(std::istream & s, Page & page) {
   return s;
 }
 
+/**
+* Overloaded operator<< prints page.choices to terminal
+*/
 std::ostream & operator<<(std::ostream & s, Page & page) {
   //should this be const_iterator???
   std::vector<std::pair<std::string, int> >::iterator it = page.choices.begin();
