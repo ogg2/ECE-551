@@ -5,6 +5,7 @@ cyoa-step1 tests/page3.txt
 cyoa-step1 tests/page4.txt
 cyoa-step1 tests/page5.txt
 cyoa-step1 tests/page6.txt
+cyoa-step1 tests/page8.txt
 
 #success
 cyoa-step1 tests/page1.txt
