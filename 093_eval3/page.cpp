@@ -56,6 +56,7 @@ std::istream & operator>>(std::istream & s, Page & page) {
 }
 
 std::ostream & operator<<(std::ostream & s, Page & page) {
+  //should this be const_iterator???
   std::vector<std::pair<std::string, int> >::iterator it = page.choices.begin();
   int index = 1;
   if (it->second == 0) {
