@@ -13,8 +13,30 @@ Page::Page (char * fileName) {
   if (!file) {
     Error ("Could not open file!");
   }
+  possibleWin = false;
+  possibleLoss = false;
   file >> *this;
   file.close ();
+}
+
+void Page::validChoices() {
+  if (choices.size() == 0) {
+    Error ("No navigation choices.");
+  }
+  
+  std::pair<std::string, int> firstPair = choices.front();
+
+  if (firstPair.second == 0) {
+    if (firstPair.first.compare ("WIN") == 0 && choices.size() == 1) {
+      choices.front().first = "Congratulations! You have won. Hooray!";
+      possibleWin = true;
+    } else if (firstPair.first.compare ("LOSE") == 0 && choices.size() == 1) {
+      choices.front().first = "Sorry, you have lost. Better luck next time!";
+      possibleLoss = true;
+    } else {
+      Error ("Navigation choices must include page number.");
+    }
+  }
 }
 
 /**
@@ -50,9 +72,7 @@ std::istream & operator>>(std::istream & s, Page & page) {
     }
   }
 
-  if (page.choices.size() == 0) {
-    Error ("No navigation choices.");
-  }
+  page.validChoices ();
 
   while (std::getline (s, line)) {
     page.pageText << line << "\n";
@@ -68,7 +88,7 @@ std::ostream & operator<<(std::ostream & s, Page & page) {
   //should this be const_iterator???
   std::vector<std::pair<std::string, int> >::iterator it = page.choices.begin();
   int index = 1;
-  if (it->second == 0) {
+  /*if (it->second == 0) {
     if (it->first.compare ("WIN") == 0 && page.choices.size() == 1) {
       s << "Congratulations! You have won. Hooray!" << std::endl;
     } else if (it->first.compare ("LOSE") == 0 && page.choices.size() == 1) {
@@ -76,14 +96,18 @@ std::ostream & operator<<(std::ostream & s, Page & page) {
     } else {
       Error ("Navigation choices must include page number.");
     }  
-  } else {
-      s << "What would you like to do?\n" << std::endl;
+  }*/// else {
+    if (it->second == 0) {
+      s << it->first << std::endl;
+      return s;
+    }
+    s << "What would you like to do?\n" << std::endl;
     while (it != page.choices.end()) {
       s << " " << index << ". " << it->first << std::endl;
       //s << "\t" << it->second << std::endl; //FOR TESTING - DELETE
       ++it;
       index++;
     }
-  }
+ // }
   return s;
 }
