@@ -8,7 +8,7 @@
 */
 class Book {
   private:
-    std::vector<Page> pages; 
+    std::vector<Page*> pages; 
   public:
     Book (char * directoryName);
     void printBook ();

@@ -1,6 +1,7 @@
 #include "page.hpp"
 #include <fstream>
 #include "errors.hpp"
+#include <exception>
 
 /**
 * Constructor that reads an input file and separates the navigation section
@@ -8,10 +9,11 @@
 
 * input: fileName is the file that is being read
 */
-Page::Page (char * fileName) {
+Page::Page (const char * fileName) {
   std::ifstream file (fileName);
   if (!file) {
-    Error ("Could not open file!");
+    throw std::invalid_argument ("Bad");
+    //Error ("Could not open file!");
   }
   possibleWin = false;
   possibleLoss = false;
@@ -84,30 +86,19 @@ std::istream & operator>>(std::istream & s, Page & page) {
 /**
 * Overloaded operator<< prints page.choices to terminal
 */
-std::ostream & operator<<(std::ostream & s, Page & page) {
-  //should this be const_iterator???
-  std::vector<std::pair<std::string, int> >::iterator it = page.choices.begin();
+std::ostream & operator<<(std::ostream & s, const Page & page) {
+  std::vector<std::pair<std::string, int> >::const_iterator it = page.choices.begin();
   int index = 1;
-  /*if (it->second == 0) {
-    if (it->first.compare ("WIN") == 0 && page.choices.size() == 1) {
-      s << "Congratulations! You have won. Hooray!" << std::endl;
-    } else if (it->first.compare ("LOSE") == 0 && page.choices.size() == 1) {
-      s << "Sorry, you have lost. Better luck next time!" << std::endl;
-    } else {
-      Error ("Navigation choices must include page number.");
-    }  
-  }*/// else {
-    if (it->second == 0) {
-      s << it->first << std::endl;
-      return s;
-    }
-    s << "What would you like to do?\n" << std::endl;
-    while (it != page.choices.end()) {
-      s << " " << index << ". " << it->first << std::endl;
-      //s << "\t" << it->second << std::endl; //FOR TESTING - DELETE
-      ++it;
-      index++;
-    }
- // }
+  if (it->second == 0) {
+    s << it->first << std::endl;
+    return s;
+  }
+  s << "What would you like to do?\n" << std::endl;
+  while (it != page.choices.end()) {
+    s << " " << index << ". " << it->first << std::endl;
+    //s << "\t" << it->second << std::endl; //FOR TESTING - DELETE
+    ++it;
+    index++;
+  }
   return s;
 }

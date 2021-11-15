@@ -18,11 +18,11 @@ class Page {
     //pair in vector contains navigation choices in string and next page in 'int'
     std::vector<std::pair<std::string, int> > choices; 
   public:
-    Page (char * fileName);
+    Page (const char * fileName);
     void validChoices();
-    void printPage ();
+    void printPage();
     friend std::istream & operator>>(std::istream & s, Page & page);
-    friend std::ostream & operator<<(std::ostream & s, Page & page);
+    friend std::ostream & operator<<(std::ostream & s, const Page & page);
 };
 
 #endif
