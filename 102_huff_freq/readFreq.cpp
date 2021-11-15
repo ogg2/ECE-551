@@ -27,12 +27,13 @@ uint64_t * readFrequencies(const char * fname) {
     std::cerr << "Could not open file!" << std::endl;
     exit (EXIT_FAILURE);
   }
-  uint64_t * freq = new uint64_t[257];
+  uint64_t * freq = new uint64_t[257]();
   int character;
   while ((character = file.get()) != EOF) {
     freq[(unsigned char) character] = freq[(unsigned char) character] + 1; 
   }
   freq[256] = 1;
 
+  file.close();
   return freq;
 }
