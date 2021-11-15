@@ -8,8 +8,7 @@
 #include <stdlib.h>
 #include "readFreq.h"
 #include "node.h"
-
-
+#include <fstream>
 
 void writeHeader(BitFileWriter * bfw, const std::map<unsigned,BitString> &theMap) {
   for (int i =0 ; i < 257; i++) {
@@ -27,9 +26,22 @@ void writeHeader(BitFileWriter * bfw, const std::map<unsigned,BitString> &theMap
 void writeCompressedOutput(const char* inFile,
 			   const char *outFile,
 			   const std::map<unsigned,BitString> &theMap ){
+
   BitFileWriter bfw(outFile);
   writeHeader(&bfw,theMap);
 
+  int character; 
+  std::ifstream file (inFile);
+  std::map<unsigned,BitString>::const_iterator it;
+  while ((character = file.get()) != EOF) {
+
+    it = theMap.find((unsigned char) character);
+    bfw.writeBitString (it->second);
+  }
+
+  file.close();
+  it = theMap.find (256);
+  bfw.writeBitString (it->second);
   //WRITE YOUR CODE HERE!
   //open the input file for reading
 
@@ -51,7 +63,17 @@ int main(int argc, char ** argv) {
   //Implement main
   //hint 1: most of the work is already done. 
   //hint 2: you can look at the main from the previous tester for 90% of this
+  
+  uint64_t * counts = readFrequencies(argv[1]);
+  assert(counts != NULL);
+  Node * tree = buildTree (counts);
+  delete[] counts;
+  std::map<unsigned,BitString> theMap;
+  BitString empty;
+  tree->buildMap(empty, theMap);
+  delete tree;
 
+  writeCompressedOutput(argv[1], argv[2], theMap);
 
   return EXIT_SUCCESS;
 }
