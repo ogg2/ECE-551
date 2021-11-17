@@ -1,8 +1,9 @@
 #include "book.hpp"
 
 Book::Book (char * directoryName) {
-  int index = 13;
-  while (index < 17) {
+  int index = 1;
+  bool lastPage = false;
+  while (!lastPage) {
     std::stringstream s;
     s << directoryName << "/page" << index << ".txt";
     //std::cout << s.str();
@@ -11,6 +12,7 @@ Book::Book (char * directoryName) {
       pages.push_back(page);
     } catch (std::invalid_argument & e) {
       std::cout << "Last Page\n";
+      lastPage = true;
     }
     index++;
   }

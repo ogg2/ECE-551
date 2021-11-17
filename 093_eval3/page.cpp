@@ -12,7 +12,7 @@
 Page::Page (const char * fileName) {
   std::ifstream file (fileName);
   if (!file) {
-    throw std::invalid_argument ("Bad");
+    throw std::invalid_argument ("File does not exist.");
     //Error ("Could not open file!");
   }
   possibleWin = false;
