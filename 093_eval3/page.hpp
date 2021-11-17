@@ -12,14 +12,16 @@
 */
 class Page {
   private:
-    bool possibleWin;
-    bool possibleLoss;
+    bool referenced;
     std::stringstream pageText;
-    //pair in vector contains navigation choices in string and next page in 'int'
-    std::vector<std::pair<std::string, int> > choices; 
+    //pair in vector contains navigation choices in string and next page in 'size_t'
+    std::vector<std::pair<std::string, size_t> > choices; 
   public:
-    Page (const char * fileName);
+    Page(const char * fileName);
     void validChoices();
+    const std::vector<std::pair<std::string, size_t> > getChoices() {return choices;}
+    bool getReferenced() {return referenced;}
+    void setReferenced(bool r) {referenced = r;}
     void printPage();
     friend std::istream & operator>>(std::istream & s, Page & page);
     friend std::ostream & operator<<(std::ostream & s, const Page & page);

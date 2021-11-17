@@ -15,26 +15,23 @@ Page::Page (const char * fileName) {
     throw std::invalid_argument ("File does not exist.");
     //Error ("Could not open file!");
   }
-  possibleWin = false;
-  possibleLoss = false;
+  referenced = false;
   file >> *this;
   file.close ();
 }
-
+    
 void Page::validChoices() {
   if (choices.size() == 0) {
     Error ("No navigation choices.");
   }
   
-  std::pair<std::string, int> firstPair = choices.front();
+  std::pair<std::string, size_t> firstPair = choices.front();
 
   if (firstPair.second == 0) {
     if (firstPair.first.compare ("WIN") == 0 && choices.size() == 1) {
       choices.front().first = "Congratulations! You have won. Hooray!";
-      possibleWin = true;
     } else if (firstPair.first.compare ("LOSE") == 0 && choices.size() == 1) {
       choices.front().first = "Sorry, you have lost. Better luck next time!";
-      possibleLoss = true;
     } else {
       Error ("Navigation choices must include page number.");
     }
@@ -60,14 +57,14 @@ std::istream & operator>>(std::istream & s, Page & page) {
     if (line.substr(0,1).compare("#") != 0) {
       size_t colon = line.find_first_of(':');
       char * extraNumbers = NULL;
-      int nextPage = 0;
+      size_t nextPage = 0;
       //Navigation section error checking
       if ((colon != std::string::npos || page.choices.size() > 0) && 
          ((nextPage = strtol (line.substr(0, colon).c_str(), &extraNumbers, 10)) <= 0 || 
          *extraNumbers != '\0')) {
         Error ("Page number must be integer greater than 0.");
       }
-      std::pair<std::string, int> pair (line.substr (colon + 1, line.length()), nextPage);
+      std::pair<std::string, size_t> pair (line.substr (colon + 1, line.length()), nextPage);
       page.choices.push_back (pair);
     } else {
       break;
@@ -87,7 +84,7 @@ std::istream & operator>>(std::istream & s, Page & page) {
 * Overloaded operator<< prints page.choices to terminal
 */
 std::ostream & operator<<(std::ostream & s, const Page & page) {
-  std::vector<std::pair<std::string, int> >::const_iterator it = page.choices.begin();
+  std::vector<std::pair<std::string, size_t> >::const_iterator it = page.choices.begin();
   int index = 1;
   if (it->second == 0) {
     s << it->first << std::endl;
