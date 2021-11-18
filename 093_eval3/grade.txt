@@ -1,6 +1,6 @@
-Grading at 11/18/2021:04:03:55.825898
-For commit ID 3f21f8ab2a3b278b6e906bb45ce1844e4f1e0a20
-Grading at Wed Nov 17 23:03:19 EST 2021
+Grading at 11/18/2021:04:07:17.479951
+For commit ID 4b58ea6dc9d8ef09b0a8ff3785ddc40a47d86189
+Grading at Wed Nov 17 23:06:41 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -153,20 +153,13 @@ Your file matched the expected output
 Test case 17 (success): cyoa-step2 story1 < story1/input2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 18 (success): cyoa-step2 story2 < story2/input3.txt
-34d33
-< That is not a valid choice, please try again
-43a43
-> That is not a valid choice, please try again
-Your file did not match the expected output
+Test case 18 (success): cyoa-step2 story2 < story2/input.txt
+Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 19 (success): cyoa-step2 story2 < story2/input.txt
+Test case 19 (success): cyoa-step2 story2 < story2/input2.txt
 Your file matched the expected output
 
-Grading has taken more than 20 seconds
-Skipping remaining test cases
-
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
