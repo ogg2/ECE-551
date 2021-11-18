@@ -20,3 +20,4 @@ cyoa-step2 story1 < story1/input.txt
 cyoa-step2 story1 < story1/input2.txt
 cyoa-step2 story2 < story2/input.txt
 cyoa-step2 story2 < story2/input2.txt
+cyoa-step2 story2 < story2/input3.txt
