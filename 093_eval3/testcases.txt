@@ -12,7 +12,6 @@ cyoa-step2 tests3
 cyoa-step2 tests4
 
 #success
-cyoa-step1 tests/page1.txt
 cyoa-step1 tests/page7.txt
 cyoa-step1 story1/page4.txt
 cyoa-step1 story1/page6.txt
