@@ -89,13 +89,6 @@ void Book::readBook () {
       }
       std::cin.clear();
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-    /*try {
-      std::cin >> userChoice;
-      invalidInput = false;
-    } catch (std::invalid_argument & e) {
-      std::cout << "That is not a valid choice, please try again" << std::endl;
-    }*/
     }
     userChoice = thisPage->getChoices()[userChoice - 1].second;
 
