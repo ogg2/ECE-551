@@ -1,5 +1,6 @@
 #include "book.hpp"
 #include "errors.hpp"
+#include <limits>
 
 Book::Book (char * directoryName) {
   int index = 1;
@@ -68,25 +69,36 @@ void Book::winAndLose() {
 void Book::readBook () {
   Page * thisPage = pages[0];
   thisPage->printPage();
-  //bool finished = false;
   while (true) {
     if (thisPage->getChoices()[0].second == 0) {
-      //FREE MEMORY
       freeBookMemory();
       exit (EXIT_SUCCESS);
     }
     size_t userChoice;
-    std::cin >> userChoice;
+    bool invalidInput = true;
+
+    while (invalidInput) {
+      std::cin >> userChoice;
+      if (std::cin.good() && userChoice <= thisPage->getChoices().size() && userChoice > 0) {
+        invalidInput = false;
+      } else {
+        std::cout << "That is not a valid choice, please try again" << std::endl;
+      }
+      std::cin.clear();
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    /*try {
+      std::cin >> userChoice;
+      invalidInput = false;
+    } catch (std::invalid_argument & e) {
+      std::cout << "That is not a valid choice, please try again" << std::endl;
+    }*/
+    }
     userChoice = thisPage->getChoices()[userChoice - 1].second;
 
     thisPage = pages[userChoice - 1];
     thisPage->printPage();
   }
-  /*std::vector<Page*>::iterator it = pages.begin();
-  while (it != pages.end()) {
-    (*it)->printPage();
-    ++it;
-  }*/
 }
       
 void Book::freeBookMemory() {
