@@ -1,6 +1,7 @@
 #include "book.hpp"
 #include "errors.hpp"
 #include <limits>
+#include <cmath>
 
 Book::Book (char * directoryName) {
   int index = 1;
@@ -74,12 +75,13 @@ void Book::readBook () {
       freeBookMemory();
       exit (EXIT_SUCCESS);
     }
-    size_t userChoice;
+    float userChoice;
     bool invalidInput = true;
 
     while (invalidInput) {
       std::cin >> userChoice;
-      if (std::cin.good() && userChoice <= thisPage->getChoices().size() && userChoice > 0) {
+      if (std::cin.good() && (size_t) userChoice <= thisPage->getChoices().size() 
+          && (size_t) userChoice > 0 && fmod(userChoice, 1.0) == 0.0) {
         invalidInput = false;
       } else {
         std::cout << "That is not a valid choice, please try again" << std::endl;
