@@ -1,6 +1,6 @@
-Grading at 11/18/2021:03:50:03.452539
-For commit ID 6d9a548615b0351fb620a8db0e2c0a7b1bfe7de9
-Grading at Wed Nov 17 22:49:27 EST 2021
+Grading at 11/18/2021:04:03:55.825898
+For commit ID 3f21f8ab2a3b278b6e906bb45ce1844e4f1e0a20
+Grading at Wed Nov 17 23:03:19 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -156,28 +156,8 @@ Your file matched the expected output
 Test case 18 (success): cyoa-step2 story2 < story2/input3.txt
 34d33
 < That is not a valid choice, please try again
-44,46c43,45
-< The book is the original copy of All of Programming, but the text
-< disappears as soon as you touch it, apparently an associative property of
-< your cloak of invisibility.
----
+43a43
 > That is not a valid choice, please try again
-> You wrap the Scythian ruby in the cloak, and sneak back to where the dragon
-> slumbers. 
-48c47
-< You do not learn to program.
----
-> What would you like to do?
-50,53c49,52
-< In your frustration, you let out a long howl of dismay. This wakes the
-< dragon, who picks you up gently between her claws and deposits you in a
-< shallow pit with a large, craggy egg. You realize with terror that you are
-< to be the first meal of her hatchling.
----
->  1. Take your prize and go home
->  2. Stab the dragon in the neck
-> Your famed sword Ice becomes embedded in the dragon's neck scales, and the
-> dragon rolls over, crushing you.
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 19 (success): cyoa-step2 story2 < story2/input.txt
