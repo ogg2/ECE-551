@@ -79,6 +79,7 @@ void Book::readBook () {
     float userChoice;
     bool invalidInput = true;
 
+    //NEED TO FIGURE OUT DOUBLE/FLOAT INPUTS
     while (invalidInput) {
       std::cin >> userChoice;
       if (std::cin.good() && (size_t) userChoice <= thisPage->getChoices().size() 
