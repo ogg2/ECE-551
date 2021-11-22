@@ -106,17 +106,26 @@ void Book::depth() {
         size_t nextPage = thisPage->getChoices()[i].second;
         //do not add to queue if already visited
         //change choices to just WIN/LOSE
-        pages[nextPage - 1]->setDepth(pageDepth + 1);
-        pageQueue.push(pages[nextPage - 1]);
+        if (pages[nextPage - 1]->getDepth() == -1) {
+          pages[nextPage - 1]->setDepth(pageDepth + 1);
+          pageQueue.push(pages[nextPage - 1]);
+        }
       }
     }
   }
 }
 
+/**
+* printDepth prints the minimum depth of each page in the book
+*/
 void Book::printDepth() {
   for (size_t i = 0; i < pages.size(); i++) {
     std::cout << "Page " << i + 1;
-    std::cout << ":" << pages[i]->getDepth() << std::endl;
+    if (pages[i]->getDepth() > -1) {
+      std::cout << ":" << pages[i]->getDepth() << std::endl;
+    } else {
+      std::cout << " is not reachable" << std::endl;
+    }
   }
 }
 

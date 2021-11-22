@@ -1,4 +1,9 @@
 #error
+cyoa-step2 tests
+cyoa-step2 tests2
+cyoa-step2 tests3
+cyoa-step2 tests4
+
 cyoa-step1 tests/page0.txt
 cyoa-step1 tests/page2.txt
 cyoa-step1 tests/page3.txt
@@ -7,18 +12,16 @@ cyoa-step1 tests/page5.txt
 cyoa-step1 tests/page6.txt
 cyoa-step1 tests/page8.txt
 
-cyoa-step2 tests
-cyoa-step2 tests2
-cyoa-step2 tests3
-cyoa-step2 tests4
-
 #success
-cyoa-step1 tests/page7.txt
-cyoa-step1 story1/page4.txt
-cyoa-step1 story1/page6.txt
-cyoa-step1 story1/page12.txt
+cyoa-step3 story1
+cyoa-step3 story2
 
 cyoa-step2 story1 < story1/input.txt
 cyoa-step2 story1 < story1/input2.txt
 cyoa-step2 story2 < story2/input.txt
 cyoa-step2 story2 < story2/input2.txt
+
+cyoa-step1 tests/page7.txt
+cyoa-step1 story1/page4.txt
+cyoa-step1 story1/page6.txt
+cyoa-step1 story1/page12.txt
