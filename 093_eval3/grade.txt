@@ -1,6 +1,6 @@
-Grading at 11/18/2021:04:07:17.479951
-For commit ID 4b58ea6dc9d8ef09b0a8ff3785ddc40a47d86189
-Grading at Wed Nov 17 23:06:41 EST 2021
+Grading at 11/22/2021:17:38:25.614782
+For commit ID b2ff7a7b9398db6eac70f319a982694d0f12f6cf
+Grading at Mon Nov 22 12:37:46 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -77,8 +77,14 @@ Step 2: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step3
 rm -f cyoa-step?
-The code did not compile!
-Did not compile for step 3
+g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step3 page.cpp book.cpp cyoa-step3.cpp
++-----------------------------------------------------------------------+
+Test case 15 (success): cyoa-step3 /usr/local/ece551/cyoa/story1
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 16 (success): cyoa-step3 /usr/local/ece551/cyoa/story2
+Your file matched the expected output
+Step 3: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step4
 rm -f cyoa-step?
@@ -86,78 +92,75 @@ The code did not compile!
 Did not compile for step 4
 Running your test cases
 
-Compiling cyoa-step1
-rm -f cyoa-step?
-g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step1 page.cpp cyoa-step1.cpp
-+-----------------------------------------------------------------------+
-Test case 1 (error): cyoa-step1 tests/page0.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 2 (error): cyoa-step1 tests/page2.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 3 (error): cyoa-step1 tests/page3.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 4 (error): cyoa-step1 tests/page4.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 5 (error): cyoa-step1 tests/page5.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 6 (error): cyoa-step1 tests/page6.txt
-Your program successfully indicated a failure case
-+-----------------------------------------------------------------------+
-Test case 7 (error): cyoa-step1 tests/page8.txt
-Your program successfully indicated a failure case
-
 Compiling cyoa-step2
 rm -f cyoa-step?
 g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step2 page.cpp book.cpp cyoa-step2.cpp
 +-----------------------------------------------------------------------+
-Test case 8 (error): cyoa-step2 tests
+Test case 1 (error): cyoa-step2 tests
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 9 (error): cyoa-step2 tests2
+Test case 2 (error): cyoa-step2 tests2
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 10 (error): cyoa-step2 tests3
+Test case 3 (error): cyoa-step2 tests3
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case 11 (error): cyoa-step2 tests4
+Test case 4 (error): cyoa-step2 tests4
 Your program successfully indicated a failure case
 
 Compiling cyoa-step1
 rm -f cyoa-step?
 g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step1 page.cpp cyoa-step1.cpp
 +-----------------------------------------------------------------------+
-Test case 12 (success): cyoa-step1 tests/page7.txt
+Test case 5 (error): cyoa-step1 tests/page0.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 6 (error): cyoa-step1 tests/page2.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 7 (error): cyoa-step1 tests/page3.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 8 (error): cyoa-step1 tests/page4.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 9 (error): cyoa-step1 tests/page5.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 10 (error): cyoa-step1 tests/page6.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 11 (error): cyoa-step1 tests/page8.txt
+Your program successfully indicated a failure case
+
+Compiling cyoa-step3
+rm -f cyoa-step?
+g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step3 page.cpp book.cpp cyoa-step3.cpp
++-----------------------------------------------------------------------+
+Test case 12 (success): cyoa-step3 story1
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 13 (success): cyoa-step1 story1/page4.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 14 (success): cyoa-step1 story1/page6.txt
-Your file matched the expected output
-+-----------------------------------------------------------------------+
-Test case 15 (success): cyoa-step1 story1/page12.txt
+Test case 13 (success): cyoa-step3 story2
 Your file matched the expected output
 
 Compiling cyoa-step2
 rm -f cyoa-step?
 g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step2 page.cpp book.cpp cyoa-step2.cpp
 +-----------------------------------------------------------------------+
-Test case 16 (success): cyoa-step2 story1 < story1/input.txt
+Test case 14 (success): cyoa-step2 story1 < story1/input.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 17 (success): cyoa-step2 story1 < story1/input2.txt
+Test case 15 (success): cyoa-step2 story1 < story1/input2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 18 (success): cyoa-step2 story2 < story2/input.txt
+Test case 16 (success): cyoa-step2 story2 < story2/input.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 19 (success): cyoa-step2 story2 < story2/input2.txt
+Test case 17 (success): cyoa-step2 story2 < story2/input2.txt
 Your file matched the expected output
+
+Grading has taken more than 20 seconds
+Skipping remaining test cases
 
 You have PASSED all of your test cases
 Keep adding test cases until you are satisfied your program is correct
