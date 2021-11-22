@@ -131,8 +131,7 @@ void Book::readBook() {
   thisPage->printPage();
   while (true) {
     if (thisPage->getChoices()[0].second == 0) {
-      freeBookMemory();
-      exit (EXIT_SUCCESS);
+      return;
     }
     //size_t userChoice;
     float userChoice;
@@ -167,5 +166,4 @@ void Book::freeBookMemory() {
     delete *it;
     ++it;
   }
-  pages.~vector();
 }

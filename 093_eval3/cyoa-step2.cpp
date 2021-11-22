@@ -11,5 +11,6 @@ int main (int argc, char ** argv) {
   book.allPagesReferenced();
   book.winAndLose();
   book.readBook();
+  book.freeBookMemory();
   return EXIT_SUCCESS;
 }

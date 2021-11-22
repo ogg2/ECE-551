@@ -10,8 +10,8 @@ int main (int argc, char ** argv) {
   book.validNextPage();
   book.allPagesReferenced();
   book.winAndLose();
-  //book.readBook();
   book.depth();
   book.printDepth();
+  book.freeBookMemory();
   return EXIT_SUCCESS;
 }
