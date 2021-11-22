@@ -16,6 +16,8 @@ class Book {
     void validNextPage();
     void allPagesReferenced();
     void winAndLose();
+    void depth();
+    void printDepth();
     void readBook();
     void freeBookMemory();
     friend std::istream & operator>>(std::istream & s, Book & book);

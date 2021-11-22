@@ -16,10 +16,14 @@ Page::Page (const char * fileName) {
     //Error ("Could not open file!");
   }
   referenced = false;
+  depth = -1;
   file >> *this;
   file.close ();
 }
     
+/**
+* validChoices ensures a page's navigation choices are legal
+*/
 void Page::validChoices() {
   if (choices.size() == 0) {
     Error ("No navigation choices.");
@@ -82,6 +86,11 @@ std::istream & operator>>(std::istream & s, Page & page) {
 
 /**
 * Overloaded operator<< prints page.choices to terminal
+*
+* input: s is the output stream to be printed
+* input: page is a reference to the page that will have it's choices printed
+*
+* return: std::ostream is the output stream to be printed
 */
 std::ostream & operator<<(std::ostream & s, const Page & page) {
   std::vector<std::pair<std::string, size_t> >::const_iterator it = page.choices.begin();
