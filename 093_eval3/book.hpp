@@ -19,7 +19,8 @@ class Book {
     void depth();
     void printDepth();
     void readBook();
-    void freeBookMemory();
+    void freeBookMemory(); //make this destructor?
+    //write copy constructor and assignment operator?
     friend std::istream & operator>>(std::istream & s, Book & book);
     friend std::ostream & operator<<(std::ostream & s, Book & book);
 };
