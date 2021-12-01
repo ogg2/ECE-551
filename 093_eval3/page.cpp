@@ -16,6 +16,7 @@ Page::Page (const char * fileName) {
     //Error ("Could not open file!");
   }
   referenced = false;
+  visited = false;
   depth = -1;
   file >> *this;
   file.close ();
@@ -31,14 +32,9 @@ void Page::validChoices() {
   
   std::pair<std::string, size_t> firstPair = choices.front();
 
-  if (firstPair.second == 0) {
-    if (firstPair.first.compare ("WIN") == 0 && choices.size() == 1) {
-      choices.front().first = "Congratulations! You have won. Hooray!";
-    } else if (firstPair.first.compare ("LOSE") == 0 && choices.size() == 1) {
-      choices.front().first = "Sorry, you have lost. Better luck next time!";
-    } else {
+  if (firstPair.second == 0 && firstPair.first.compare ("WIN") != 0 
+      && firstPair.first.compare ("LOSE") != 0) {
       Error ("Navigation choices must include page number.");
-    }
   }
 }
 
@@ -96,7 +92,11 @@ std::ostream & operator<<(std::ostream & s, const Page & page) {
   std::vector<std::pair<std::string, size_t> >::const_iterator it = page.choices.begin();
   int index = 1;
   if (it->second == 0) {
-    s << it->first << std::endl;
+    if (it->first.compare ("WIN") == 0) {
+      s << "Congratulations! You have won. Hooray!" << std::endl;
+    } else {
+      s << "Sorry, you have lost. Better luck next time!" << std::endl;
+    }
     return s;
   }
   s << "What would you like to do?\n" << std::endl;

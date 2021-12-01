@@ -18,6 +18,7 @@ class Book {
     void winAndLose();
     void depth();
     void printDepth();
+    void cycleFreeWins();
     void readBook();
     void freeBookMemory(); //make this destructor?
     //write copy constructor and assignment operator?

@@ -3,6 +3,7 @@
 #include <limits>
 #include <cmath>
 #include <queue>
+#include <stack>
 
 /**
 * Constructor to add all the pages in directoryName to a book
@@ -63,10 +64,10 @@ void Book::allPagesReferenced () {
       Error ("Not every page is referenced.");
     }
     //CHECK THERE IS BOTH A WIN PAGE AND LOSE PAGE
-    if ((*it)->getChoices()[0].first.compare("Congratulations! You have won. Hooray!") == 0) {
+    if ((*it)->getChoices()[0].first.compare("WIN") == 0) {
       winnable = true;
     }
-    if ((*it)->getChoices()[0].first.compare("Sorry, you have lost. Better luck next time!") == 0) {
+    if ((*it)->getChoices()[0].first.compare("LOSE") == 0) {
       losable = true;
     }
     ++it;
@@ -99,8 +100,8 @@ void Book::depth() {
     pageQueue.pop();
     int pageDepth = thisPage->getDepth();
 
-    if (thisPage->getChoices()[0].first.compare("Congratulations! You have won. Hooray!") != 0 && 
-        thisPage->getChoices()[0].first.compare("Sorry, you have lost. Better luck next time!") != 0) {
+    if (thisPage->getChoices()[0].first.compare("WIN") != 0 && 
+        thisPage->getChoices()[0].first.compare("LOSE") != 0) {
 
       for (size_t i = 0; i < thisPage->getChoices().size(); i++) {
         size_t nextPage = thisPage->getChoices()[i].second;
@@ -129,10 +130,32 @@ void Book::printDepth() {
   }
 }
 
+
+void Book::cycleFreeWins() {
+  if (!winnable) {
+    std::cout << "This story is unwinnable!" << std::endl;
+    return;
+  }
+  //mark as not visited when popping?, "avoid revisiting node on same path"
+  //DFS using stack?
+  //track explored paths with extra vector after marking as unvisited
+    //this is local variable so we can still reuse page in a separate path
+  std::stack<Page*> pageStack;
+  pages[0]->setVisited(true);
+  pageStack.push(pages[0]);
+
+  while (!pageStack.empty()) {
+    //Page * thisPage = pageStack.top();
+    pageStack.pop();
+
+  }
+}
+
 /**
 * readBook allows a user to play the CYOA, playing involves printing pageText
 *   for the current page, displaying the page's navigations choices, prompting
-*   the user to select which choice they would like to make 
+*   the user to select which choice they would like to make, and navigating to page
+*   corresponding to user's choice
 SIMPLIFY COMMENT?????
 */
 void Book::readBook() {
