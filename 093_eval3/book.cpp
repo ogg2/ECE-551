@@ -105,8 +105,7 @@ void Book::depth() {
 
       for (size_t i = 0; i < thisPage->getChoices().size(); i++) {
         size_t nextPage = thisPage->getChoices()[i].second;
-        //do not add to queue if already visited
-        //change choices to just WIN/LOSE
+        //add to queue if not yet visited
         if (pages[nextPage - 1]->getDepth() == -1) {
           pages[nextPage - 1]->setDepth(pageDepth + 1);
           pageQueue.push(pages[nextPage - 1]);
@@ -143,11 +142,24 @@ void Book::cycleFreeWins() {
   std::stack<Page*> pageStack;
   pages[0]->setVisited(true);
   pageStack.push(pages[0]);
+  
+  std::vector<std::pair<Page*, size_t> > currentPath;
+  std::pair<Page*, size_t> pair (pages[0], 1);
+  currentPath.push_back(pair);
 
   while (!pageStack.empty()) {
-    //Page * thisPage = pageStack.top();
+    Page * thisPage = pageStack.top();
     pageStack.pop();
-
+    
+    if (thisPage->getChoices()[0].first.compare("WIN") == 0 &&
+        thisPage->getChoices()[0].first.compare("LOSE") == 0) {
+      break;
+    } else {
+      for (size_t i = 0; i < thisPage->getChoices().size(); i++) {
+        //size_t nextPage = thisPage->getChoices()[i].second;
+        
+      }
+    }
   }
 }
 
