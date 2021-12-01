@@ -1,6 +1,6 @@
-Grading at 11/22/2021:17:48:19.826822
-For commit ID 62bc2eb9ec64ba37aa2afdb982f44ba87c8ddf64
-Grading at Mon Nov 22 12:47:40 EST 2021
+Grading at 12/01/2021:20:52:55.298751
+For commit ID 845d5894c048afbd9bba18ac8cfe11c9a771955e
+Grading at Wed Dec  1 15:52:08 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -88,8 +88,21 @@ Step 3: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step4
 rm -f cyoa-step?
-The code did not compile!
-Did not compile for step 4
+g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step4 page.cpp book.cpp cyoa-step4.cpp
++-----------------------------------------------------------------------+
+Test case 17 (success): cyoa-step4 /usr/local/ece551/cyoa/story1
+0a1,2
+> 1(2),3(1),8(win)
+> 1(3),4(2),12(win)
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case 18 (success): cyoa-step4 /usr/local/ece551/cyoa/story2
+0a1,3
+> 1(1),2(2),6(1),7(1),12(1),9(win)
+> 1(1),2(2),6(2),8(1),11(win)
+> 1(2),3(win)
+Your file did not match the expected output
+Step 4: Failed test cases as above
 Running your test cases
 
 Compiling cyoa-step2
@@ -132,39 +145,48 @@ Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case 11 (error): cyoa-step1 tests/page8.txt
 Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 12 (error): cyoa-step1 tests/page9.txt
+Your program successfully indicated a failure case
 
 Compiling cyoa-step3
 rm -f cyoa-step?
 g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step3 page.cpp book.cpp cyoa-step3.cpp
 +-----------------------------------------------------------------------+
-Test case 12 (success): cyoa-step3 tests5
+Test case 13 (success): cyoa-step3 tests5
 Your file matched the expected output
 
 Compiling cyoa-step2
 rm -f cyoa-step?
 g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step2 page.cpp book.cpp cyoa-step2.cpp
 +-----------------------------------------------------------------------+
-Test case 13 (success): cyoa-step2 story1 < story1/input.txt
+Test case 14 (success): cyoa-step2 story1 < story1/input.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 14 (success): cyoa-step2 story1 < story1/input2.txt
+Test case 15 (success): cyoa-step2 story1 < story1/input2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 15 (success): cyoa-step2 story2 < story2/input.txt
+Test case 16 (success): cyoa-step2 story2 < story2/input.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 16 (success): cyoa-step2 story2 < story2/input2.txt
+Test case 17 (success): cyoa-step2 story2 < story2/input2.txt
 Your file matched the expected output
 
 Compiling cyoa-step1
 rm -f cyoa-step?
 g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step1 page.cpp cyoa-step1.cpp
 +-----------------------------------------------------------------------+
-Test case 17 (success): cyoa-step1 tests/page7.txt
+Test case 18 (success): cyoa-step1 tests/page7.txt
 Your file matched the expected output
-
-Grading has taken more than 20 seconds
-Skipping remaining test cases
++-----------------------------------------------------------------------+
+Test case 19 (success): cyoa-step1 story1/page4.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 20 (success): cyoa-step1 story1/page6.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 21 (success): cyoa-step1 story1/page12.txt
+Your file matched the expected output
 
 You have PASSED all of your test cases
 Keep adding test cases until you are satisfied your program is correct
