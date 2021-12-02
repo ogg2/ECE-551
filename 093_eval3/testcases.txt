@@ -14,6 +14,9 @@ cyoa-step1 tests/page8.txt
 cyoa-step1 tests/page9.txt
 
 #success
+cyoa-step4 story1
+cyoa-step4 story2
+
 cyoa-step3 tests5
 
 cyoa-step2 story1 < story1/input.txt

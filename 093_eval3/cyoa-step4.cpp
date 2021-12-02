@@ -10,7 +10,7 @@ int main (int argc, char ** argv) {
   book.validNextPage();
   book.allPagesReferenced();
   book.winAndLose();
-  book.depth();
+  book.cycleFreeWins();
 
   book.freeBookMemory();
   return EXIT_SUCCESS;
