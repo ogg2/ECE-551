@@ -165,6 +165,7 @@ void Book::cycleFreeWins() {
           prevPage = prevPage->getPrev();
         }
 
+        //add to stack if not yet visited along current path
         if (!visited) {
           pages[nextPage - 1]->setPrev(thisPage);
           pageStack.push(pages[nextPage - 1]); 
@@ -184,7 +185,7 @@ void Book::cycleFreeWins() {
 * input: thisPage is the win page that we will be printing the winning path to
 */
 void Book::printWins(const Page * thisPage) const {
-  //first = page number, second = choice number
+  //path.first = page number, path.second = choice number
   std::vector<std::pair<size_t, size_t> > path;
 
   Page * prevPage = thisPage->getPrev();
@@ -230,15 +231,15 @@ void Book::printWins(const Page * thisPage) const {
 void Book::readBook() const {
   Page * thisPage = pages[0];
   thisPage->printPage();
+
+  //keep requesting user input until WIN/LOSE page reached
   while (true) {
     if (thisPage->getChoices()[0].second == 0) {
       return;
     }
-    //size_t userChoice;
     float userChoice;
     bool invalidInput = true;
 
-    //NEED TO FIGURE OUT DOUBLE/FLOAT INPUTS
     //error checking user input
     while (invalidInput) {
       std::cin >> userChoice;
