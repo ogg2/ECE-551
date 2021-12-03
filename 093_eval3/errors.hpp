@@ -2,6 +2,9 @@
 #define __ERRORS_HPP__
 #include <string>
 
+/**
+* Error class prints out an error passed into the constructor
+*/
 class Error {
   private:
     std::string message;
@@ -11,7 +14,7 @@ class Error {
   }
 
   void printError () {
-    std::cerr << "Error: " <<message << std::endl;
+    std::cerr << "Error: " << message << std::endl;
     exit (EXIT_FAILURE);
   }
 };

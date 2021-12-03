@@ -79,7 +79,7 @@ void Book::allPagesReferenced () {
 * winAndLose ensures a CYOA is winnable and losable by checkings it's
 *   winnable and losable field accordingly
 */
-void Book::winAndLose() {
+void Book::winAndLose() const {
   if (!losable) {
     Error ("Story is not losable.");
   }
@@ -120,7 +120,7 @@ void Book::depth() {
 /**
 * printDepth prints the minimum depth of each page in the book
 */
-void Book::printDepth() {
+void Book::printDepth() const {
   for (size_t i = 0; i < pages.size(); i++) {
     std::cout << "Page " << i + 1;
     if (pages[i]->getDepth() > -1) {
@@ -183,7 +183,7 @@ void Book::cycleFreeWins() {
 *
 * input: thisPage is the win page that we will be printing the winning path to
 */
-void Book::printWins(Page * thisPage) {
+void Book::printWins(const Page * thisPage) const {
   //first = page number, second = choice number
   std::vector<std::pair<size_t, size_t> > path;
 
@@ -227,7 +227,7 @@ void Book::printWins(Page * thisPage) {
 *   the user to select which choice they would like to make, and navigating to page
 *   corresponding to user's choice
 */
-void Book::readBook() {
+void Book::readBook() const {
   Page * thisPage = pages[0];
   thisPage->printPage();
   while (true) {

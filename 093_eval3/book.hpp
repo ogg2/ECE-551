@@ -8,22 +8,20 @@
 */
 class Book {
   private:
-    std::vector<Page*> pages; 
-    bool winnable;
-    bool losable;
+    std::vector<Page*> pages; //array of all pages in book
+    bool winnable;            //at least one win page in book
+    bool losable;             //at least one lose page in book
   public:
     Book(char * directoryName);
     void validNextPage();
     void allPagesReferenced();
-    void winAndLose();
+    void winAndLose() const;
     void depth();
-    void printDepth();
+    void printDepth() const;
     void cycleFreeWins();
-    void printWins(Page * thisPage);
-    //void printWins(std::vector<Page*> path, std::vector<size_t> choices);
-    void readBook();
-    void freeBookMemory(); //make this destructor?
-    //write copy constructor and assignment operator?
+    void printWins(const Page * thisPage) const;
+    void readBook() const;
+    void freeBookMemory();
 };
 
 #endif
