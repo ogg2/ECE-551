@@ -6,7 +6,7 @@
 /**
 * Constructor that reads an input file and separates the navigation section
 *   from the story text section
-
+*
 * input: fileName is the file that is being read
 */
 Page::Page (const char * fileName) {
@@ -16,7 +16,7 @@ Page::Page (const char * fileName) {
     //Error ("Could not open file!");
   }
   referenced = false;
-  visited = false;
+//  visited = false;
   depth = -1;
   prev = NULL;
   file >> *this;
