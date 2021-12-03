@@ -20,6 +20,8 @@ cyoa-step4 /usr/local/ece551/cyoa/cycle
 cyoa-step4 /usr/local/ece551/cyoa/no_win
 
 cyoa-step3 tests5
+cyoa-step3 /usr/local/ece551/cyoa/cycle
+cyoa-step3 /usr/local/ece551/cyoa/no_win
 
 cyoa-step2 story1 < story1/input.txt
 cyoa-step2 story1 < story1/input2.txt
