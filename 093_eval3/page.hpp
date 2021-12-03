@@ -13,7 +13,6 @@
 class Page {
   private:
     bool referenced;
-//    bool visited;
     int depth;
     size_t pageNum;
     Page * prev; //previous page used to backtrack solution after DFS
@@ -26,8 +25,6 @@ class Page {
     const std::vector<std::pair<std::string, size_t> > getChoices() {return choices;}
     bool getReferenced() {return referenced;}
     void setReferenced(bool r) {referenced = r;}
-  //  bool getVisited() {return visited;}
-  //  void setVisited(bool v) {visited = v;}
     int getDepth() {return depth;}
     void setDepth(int d) {depth = d;}
     size_t getPageNum() {return pageNum;}

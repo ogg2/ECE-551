@@ -16,7 +16,6 @@ Page::Page (const char * fileName) {
     //Error ("Could not open file!");
   }
   referenced = false;
-//  visited = false;
   depth = -1;
   prev = NULL;
   file >> *this;

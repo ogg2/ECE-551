@@ -136,69 +136,20 @@ void Book::printDepth() {
 */
 void Book::cycleFreeWins() {
   bool unwinnable = true;
-  //mark as not visited when popping?, "avoid revisiting node on same path"
-  //DFS using stack?
-  //track explored paths with extra vector after marking as unvisited
-    //this is local variable so we can still reuse page in a separate path
+
   std::stack<Page*> pageStack;
   pageStack.push(pages[0]);
   
-  std::vector<Page*> currentPath;
-  //std::vector<size_t> choices;
-  //currentPath.push_back(pair);
-  //bool popping = false;
-  //bool addedPage = true;
 
   while (!pageStack.empty()) {
     Page * thisPage = pageStack.top();
     pageStack.pop();
-    //thisPage->setVisited(true);
-
-    /*if (addedPage) {
-      thisPage->setVisited(false);
-    }*/
-
-    //currentPath.push_back(thisPage);
-    //std::cout << "Vector Size: " << thisPage->getChoices().size() << std::endl;
-    /*while (popping) {
-      size_t currentChoice = choices.back();
-      choices.pop_back();
-      if (currentChoice <= 1) {
-        currentPath.back()->setVisited(false);
-        currentPath.pop_back();
-      } else {
-        //while (pages[thisPage->getChoices()[currentChoice - 1].second]->getVisited()) {
-        //  currentChoice--;
-        //  if (currentChoice == 0) {
-        //    break;
-        //  }
-        //}
-        choices.push_back(currentChoice - 1);
-        popping = false;
-      }
-    }
-    size_t index = thisPage->getChoices().size();
-    //while (pages[thisPage->getChoices()[index - 1].second]->getVisited()) {
-    //  index--;
-    //  if (index == 0) {
-    //    break;
-    //  }
-    //}
-    currentPath.push_back(thisPage);
-    //choices.push_back(thisPage->getChoices().size());
-    choices.push_back(index);*/
 
     if (thisPage->getChoices()[0].first.compare("WIN") == 0) {
       printWins(thisPage);
       unwinnable = false;
-      //addedPage = false;
-      //printWins(currentPath, choices);
-      //popping = true; 
-      //pageStack.pop();
-      //break;
     } else if (thisPage->getChoices()[0].first.compare("LOSE") == 0) {
-      //popping = true; 
-      //addedPage = false;
+      ;
     } else {
       for (size_t i = 0; i < thisPage->getChoices().size(); i++) {
         size_t nextPage = thisPage->getChoices()[i].second;
@@ -209,15 +160,11 @@ void Book::cycleFreeWins() {
               thisPage->getPageNum() == nextPage) {
             visited = true;
           }
-          //std::cout << "Page Num: " << prevPage->getPageNum() << std::endl;
           prevPage = prevPage->getPrev();
         }
-        //if (!pages[nextPage - 1]->getVisited()) {
         if (!visited) {
           pages[nextPage - 1]->setPrev(thisPage);
           pageStack.push(pages[nextPage - 1]); 
-          //addedPage = true;
-          //popping = false;
         }
       }
     }
@@ -233,7 +180,7 @@ void Book::cycleFreeWins() {
 *
 * input: thisPage is the win page that we will be printing the winning path to
 */
-void Book::printWins(Page * thisPage) {//, std::vector<size_t> choices) {
+void Book::printWins(Page * thisPage) {
   std::vector<std::pair<size_t, size_t> > path;
 
   Page * prevPage = thisPage->getPrev();
@@ -256,6 +203,7 @@ void Book::printWins(Page * thisPage) {//, std::vector<size_t> choices) {
     prevPage = prevPage->getPrev();
   }
 
+  //print out winning path
   std::vector<std::pair<size_t, size_t> >::reverse_iterator rit = path.rbegin();
   while (rit != path.rend()) {
     std::cout << rit->first << "(";
@@ -267,26 +215,6 @@ void Book::printWins(Page * thisPage) {//, std::vector<size_t> choices) {
     ++rit;
   }
   std::cout << std::endl;
-  /*for (size_t i = path.size() - 1; i > 0; i--) {
-    std::cout << path[i].first << "(";
-    if (path[i].second == 0) {
-      std::cout << "win)";
-    } else {
-      std::cout << path[i].second << "),";
-    }
-  }
-  std::cout << std::endl;*/
-
-
-  /*for (size_t i = 0; i < path.size(); i++) {
-    std::cout << path[i]->getPageNum() << "(";
-    if (path[i]->getChoices()[0].second == 0) {
-      std::cout << "win)";
-    } else {
-      std::cout << choices[i] << "),";
-    }
-  }
-  std::cout << std::endl;*/
 }
 
 /**
