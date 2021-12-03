@@ -15,6 +15,9 @@ cyoa-step1 tests/page9.txt
 
 #success
 cyoa-step4 tests5
+cyoa-step4 /usr/local/ece551/cyoa/story-diamond-win
+cyoa-step4 /usr/local/ece551/cyoa/cycle
+cyoa-step4 /usr/local/ece551/cyoa/no_win
 
 cyoa-step3 tests5
 

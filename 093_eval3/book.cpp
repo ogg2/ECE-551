@@ -135,10 +135,7 @@ void Book::printDepth() {
 *   to any win page
 */
 void Book::cycleFreeWins() {
-  if (!winnable) {
-    std::cout << "This story is unwinnable!" << std::endl;
-    return;
-  }
+  bool unwinnable = true;
   //mark as not visited when popping?, "avoid revisiting node on same path"
   //DFS using stack?
   //track explored paths with extra vector after marking as unvisited
@@ -193,6 +190,7 @@ void Book::cycleFreeWins() {
 
     if (thisPage->getChoices()[0].first.compare("WIN") == 0) {
       printWins(thisPage);
+      unwinnable = false;
       //addedPage = false;
       //printWins(currentPath, choices);
       //popping = true; 
@@ -223,6 +221,9 @@ void Book::cycleFreeWins() {
         }
       }
     }
+  }
+  if (unwinnable) {
+    std::cout << "This story is unwinnable!" << std::endl;
   }
 }
 
