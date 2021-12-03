@@ -18,6 +18,7 @@ Page::Page (const char * fileName) {
   referenced = false;
   visited = false;
   depth = -1;
+  prev = NULL;
   file >> *this;
   file.close ();
 }

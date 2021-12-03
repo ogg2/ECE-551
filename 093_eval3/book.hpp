@@ -19,7 +19,8 @@ class Book {
     void depth();
     void printDepth();
     void cycleFreeWins();
-    void printWins(std::vector<Page*> path, std::vector<size_t> choices);
+    void printWins(Page * thisPage);
+    //void printWins(std::vector<Page*> path, std::vector<size_t> choices);
     void readBook();
     void freeBookMemory(); //make this destructor?
     //write copy constructor and assignment operator?

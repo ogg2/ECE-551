@@ -15,7 +15,8 @@ class Page {
     bool referenced;
     bool visited;
     int depth;
-    int pageNum;
+    size_t pageNum;
+    Page * prev;
     std::stringstream pageText;
     //pair in vector contains navigation choices in string and next page in 'size_t'
     std::vector<std::pair<std::string, size_t> > choices; 
@@ -29,8 +30,10 @@ class Page {
     void setVisited(bool v) {visited = v;}
     int getDepth() {return depth;}
     void setDepth(int d) {depth = d;}
-    int getPageNum() {return pageNum;}
-    void setPageNum(int pn) {pageNum = pn;}
+    size_t getPageNum() {return pageNum;}
+    void setPageNum(size_t pn) {pageNum = pn;}
+    Page * getPrev() {return prev;}
+    void setPrev(Page * p) {prev = p;}
     void printPage();
     friend std::istream & operator>>(std::istream & s, Page & page);
     friend std::ostream & operator<<(std::ostream & s, const Page & page);

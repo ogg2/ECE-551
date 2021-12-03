@@ -11,7 +11,7 @@
 * input: directoryName is the directory that contains all of the page files
 */
 Book::Book (char * directoryName) {
-  int index = 1;
+  size_t index = 1;
   bool lastPage = false;
   while (!lastPage) {
     std::stringstream s;
@@ -144,50 +144,111 @@ void Book::cycleFreeWins() {
   pageStack.push(pages[0]);
   
   std::vector<Page*> currentPath;
-  std::vector<size_t> choices;
+  //std::vector<size_t> choices;
   //currentPath.push_back(pair);
-  bool popping = false;
+  //bool popping = false;
 
   while (!pageStack.empty()) {
     Page * thisPage = pageStack.top();
     pageStack.pop();
     thisPage->setVisited(true);
+
+    //currentPath.push_back(thisPage);
     //std::cout << "Vector Size: " << thisPage->getChoices().size() << std::endl;
-    while (popping) {
+    /*while (popping) {
       size_t currentChoice = choices.back();
       choices.pop_back();
       if (currentChoice <= 1) {
         currentPath.back()->setVisited(false);
         currentPath.pop_back();
       } else {
+        //while (pages[thisPage->getChoices()[currentChoice - 1].second]->getVisited()) {
+        //  currentChoice--;
+        //  if (currentChoice == 0) {
+        //    break;
+        //  }
+        //}
         choices.push_back(currentChoice - 1);
         popping = false;
       }
     }
+    size_t index = thisPage->getChoices().size();
+    //while (pages[thisPage->getChoices()[index - 1].second]->getVisited()) {
+    //  index--;
+    //  if (index == 0) {
+    //    break;
+    //  }
+    //}
     currentPath.push_back(thisPage);
-    choices.push_back(thisPage->getChoices().size());
-    
+    //choices.push_back(thisPage->getChoices().size());
+    choices.push_back(index);*/
+
     if (thisPage->getChoices()[0].first.compare("WIN") == 0) {
-      printWins(currentPath, choices);
-      popping = true; 
+      printWins(thisPage);
+      //printWins(currentPath, choices);
+      //popping = true; 
       //pageStack.pop();
       //break;
     } else if (thisPage->getChoices()[0].first.compare("LOSE") == 0) {
-      popping = true; 
+      //popping = true; 
     } else {
       for (size_t i = 0; i < thisPage->getChoices().size(); i++) {
         size_t nextPage = thisPage->getChoices()[i].second;
         if (!pages[nextPage - 1]->getVisited()) {
+          pages[nextPage - 1]->setPrev(thisPage);
           pageStack.push(pages[nextPage - 1]); 
-          popping = false;
+          //popping = false;
         }
       }
     }
   }
 }
 
-void Book::printWins(std::vector<Page*> path, std::vector<size_t> choices) {
-  for (size_t i = 0; i < path.size(); i++) {
+void Book::printWins(Page * thisPage) {//, std::vector<size_t> choices) {
+  std::vector<std::pair<size_t, size_t> > path;
+
+  Page * prevPage = thisPage->getPrev();
+  std::pair<size_t, size_t> pair (thisPage->getPageNum(), 0);
+  path.push_back(pair);
+
+  while (prevPage != NULL) {
+    size_t choice;
+    for (size_t i = 0; i < prevPage->getChoices().size(); i++) { // what if diff choice goes to same page?
+      if (prevPage->getChoices()[i].second == thisPage->getPageNum()) {
+        choice = i + 1;
+        break;
+      }
+    }
+    pair = std::make_pair(prevPage->getPageNum(), choice);
+    path.push_back(pair); 
+
+    thisPage = prevPage;
+    prevPage = prevPage->getPrev();
+  }
+
+  std::vector<std::pair<size_t, size_t> >::reverse_iterator rit = path.rbegin();
+  while (rit != path.rend()) {
+    std::cout << rit->first << "(";
+    if (rit->second == 0) {
+      std::cout << "win)";
+    } else {
+      std::cout << rit->second << "),";
+    }
+    ++rit;
+  }
+  std::cout << std::endl;
+  /*for (size_t i = path.size() - 1; i > 0; i--) {
+    std::cout << path[i].first << "(";
+    if (path[i].second == 0) {
+      std::cout << "win)";
+    } else {
+      std::cout << path[i].second << "),";
+    }
+  }
+  std::cout << std::endl;*/
+
+
+  /*for (size_t i = 0; i < path.size(); i++) {
     std::cout << path[i]->getPageNum() << "(";
     if (path[i]->getChoices()[0].second == 0) {
       std::cout << "win)";
@@ -195,7 +256,7 @@ void Book::printWins(std::vector<Page*> path, std::vector<size_t> choices) {
       std::cout << choices[i] << "),";
     }
   }
-  std::cout << std::endl;
+  std::cout << std::endl;*/
 }
 
 /**
