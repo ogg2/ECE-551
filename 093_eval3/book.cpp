@@ -245,6 +245,8 @@ void Book::readBook() {
       if (std::cin.good() && (size_t) userChoice <= thisPage->getChoices().size() 
           && (size_t) userChoice > 0 && fmod(userChoice, 1.0) == 0.0) {
         invalidInput = false;
+      } else if (std::cin.eof()) {
+        Error ("Not enough inputs to finish story.");
       } else {
         std::cout << "That is not a valid choice, please try again" << std::endl;
       }
