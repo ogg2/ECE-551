@@ -1,6 +1,6 @@
-Grading at 12/03/2021:14:24:06.017819
-For commit ID 7cce20ade03ca92034c1f8397c5b27c3aa0d49db
-Grading at Fri Dec  3 09:23:14 EST 2021
+Grading at 12/03/2021:14:28:03.708625
+For commit ID a549345b0533ffe495d77bb51430fe4ff0e525a8
+Grading at Fri Dec  3 09:27:09 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -164,37 +164,43 @@ g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step3 page.cpp book.cpp 
 +-----------------------------------------------------------------------+
 Test case 17 (success): cyoa-step3 tests5
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 18 (success): cyoa-step3 /usr/local/ece551/cyoa/cycle
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case 19 (success): cyoa-step3 /usr/local/ece551/cyoa/no_win
+Your file matched the expected output
 
 Compiling cyoa-step2
 rm -f cyoa-step?
 g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step2 page.cpp book.cpp cyoa-step2.cpp
 +-----------------------------------------------------------------------+
-Test case 18 (success): cyoa-step2 story1 < story1/input.txt
+Test case 20 (success): cyoa-step2 story1 < story1/input.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 19 (success): cyoa-step2 story1 < story1/input2.txt
+Test case 21 (success): cyoa-step2 story1 < story1/input2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 20 (success): cyoa-step2 story2 < story2/input.txt
+Test case 22 (success): cyoa-step2 story2 < story2/input.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 21 (success): cyoa-step2 story2 < story2/input2.txt
+Test case 23 (success): cyoa-step2 story2 < story2/input2.txt
 Your file matched the expected output
 
 Compiling cyoa-step1
 rm -f cyoa-step?
 g++ -std=gnu++98 -pedantic -Wall -Werror -ggdb3 -o cyoa-step1 page.cpp cyoa-step1.cpp
 +-----------------------------------------------------------------------+
-Test case 22 (success): cyoa-step1 tests/page7.txt
+Test case 24 (success): cyoa-step1 tests/page7.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 23 (success): cyoa-step1 story1/page4.txt
+Test case 25 (success): cyoa-step1 story1/page4.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 24 (success): cyoa-step1 story1/page6.txt
+Test case 26 (success): cyoa-step1 story1/page6.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
-Test case 25 (success): cyoa-step1 story1/page12.txt
+Test case 27 (success): cyoa-step1 story1/page12.txt
 Your file matched the expected output
 
 You have PASSED all of your test cases
