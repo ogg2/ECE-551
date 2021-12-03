@@ -3,7 +3,6 @@ cyoa-step2 tests
 cyoa-step2 tests2
 cyoa-step2 tests3
 cyoa-step2 tests4
-cyoa-step2 story2 < story2/input4.txt
 
 cyoa-step1 tests/page0.txt
 cyoa-step1 tests/page2.txt
