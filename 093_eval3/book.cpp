@@ -237,15 +237,14 @@ void Book::readBook() const {
     if (thisPage->getChoices()[0].second == 0) {
       return;
     }
-    //float userChoice;
     size_t userChoice;
     bool invalidInput = true;
 
     //error checking user input
     while (invalidInput) {
       std::cin >> userChoice;
-      if (std::cin.good() && (size_t) userChoice <= thisPage->getChoices().size() 
-          && (size_t) userChoice > 0) { //&& fmod(userChoice, 1.0) == 0.0) {
+      if (std::cin.good() && userChoice <= thisPage->getChoices().size() 
+          && userChoice > 0) {
         invalidInput = false;
       } else if (std::cin.eof()) {
         Error ("Not enough inputs to finish story.");
