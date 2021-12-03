@@ -1,5 +1,8 @@
 #include "book.hpp"
 
+/**
+* main for cyoa-step3
+*/
 int main (int argc, char ** argv) {
   if (argc != 2) {
     std::cerr << "Usage: ./program directory" << std::endl;

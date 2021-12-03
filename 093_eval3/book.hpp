@@ -24,8 +24,6 @@ class Book {
     void readBook();
     void freeBookMemory(); //make this destructor?
     //write copy constructor and assignment operator?
-    friend std::istream & operator>>(std::istream & s, Book & book);
-    friend std::ostream & operator<<(std::ostream & s, Book & book);
 };
 
 #endif

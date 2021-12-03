@@ -64,7 +64,7 @@ void Book::allPagesReferenced () {
     if (!(*it)->getReferenced()) {
       Error ("Not every page is referenced.");
     }
-    //CHECK THERE IS BOTH A WIN PAGE AND LOSE PAGE
+    //check there is both a win page and lose page
     if ((*it)->getChoices()[0].first.compare("WIN") == 0) {
       winnable = true;
     }
@@ -89,7 +89,8 @@ void Book::winAndLose() {
 }
 
 /**
-* depth prints the story depth for each page in the book in numerical order
+* depth prints the minimum story depth for each page in the book in numerical order,
+*   minimum page depth is found using BFS
 */
 void Book::depth() {
   std::queue<Page*> pageQueue;
@@ -106,7 +107,7 @@ void Book::depth() {
 
       for (size_t i = 0; i < thisPage->getChoices().size(); i++) {
         size_t nextPage = thisPage->getChoices()[i].second;
-        //add to queue if not yet visited
+        //add to queue if not yet visited, depth of -1 means unvisited
         if (pages[nextPage - 1]->getDepth() == -1) {
           pages[nextPage - 1]->setDepth(pageDepth + 1);
           pageQueue.push(pages[nextPage - 1]);
@@ -131,7 +132,7 @@ void Book::printDepth() {
 }
 
 /**
-* cycleFreeWins usees DFS to find all possible, cycle-free, paths from page1
+* cycleFreeWins uses DFS to find all possible, cycle-free, paths from page1
 *   to any win page
 */
 void Book::cycleFreeWins() {
@@ -139,7 +140,6 @@ void Book::cycleFreeWins() {
 
   std::stack<Page*> pageStack;
   pageStack.push(pages[0]);
-  
 
   while (!pageStack.empty()) {
     Page * thisPage = pageStack.top();
@@ -154,6 +154,8 @@ void Book::cycleFreeWins() {
       for (size_t i = 0; i < thisPage->getChoices().size(); i++) {
         size_t nextPage = thisPage->getChoices()[i].second;
         bool visited = false;
+        
+        //search path to current page to make sure next page isn't already visited
         Page * prevPage = thisPage->getPrev();
         while (prevPage != NULL) {
           if (prevPage->getPageNum() == nextPage ||
@@ -162,6 +164,7 @@ void Book::cycleFreeWins() {
           }
           prevPage = prevPage->getPrev();
         }
+
         if (!visited) {
           pages[nextPage - 1]->setPrev(thisPage);
           pageStack.push(pages[nextPage - 1]); 
@@ -181,6 +184,7 @@ void Book::cycleFreeWins() {
 * input: thisPage is the win page that we will be printing the winning path to
 */
 void Book::printWins(Page * thisPage) {
+  //first = page number, second = choice number
   std::vector<std::pair<size_t, size_t> > path;
 
   Page * prevPage = thisPage->getPrev();
@@ -189,14 +193,14 @@ void Book::printWins(Page * thisPage) {
 
   //reconstruct path by looking at prev pages
   while (prevPage != NULL) {
-    size_t choice;
-    for (size_t i = 0; i < prevPage->getChoices().size(); i++) { // what if diff choice goes to same page?
+    size_t choiceNum;
+    for (size_t i = 0; i < prevPage->getChoices().size(); i++) { 
       if (prevPage->getChoices()[i].second == thisPage->getPageNum()) {
-        choice = i + 1;
+        choiceNum = i + 1;
         break;
       }
     }
-    pair = std::make_pair(prevPage->getPageNum(), choice);
+    pair = std::make_pair(prevPage->getPageNum(), choiceNum);
     path.push_back(pair); 
 
     thisPage = prevPage;
@@ -222,7 +226,6 @@ void Book::printWins(Page * thisPage) {
 *   for the current page, displaying the page's navigations choices, prompting
 *   the user to select which choice they would like to make, and navigating to page
 *   corresponding to user's choice
-SIMPLIFY COMMENT?????
 */
 void Book::readBook() {
   Page * thisPage = pages[0];
